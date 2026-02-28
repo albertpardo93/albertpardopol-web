@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "../components";
+@source "../app";
+@source "../lib";
+
+@theme {
+  --color-primary: #0D3B66;
+  --color-primary-light: #155A8A;
+  --color-primary-dark: #082A4A;
+  --color-accent: #B4D6E3;
+  --color-navy: #0D3B66;
+  --color-surface: #EAF2F8;
+  --color-surface-card: #ffffff;
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #4A4A5A;
+  --color-text-muted: #6B7280;
+  --color-border: #CBD5E1;
+  --color-star: #D4A843;
+  --font-sans: "DM Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto",
+    sans-serif;
+  --font-display: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+}
+
+/* ── Base layer ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth transitions globally for interactive elements */
+  a, button, [role="button"] {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ── Components layer ── */
+@layer components {
+  /* Scroll snap for carousels */
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scroll-snap-x > * {
+    scroll-snap-align: start;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Desktop-only animations (sm: 640px+) */
+  @media (min-width: 640px) {
+    /* Hero entrance — smoother, slightly longer */
+    .hero-animate-name {
+      animation: hero-fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+    .hero-animate-title {
+      animation: hero-fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+    .hero-animate-cta {
+      animation: hero-fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    }
+    .hero-animate-image {
+      animation: hero-fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    /* Scroll reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    [data-reveal].is-visible {
+      animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    [data-reveal-delay="1"].is-visible { animation-delay: 100ms; }
+    [data-reveal-delay="2"].is-visible { animation-delay: 200ms; }
+    [data-reveal-delay="3"].is-visible { animation-delay: 300ms; }
+    [data-reveal-delay="4"].is-visible { animation-delay: 400ms; }
+    [data-reveal-delay="5"].is-visible { animation-delay: 500ms; }
+    [data-reveal-delay="6"].is-visible { animation-delay: 600ms; }
+    [data-reveal-delay="7"].is-visible { animation-delay: 700ms; }
+    [data-reveal-delay="8"].is-visible { animation-delay: 800ms; }
+    [data-reveal-delay="9"].is-visible { animation-delay: 900ms; }
+  }
+}
+
+/* ── Keyframes (global, outside layers) ── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}

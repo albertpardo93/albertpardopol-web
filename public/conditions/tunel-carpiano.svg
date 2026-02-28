@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
+  <!-- Background -->
+  <rect width="600" height="500" rx="16" fill="#F8FBFE"/>
+
+  <!-- Title -->
+  <text x="300" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#0D3B66">Sección transversal — Túnel carpiano</text>
+
+  <!-- Wrist cross-section (elliptical shape representing the carpal tunnel area) -->
+  <!-- Outer skin/tissue boundary -->
+  <ellipse cx="300" cy="270" rx="180" ry="140" fill="#FDEBD0" stroke="#D4A373" stroke-width="2"/>
+
+  <!-- Subcutaneous tissue -->
+  <ellipse cx="300" cy="270" rx="160" ry="120" fill="#FAD7A0" stroke="#D4A373" stroke-width="1.5"/>
+
+  <!-- Carpal bones (floor of tunnel) - posterior/dorsal side -->
+  <path d="M160 310 Q180 380 230 400 Q270 415 300 418 Q330 415 370 400 Q420 380 440 310" fill="#E8DAEF" stroke="#8E44AD" stroke-width="2"/>
+  <text x="300" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6C3483" font-weight="500">Huesos del carpo</text>
+
+  <!-- Individual carpal bone outlines -->
+  <ellipse cx="210" cy="350" rx="35" ry="28" fill="#D7BDE2" stroke="#8E44AD" stroke-width="1.5"/>
+  <ellipse cx="280" cy="365" rx="30" ry="25" fill="#D7BDE2" stroke="#8E44AD" stroke-width="1.5"/>
+  <ellipse cx="340" cy="360" rx="28" ry="26" fill="#D7BDE2" stroke="#8E44AD" stroke-width="1.5"/>
+  <ellipse cx="405" cy="340" rx="30" ry="25" fill="#D7BDE2" stroke="#8E44AD" stroke-width="1.5"/>
+
+  <!-- Transverse carpal ligament (roof of tunnel) -->
+  <path d="M170 230 Q220 200 300 195 Q380 200 430 230" fill="none" stroke="#2E86C1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M170 230 Q220 205 300 200 Q380 205 430 230" fill="#AED6F1" fill-opacity="0.4" stroke="none"/>
+
+  <!-- Label: Ligamento transverso -->
+  <line x1="300" y1="195" x2="300" y2="115" stroke="#2E86C1" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="195" y="95" width="210" height="24" rx="4" fill="#2E86C1"/>
+  <text x="300" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" font-weight="500">Ligamento transverso del carpo</text>
+
+  <!-- Carpal tunnel space -->
+  <path d="M190 235 Q220 215 300 210 Q380 215 410 235 Q420 280 400 330 Q370 360 300 370 Q230 360 200 330 Q180 280 190 235Z" fill="#FEF9E7" fill-opacity="0.6" stroke="#F4D03F" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Median nerve (the key structure) -->
+  <circle cx="300" cy="235" r="14" fill="#F5B041" stroke="#E67E22" stroke-width="2.5"/>
+  <circle cx="296" cy="231" r="3" fill="#E67E22" opacity="0.5"/>
+  <circle cx="304" cy="233" r="2.5" fill="#E67E22" opacity="0.5"/>
+  <circle cx="300" cy="239" r="2.5" fill="#E67E22" opacity="0.5"/>
+
+  <!-- Label: Nervio mediano -->
+  <line x1="314" y1="235" x2="480" y2="160" stroke="#E67E22" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="410" y="145" width="130" height="24" rx="4" fill="#E67E22"/>
+  <text x="475" y="162" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" font-weight="600">Nervio mediano</text>
+
+  <!-- Flexor tendons (9 tendons in the tunnel) -->
+  <!-- Flexor digitorum superficialis (4 tendons) -->
+  <circle cx="270" cy="270" r="8" fill="#A9CCE3" stroke="#2980B9" stroke-width="1.5"/>
+  <circle cx="290" cy="265" r="8" fill="#A9CCE3" stroke="#2980B9" stroke-width="1.5"/>
+  <circle cx="310" cy="265" r="8" fill="#A9CCE3" stroke="#2980B9" stroke-width="1.5"/>
+  <circle cx="330" cy="270" r="8" fill="#A9CCE3" stroke="#2980B9" stroke-width="1.5"/>
+
+  <!-- Flexor digitorum profundus (4 tendons) -->
+  <circle cx="260" cy="295" r="8" fill="#85C1E9" stroke="#2471A3" stroke-width="1.5"/>
+  <circle cx="283" cy="292" r="8" fill="#85C1E9" stroke="#2471A3" stroke-width="1.5"/>
+  <circle cx="317" cy="292" r="8" fill="#85C1E9" stroke="#2471A3" stroke-width="1.5"/>
+  <circle cx="340" cy="295" r="8" fill="#85C1E9" stroke="#2471A3" stroke-width="1.5"/>
+
+  <!-- Flexor pollicis longus (1 tendon) -->
+  <circle cx="230" cy="260" r="9" fill="#76D7C4" stroke="#1ABC9C" stroke-width="1.5"/>
+
+  <!-- Label: Tendones flexores -->
+  <line x1="260" y1="295" x2="130" y2="180" stroke="#2471A3" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="45" y="165" width="140" height="24" rx="4" fill="#2471A3"/>
+  <text x="115" y="182" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" font-weight="500">Tendones flexores (9)</text>
+
+  <!-- Label: Flexor pollicis longus -->
+  <line x1="221" y1="260" x2="100" y2="245" stroke="#1ABC9C" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="15" y="232" width="150" height="24" rx="4" fill="#1ABC9C"/>
+  <text x="90" y="249" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" font-weight="500">Flexor largo del pulgar</text>
+
+  <!-- Ulnar artery and nerve (outside tunnel, ulnar side) -->
+  <circle cx="410" cy="250" r="7" fill="#EC7063" stroke="#E74C3C" stroke-width="1.5"/>
+  <circle cx="425" cy="240" r="6" fill="#F9E79F" stroke="#F1C40F" stroke-width="1.5"/>
+
+  <!-- Label: Arteria y nervio cubital -->
+  <line x1="430" y1="240" x2="500" y2="220" stroke="#E74C3C" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="430" y="207" width="155" height="22" rx="4" fill="#E74C3C" fill-opacity="0.85"/>
+  <text x="507" y="222" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="white" font-weight="500">Arteria y nervio cubital</text>
+
+  <!-- Compression arrows showing pressure on median nerve -->
+  <!-- Arrow from ligament pressing down -->
+  <path d="M300 180 L300 218" stroke="#C0392B" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <path d="M270 185 L285 220" stroke="#C0392B" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <path d="M330 185 L315 220" stroke="#C0392B" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C0392B"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="30" y="435" width="540" height="50" rx="8" fill="#EBF5FB" stroke="#AED6F1" stroke-width="1"/>
+
+  <circle cx="60" cy="460" r="6" fill="#F5B041" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="75" y="464" font-family="system-ui, sans-serif" font-size="10" fill="#4A4A5A">Nervio mediano</text>
+
+  <circle cx="185" cy="460" r="6" fill="#A9CCE3" stroke="#2980B9" stroke-width="1.5"/>
+  <text x="200" y="464" font-family="system-ui, sans-serif" font-size="10" fill="#4A4A5A">Tendones</text>
+
+  <line x1="270" y1="460" x2="290" y2="460" stroke="#2E86C1" stroke-width="3"/>
+  <text x="300" y="464" font-family="system-ui, sans-serif" font-size="10" fill="#4A4A5A">Lig. transverso</text>
+
+  <ellipse cx="410" cy="460" rx="8" ry="6" fill="#D7BDE2" stroke="#8E44AD" stroke-width="1"/>
+  <text x="425" y="464" font-family="system-ui, sans-serif" font-size="10" fill="#4A4A5A">Huesos del carpo</text>
+
+  <path d="M510 453 L510 467" stroke="#C0392B" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <text x="525" y="464" font-family="system-ui, sans-serif" font-size="10" fill="#4A4A5A">Compresión</text>
+</svg>

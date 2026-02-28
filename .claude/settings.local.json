@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx next build:*)",
+      "WebSearch",
+      "WebFetch(domain:www.doctoralia.es)",
+      "WebFetch(domain:icatme.com)",
+      "WebFetch(domain:www.avantmedic.com)",
+      "WebFetch(domain:bayesclinica.cat)",
+      "WebFetch(domain:www.quironsalud.com)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(wc:*)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:esopiniones.com)",
+      "Bash(pnpm build:*)",
+      "Bash(ls:*)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(node -e:*)",
+      "Bash(timeout 15 pnpm dev:*)",
+      "Bash(export PATH=\"/tmp/node-v20.11.1-darwin-arm64/bin:$PATH\")",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:clara.com)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs:*)",
+      "Bash(PATH=\"/tmp/node-v20.11.1-darwin-arm64/bin:$PATH\" /Users/albertpardopol/Desktop/albert/node_modules/.bin/next dev:*)",
+      "Bash(pkill:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
