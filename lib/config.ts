@@ -1,6 +1,6 @@
 /** Centralized booking & contact configuration */
 
-export const SITE_URL = "https://albertpardopol.com";
+export const SITE_URL = "https://cirujanodemano.es";
 
 export const REVIEWS_ARE_VERIFIED = false;
 
