@@ -16,7 +16,6 @@ export const booking = {
 } as const;
 
 export const contact = {
-  phone: "+34 689 524 020",
   email: "dralbertpardo@gmail.com",
   whatsapp: "https://wa.me/34689524020",
 } as const;
