@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     await resend.emails.send({
-      from: "Presupuestos Web <onboarding@resend.dev>",
+      from: "Presupuestos Web <presupuestos@cirujanodemano.es>",
       to: "dralbertpardo@gmail.com",
       subject: `Solicitud de presupuesto — ${condition}`,
       replyTo: email,
