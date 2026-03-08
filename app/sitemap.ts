@@ -5,6 +5,7 @@ const locales = ["es", "ca", "en"];
 const pages = [
   { path: "", priority: 1.0, freq: "weekly" as const },
   { path: "/sobre-mi", priority: 0.9, freq: "monthly" as const },
+  { path: "/info-paciente", priority: 0.8, freq: "monthly" as const },
   { path: "/aviso-legal", priority: 0.3, freq: "monthly" as const },
   { path: "/politica-de-privacidad", priority: 0.3, freq: "monthly" as const },
   { path: "/politica-de-cookies", priority: 0.3, freq: "monthly" as const },

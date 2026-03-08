@@ -9,6 +9,7 @@ import BookingTrigger from "./BookingTrigger";
 const navLinks = (locale: Locale, dict: Dictionary) => [
   { href: `/${locale}/sobre-mi`, label: dict.nav.aboutMe },
   { href: `/${locale}#condiciones`, label: dict.nav.conditions },
+  { href: `/${locale}/info-paciente`, label: dict.nav.patientInfo },
   { href: `/${locale}#centros`, label: dict.nav.centers },
   { href: `/${locale}#contacto`, label: dict.nav.contact },
 ];

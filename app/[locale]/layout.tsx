@@ -9,6 +9,7 @@ import StickyCTA from "@/components/StickyCTA";
 import BookingModal from "@/components/BookingModal";
 import ConditionModal from "@/components/ConditionModal";
 import CookieBanner from "@/components/CookieBanner";
+import EmergencyBanner from "@/components/EmergencyBanner";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
         <BookingModal dict={dict} />
         <ConditionModal dict={dict} />
         <CookieBanner locale={locale} />
+        <EmergencyBanner dict={dict} />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
 import { generateConditionMetadata, generateConditionStructuredData, generateConditionFAQSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import BookingTrigger from "@/components/BookingTrigger";
+import BudgetForm from "@/components/BudgetForm";
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -133,6 +134,8 @@ export default async function ConditionPage({
                   : "Pedir cita"}
             </BookingTrigger>
           </div>
+
+          <BudgetForm dict={dict} conditionName={condition.name} />
 
           {condition.faq.length > 0 && (
             <section className="mt-14">

@@ -10,6 +10,7 @@ const es = {
     aboutMe: "Sobre mí",
     centers: "Centros",
     contact: "Contacto",
+    patientInfo: "Información al paciente",
     menu: "Menú",
   },
   hero: {
@@ -444,8 +445,7 @@ const es = {
     phone: "Teléfono",
     email: "Correo electrónico",
     whatsapp: "WhatsApp",
-    emergency:
-      "Si se trata de una urgencia, acude a urgencias o llama al 112.",
+    emergency: "Para urgencias quirúrgicas, contáctame por",
   },
   footer: {
     rights: "Todos los derechos reservados.",
@@ -524,6 +524,110 @@ const es = {
     whatsapp: "Enviar WhatsApp",
     back: "Volver",
     close: "Cerrar",
+  },
+  emergencyBanner: {
+    text: "Para urgencias quirúrgicas, contacta conmigo a través de WhatsApp para poder valorar tu caso.",
+    cta: "Contactar por WhatsApp",
+    close: "Cerrar",
+  },
+  patientInfo: {
+    title: "Información para el paciente",
+    subtitle: "Todo lo que necesitas saber antes y después de tu intervención quirúrgica de la mano.",
+    sections: [
+      {
+        title: "Antes de la cirugía",
+        content: `<p>Es importante que estés bien informado antes de cualquier intervención. Te explicaré en detalle el procedimiento, los riesgos y beneficios, y firmaremos juntos el <strong>consentimiento informado</strong>.</p>
+<p>Si tienes cualquier duda, no dudes en preguntarme durante la consulta previa. Cuanto más informado estés, más tranquilo afrontarás la cirugía.</p>`,
+      },
+      {
+        title: "Estudios preoperatorios",
+        content: `<p>Dependiendo de tu intervención y estado de salud, puede ser necesario realizar:</p>
+<ul>
+<li>Analítica de sangre (hemograma, coagulación)</li>
+<li>Electrocardiograma</li>
+<li>Radiografía de tórax (en algunos casos)</li>
+<li>Visita preanestésica con el anestesista</li>
+</ul>`,
+      },
+      {
+        title: "Tipos de anestesia",
+        content: `<p>La mayoría de las cirugías de la mano se realizan con <strong>anestesia locorregional</strong>, lo que significa que se anestesia solo el brazo afectado. Esto ofrece varias ventajas:</p>
+<ul>
+<li>No requiere ayuno prolongado en intervenciones menores</li>
+<li>Recuperación más rápida</li>
+<li>Menor riesgo de efectos secundarios</li>
+<li>Analgesia postoperatoria prolongada</li>
+</ul>
+<p>En algunos casos puede ser necesaria anestesia general o sedación. El anestesista valorará la mejor opción para ti.</p>`,
+      },
+      {
+        title: "El día de la cirugía",
+        content: `<p>Instrucciones generales para el día de tu intervención:</p>
+<ul>
+<li><strong>Ayuno:</strong> No comas ni bebas nada en las 8 horas previas (si llevas anestesia general o sedación)</li>
+<li><strong>Higiene:</strong> Dúchate la mañana de la intervención. No lleves esmalte de uñas, joyas ni maquillaje</li>
+<li><strong>Ropa:</strong> Usa ropa cómoda y holgada, preferiblemente con mangas anchas</li>
+<li><strong>Medicación:</strong> Consulta con el anestesista tu medicación habitual y qué medicamentos te puedes seguir tomando el día de la intervención</li>
+<li><strong>Acompañante:</strong> Ven acompañado, ya que no podrás conducir después de la intervención</li>
+<li><strong>Puntualidad:</strong> Llega con al menos 30 minutos de antelación</li>
+</ul>`,
+      },
+      {
+        title: "Cuidados postoperatorios",
+        content: `<p>Tras la cirugía, es fundamental seguir estas recomendaciones para una buena recuperación:</p>
+<ul>
+<li><strong>Elevación:</strong> Mantén la mano elevada por encima del corazón las primeras 48-72 horas para reducir la inflamación</li>
+<li><strong>Vendaje:</strong> No retires ni mojes el vendaje a menos que se te indique. Mantén las vendas limpias y secas</li>
+<li><strong>Medicación:</strong> Toma los analgésicos pautados de forma regular, sin esperar a que aparezca el dolor intenso</li>
+<li><strong>Movilidad:</strong> Mueve los dedos que no estén inmovilizados para favorecer la circulación</li>
+<li><strong>Hielo:</strong> Puedes aplicar frío local (sin contacto directo con la piel) para aliviar la inflamación</li>
+<li><strong>Reposo:</strong> Evita esfuerzos con la mano operada durante el tiempo que te indique</li>
+</ul>`,
+      },
+      {
+        title: "Signos de alarma",
+        content: `<p>Contacta conmigo o acude a urgencias si presentas alguno de estos síntomas:</p>
+<ul>
+<li><strong>Dolor intenso</strong> que no mejora con la medicación pautada</li>
+<li><strong>Inflamación excesiva</strong> o aumento progresivo del hinchazón</li>
+<li><strong>Fiebre</strong> superior a 38°C</li>
+<li><strong>Cambio de coloración</strong> en los dedos (azulados, blancos o muy pálidos)</li>
+<li><strong>Pérdida de sensibilidad</strong> o hormigueo intenso persistente</li>
+<li><strong>Sangrado activo</strong> que empapa el vendaje</li>
+<li><strong>Mal olor</strong> o supuración a través del vendaje</li>
+</ul>
+<p>Ante la duda, siempre es mejor consultar. Puedes contactarme por WhatsApp para urgencias quirúrgicas.</p>`,
+      },
+      {
+        title: "Rehabilitación",
+        content: `<p>La rehabilitación es una parte esencial de la recuperación tras la cirugía de la mano. En muchos casos, trabajarás con un <strong>fisioterapeuta especializado</strong> en mano.</p>
+<ul>
+<li>Sigue fielmente las indicaciones de ejercicios que te dé el equipo médico</li>
+<li>La constancia es clave: realiza los ejercicios varias veces al día</li>
+<li>No fuerces más allá de lo indicado, pero tampoco dejes de hacer los ejercicios</li>
+<li>El tiempo de recuperación varía según la intervención: desde semanas hasta varios meses</li>
+</ul>
+<p>Te daré indicaciones específicas según tu caso particular y te haré seguimiento durante todo el proceso de recuperación.</p>`,
+      },
+    ],
+  },
+  budgetForm: {
+    title: "Pide tu presupuesto",
+    subtitle: "Explica brevemente tu caso y te enviaré un presupuesto personalizado a tu correo electrónico.",
+    name: "Nombre",
+    namePlaceholder: "Tu nombre completo",
+    email: "Correo electrónico",
+    emailPlaceholder: "tu@email.com",
+    phone: "Teléfono",
+    phonePlaceholder: "+34 600 000 000",
+    message: "Describe tu caso",
+    messagePlaceholder: "Explícame brevemente tu caso",
+    submit: "Enviar solicitud",
+    sending: "Enviando...",
+    successTitle: "¡Solicitud enviada!",
+    successMessage: "He recibido tu solicitud. Te enviaré el presupuesto a tu correo lo antes posible.",
+    errorMessage: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+    retry: "Reintentar",
   },
 } as const;
 

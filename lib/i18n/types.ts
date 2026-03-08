@@ -9,6 +9,7 @@ export interface Dictionary {
     aboutMe: string;
     centers: string;
     contact: string;
+    patientInfo: string;
     menu: string;
   };
   hero: {
@@ -103,5 +104,36 @@ export interface Dictionary {
     whatsapp: string;
     back: string;
     close: string;
+  };
+  emergencyBanner: {
+    text: string;
+    cta: string;
+    close: string;
+  };
+  patientInfo: {
+    title: string;
+    subtitle: string;
+    sections: readonly {
+      title: string;
+      content: string;
+    }[];
+  };
+  budgetForm: {
+    title: string;
+    subtitle: string;
+    name: string;
+    namePlaceholder: string;
+    email: string;
+    emailPlaceholder: string;
+    phone: string;
+    phonePlaceholder: string;
+    message: string;
+    messagePlaceholder: string;
+    submit: string;
+    sending: string;
+    successTitle: string;
+    successMessage: string;
+    errorMessage: string;
+    retry: string;
   };
 }

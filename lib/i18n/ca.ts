@@ -10,6 +10,7 @@ const ca = {
     aboutMe: "Sobre mi",
     centers: "Centres",
     contact: "Contacte",
+    patientInfo: "Informació al pacient",
     menu: "Menú",
   },
   hero: {
@@ -445,8 +446,7 @@ const ca = {
     phone: "Telèfon",
     email: "Correu electrònic",
     whatsapp: "WhatsApp",
-    emergency:
-      "Si es tracta d'una urgència, vés a urgències o truca al 112.",
+    emergency: "Per a urgències quirúrgiques, contacta'm per",
   },
   footer: {
     rights: "Tots els drets reservats.",
@@ -525,6 +525,110 @@ const ca = {
     whatsapp: "Enviar WhatsApp",
     back: "Tornar",
     close: "Tancar",
+  },
+  emergencyBanner: {
+    text: "Per a urgències quirúrgiques, contacta amb mi a través de WhatsApp per poder valorar el teu cas.",
+    cta: "Contactar per WhatsApp",
+    close: "Tancar",
+  },
+  patientInfo: {
+    title: "Informació per al pacient",
+    subtitle: "Tot el que necessites saber abans i després de la teva intervenció quirúrgica de la mà.",
+    sections: [
+      {
+        title: "Abans de la cirurgia",
+        content: `<p>És important que estiguis ben informat abans de qualsevol intervenció. T'explicaré en detall el procediment, els riscos i beneficis, i signarem junts el <strong>consentiment informat</strong>.</p>
+<p>Si tens qualsevol dubte, no dubtis a preguntar-me durant la consulta prèvia. Com més informat estiguis, més tranquil afrontaràs la cirurgia.</p>`,
+      },
+      {
+        title: "Estudis preoperatoris",
+        content: `<p>Depenent de la teva intervenció i estat de salut, pot ser necessari realitzar:</p>
+<ul>
+<li>Analítica de sang (hemograma, coagulació)</li>
+<li>Electrocardiograma</li>
+<li>Radiografia de tòrax (en alguns casos)</li>
+<li>Visita preanestèsica amb l'anestesista</li>
+</ul>`,
+      },
+      {
+        title: "Tipus d'anestèsia",
+        content: `<p>La majoria de les cirurgies de la mà es fan amb <strong>anestèsia locoregional</strong>, cosa que significa que s'anestesia només el braç afectat. Això ofereix diversos avantatges:</p>
+<ul>
+<li>No requereix dejuni prolongat en intervencions menors</li>
+<li>Recuperació més ràpida</li>
+<li>Menor risc d'efectes secundaris</li>
+<li>Analgèsia postoperatòria prolongada</li>
+</ul>
+<p>En alguns casos pot ser necessària anestèsia general o sedació. L'anestesista valorarà la millor opció per a tu.</p>`,
+      },
+      {
+        title: "El dia de la cirurgia",
+        content: `<p>Instruccions generals per al dia de la teva intervenció:</p>
+<ul>
+<li><strong>Dejuni:</strong> No mengis ni beguis res en les 8 hores prèvies (si portes anestèsia general o sedació)</li>
+<li><strong>Higiene:</strong> Dutxa't el matí de la intervenció. No portis esmalt d'ungles, joies ni maquillatge</li>
+<li><strong>Roba:</strong> Fes servir roba còmoda i ampla, preferiblement amb mànigues amples</li>
+<li><strong>Medicació:</strong> Consulta amb l'anestesista la teva medicació habitual i quins medicaments et pots seguir prenent el dia de la intervenció</li>
+<li><strong>Acompanyant:</strong> Vine acompanyat, ja que no podràs conduir després de la intervenció</li>
+<li><strong>Puntualitat:</strong> Arriba amb almenys 30 minuts d'antelació</li>
+</ul>`,
+      },
+      {
+        title: "Cures postoperatòries",
+        content: `<p>Després de la cirurgia, és fonamental seguir aquestes recomanacions per a una bona recuperació:</p>
+<ul>
+<li><strong>Elevació:</strong> Mantingues la mà elevada per sobre del cor les primeres 48-72 hores per reduir la inflamació</li>
+<li><strong>Embenat:</strong> No retiris ni mullis l'embenat tret que se t'indiqui. Mantingues les benes netes i seques</li>
+<li><strong>Medicació:</strong> Pren els analgèsics pautats de forma regular, sense esperar que aparegui el dolor intens</li>
+<li><strong>Mobilitat:</strong> Mou els dits que no estiguin immobilitzats per afavorir la circulació</li>
+<li><strong>Gel:</strong> Pots aplicar fred local (sense contacte directe amb la pell) per alleujar la inflamació</li>
+<li><strong>Repòs:</strong> Evita esforços amb la mà operada durant el temps que t'indiqui</li>
+</ul>`,
+      },
+      {
+        title: "Signes d'alarma",
+        content: `<p>Contacta amb mi o acudeix a urgències si presentes algun d'aquests símptomes:</p>
+<ul>
+<li><strong>Dolor intens</strong> que no millora amb la medicació pautada</li>
+<li><strong>Inflamació excessiva</strong> o augment progressiu de la inflor</li>
+<li><strong>Febre</strong> superior a 38°C</li>
+<li><strong>Canvi de coloració</strong> dels dits (blavosos, blancs o molt pàl·lids)</li>
+<li><strong>Pèrdua de sensibilitat</strong> o formigueig intens persistent</li>
+<li><strong>Sagnat actiu</strong> que empapa l'embenat</li>
+<li><strong>Mala olor</strong> o supuració a través de l'embenat</li>
+</ul>
+<p>Davant el dubte, sempre és millor consultar. Pots contactar-me per WhatsApp per a urgències quirúrgiques.</p>`,
+      },
+      {
+        title: "Rehabilitació",
+        content: `<p>La rehabilitació és una part essencial de la recuperació després de la cirurgia de la mà. En molts casos, treballaràs amb un <strong>fisioterapeuta especialitzat</strong> en mà.</p>
+<ul>
+<li>Segueix fidelment les indicacions d'exercicis que et doni l'equip mèdic</li>
+<li>La constància és clau: realitza els exercicis diverses vegades al dia</li>
+<li>No forcis més enllà del que s'indica, però tampoc deixis de fer els exercicis</li>
+<li>El temps de recuperació varia segons la intervenció: des de setmanes fins a diversos mesos</li>
+</ul>
+<p>Et donaré indicacions específiques segons el teu cas particular i et faré seguiment durant tot el procés de recuperació.</p>`,
+      },
+    ],
+  },
+  budgetForm: {
+    title: "Demana el teu pressupost",
+    subtitle: "Explica breument el teu cas i t'enviaré un pressupost personalitzat al teu correu electrònic.",
+    name: "Nom",
+    namePlaceholder: "El teu nom complet",
+    email: "Correu electrònic",
+    emailPlaceholder: "tu@email.com",
+    phone: "Telèfon",
+    phonePlaceholder: "+34 600 000 000",
+    message: "Descriu el teu cas",
+    messagePlaceholder: "Explica'm breument el teu cas",
+    submit: "Enviar sol·licitud",
+    sending: "Enviant...",
+    successTitle: "Sol·licitud enviada!",
+    successMessage: "He rebut la teva sol·licitud. T'enviaré el pressupost al teu correu el més aviat possible.",
+    errorMessage: "S'ha produït un error. Si us plau, torna-ho a intentar.",
+    retry: "Reintentar",
   },
 } as const;
 

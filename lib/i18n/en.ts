@@ -10,6 +10,7 @@ const en = {
     aboutMe: "About me",
     centers: "Centres",
     contact: "Contact",
+    patientInfo: "Patient information",
     menu: "Menu",
   },
   hero: {
@@ -444,8 +445,7 @@ const en = {
     phone: "Phone",
     email: "Email",
     whatsapp: "WhatsApp",
-    emergency:
-      "If this is an emergency, go to your nearest emergency department or call 112.",
+    emergency: "For surgical emergencies, contact me via",
   },
   footer: {
     rights: "All rights reserved.",
@@ -524,6 +524,110 @@ const en = {
     whatsapp: "Send WhatsApp",
     back: "Back",
     close: "Close",
+  },
+  emergencyBanner: {
+    text: "For surgical emergencies, contact me via WhatsApp so I can assess your case.",
+    cta: "Contact via WhatsApp",
+    close: "Close",
+  },
+  patientInfo: {
+    title: "Patient information",
+    subtitle: "Everything you need to know before and after your hand surgery.",
+    sections: [
+      {
+        title: "Before surgery",
+        content: `<p>It is important that you are well informed before any procedure. I will explain in detail the procedure, the risks and benefits, and we will sign the <strong>informed consent</strong> together.</p>
+<p>If you have any questions, do not hesitate to ask me during the pre-operative consultation. The more informed you are, the calmer you will face surgery.</p>`,
+      },
+      {
+        title: "Pre-operative studies",
+        content: `<p>Depending on your procedure and health status, you may need:</p>
+<ul>
+<li>Blood test (complete blood count, coagulation)</li>
+<li>Electrocardiogram</li>
+<li>Chest X-ray (in some cases)</li>
+<li>Pre-anaesthesia consultation with the anaesthetist</li>
+</ul>`,
+      },
+      {
+        title: "Types of anaesthesia",
+        content: `<p>Most hand surgeries are performed under <strong>regional anaesthesia</strong>, which means only the affected arm is numbed. This offers several advantages:</p>
+<ul>
+<li>No prolonged fasting required for minor procedures</li>
+<li>Faster recovery</li>
+<li>Lower risk of side effects</li>
+<li>Prolonged post-operative pain relief</li>
+</ul>
+<p>In some cases, general anaesthesia or sedation may be required. The anaesthetist will assess the best option for you.</p>`,
+      },
+      {
+        title: "The day of surgery",
+        content: `<p>General instructions for the day of your procedure:</p>
+<ul>
+<li><strong>Fasting:</strong> Do not eat or drink anything for 8 hours beforehand (if under general anaesthesia or sedation)</li>
+<li><strong>Hygiene:</strong> Shower on the morning of the procedure. Do not wear nail polish, jewellery, or makeup</li>
+<li><strong>Clothing:</strong> Wear comfortable, loose clothing, preferably with wide sleeves</li>
+<li><strong>Medication:</strong> Discuss your regular medication with the anaesthetist and which medicines you can continue taking on the day of the procedure</li>
+<li><strong>Companion:</strong> Come accompanied, as you will not be able to drive after the procedure</li>
+<li><strong>Punctuality:</strong> Arrive at least 30 minutes early</li>
+</ul>`,
+      },
+      {
+        title: "Post-operative care",
+        content: `<p>After surgery, it is essential to follow these recommendations for a good recovery:</p>
+<ul>
+<li><strong>Elevation:</strong> Keep your hand elevated above heart level for the first 48-72 hours to reduce swelling</li>
+<li><strong>Bandage:</strong> Do not remove or wet the bandage unless instructed. Keep the dressings clean and dry</li>
+<li><strong>Medication:</strong> Take the prescribed painkillers regularly, without waiting for severe pain to appear</li>
+<li><strong>Mobility:</strong> Move the fingers that are not immobilised to promote circulation</li>
+<li><strong>Ice:</strong> You can apply cold locally (without direct skin contact) to relieve swelling</li>
+<li><strong>Rest:</strong> Avoid straining the operated hand for the time indicated</li>
+</ul>`,
+      },
+      {
+        title: "Warning signs",
+        content: `<p>Contact me or go to the emergency department if you experience any of these symptoms:</p>
+<ul>
+<li><strong>Severe pain</strong> that does not improve with prescribed medication</li>
+<li><strong>Excessive swelling</strong> or progressively increasing inflammation</li>
+<li><strong>Fever</strong> above 38°C</li>
+<li><strong>Colour change</strong> in the fingers (bluish, white, or very pale)</li>
+<li><strong>Loss of sensation</strong> or persistent intense tingling</li>
+<li><strong>Active bleeding</strong> soaking through the bandage</li>
+<li><strong>Bad smell</strong> or discharge through the bandage</li>
+</ul>
+<p>When in doubt, it is always better to consult. You can contact me via WhatsApp for surgical emergencies.</p>`,
+      },
+      {
+        title: "Rehabilitation",
+        content: `<p>Rehabilitation is an essential part of recovery after hand surgery. In many cases, you will work with a <strong>specialised hand physiotherapist</strong>.</p>
+<ul>
+<li>Faithfully follow the exercise instructions given by the medical team</li>
+<li>Consistency is key: do the exercises several times a day</li>
+<li>Do not push beyond what is indicated, but do not skip the exercises either</li>
+<li>Recovery time varies depending on the procedure: from weeks to several months</li>
+</ul>
+<p>I will give you specific instructions for your particular case and will follow up throughout the recovery process.</p>`,
+      },
+    ],
+  },
+  budgetForm: {
+    title: "Request a quote",
+    subtitle: "Briefly describe your case and I'll send you a personalised quote to your email.",
+    name: "Name",
+    namePlaceholder: "Your full name",
+    email: "Email",
+    emailPlaceholder: "you@email.com",
+    phone: "Phone",
+    phonePlaceholder: "+34 600 000 000",
+    message: "Describe your case",
+    messagePlaceholder: "Briefly tell me about your case",
+    submit: "Send request",
+    sending: "Sending...",
+    successTitle: "Request sent!",
+    successMessage: "I've received your request. I'll send the quote to your email as soon as possible.",
+    errorMessage: "An error occurred. Please try again.",
+    retry: "Try again",
   },
 } as const;
 
