@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       );
     }
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Presupuestos Web <presupuestos@cirujanodemano.es>",
       to: "dralbertpardo@gmail.com",
       subject: `Solicitud de presupuesto — ${condition}`,
@@ -32,7 +32,15 @@ export async function POST(request: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true });
+    if (error) {
+      console.error("Resend API error:", error);
+      return NextResponse.json(
+        { error: error.message },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
     console.error("Budget email error:", error);
     return NextResponse.json(
