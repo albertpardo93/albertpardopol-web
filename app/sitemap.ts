@@ -3,12 +3,13 @@ import { SITE_URL } from "@/lib/config";
 
 const locales = ["es", "ca", "en"];
 const pages = [
-  { path: "", priority: 1.0, freq: "weekly" as const },
-  { path: "/sobre-mi", priority: 0.9, freq: "monthly" as const },
-  { path: "/info-paciente", priority: 0.8, freq: "monthly" as const },
-  { path: "/aviso-legal", priority: 0.3, freq: "monthly" as const },
-  { path: "/politica-de-privacidad", priority: 0.3, freq: "monthly" as const },
-  { path: "/politica-de-cookies", priority: 0.3, freq: "monthly" as const },
+  { path: "", priority: 1.0, freq: "weekly" as const, lastMod: "2025-03-10" },
+  { path: "/sobre-mi", priority: 0.9, freq: "monthly" as const, lastMod: "2025-02-15" },
+  { path: "/patologias", priority: 0.9, freq: "monthly" as const, lastMod: "2026-03-16" },
+  { path: "/info-paciente", priority: 0.8, freq: "monthly" as const, lastMod: "2025-02-20" },
+  { path: "/aviso-legal", priority: 0.3, freq: "monthly" as const, lastMod: "2025-01-10" },
+  { path: "/politica-de-privacidad", priority: 0.3, freq: "monthly" as const, lastMod: "2025-01-10" },
+  { path: "/politica-de-cookies", priority: 0.3, freq: "monthly" as const, lastMod: "2025-01-10" },
 ];
 
 const conditionSlugs = [
@@ -36,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${SITE_URL}/${locale}${page.path}`,
-        lastModified: new Date(),
+        lastModified: new Date(page.lastMod),
         alternates: { languages },
         changeFrequency: page.freq,
         priority: page.priority,
@@ -55,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${SITE_URL}/${locale}${path}`,
-        lastModified: new Date(),
+        lastModified: new Date("2025-02-20"),
         alternates: { languages },
         changeFrequency: "monthly",
         priority: 0.8,

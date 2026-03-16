@@ -154,7 +154,7 @@ export function generateBreadcrumbSchema(
         "@type": "ListItem",
         position: 2,
         name: conditionsLabel,
-        item: `${SITE_URL}/${locale}#condiciones`,
+        item: `${SITE_URL}/${locale}/patologias`,
       },
       {
         "@type": "ListItem",

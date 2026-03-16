@@ -88,7 +88,7 @@ export default async function ConditionPage({
               <li aria-hidden="true" className="text-accent/40">&rsaquo;</li>
               <li>
                 <Link
-                  href={`/${locale}#condiciones`}
+                  href={`/${locale}/patologias`}
                   className="transition-colors hover:text-white"
                 >
                   {conditionsLabel}
@@ -201,7 +201,7 @@ export default async function ConditionPage({
               {dict.conditions.bookCta}
             </BookingTrigger>
             <Link
-              href={`/${locale}#condiciones`}
+              href={`/${locale}/patologias`}
               className="text-sm font-medium text-primary transition-colors hover:text-primary-light"
             >
               {locale === "en"

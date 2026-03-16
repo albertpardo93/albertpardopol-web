@@ -15,8 +15,8 @@ export default function Footer({
   const conditionsLabel = locale === "en" ? "Conditions" : locale === "ca" ? "Patologies" : "Patologías";
   const scheduleLabel = locale === "en" ? "Mon–Fri, 9:00–20:00" : locale === "ca" ? "Dl–Dv, 9:00–20:00" : "Lun–Vie, 9:00–20:00";
 
-  // Show top 5 conditions in footer for SEO
-  const topConditions = dict.conditions.items.slice(0, 5);
+  // Show all conditions in footer for SEO internal linking
+  const topConditions = dict.conditions.items;
 
   return (
     <footer className="border-t border-primary-light/20 bg-primary pb-24 sm:pb-8">
@@ -53,6 +53,12 @@ export default function Footer({
                 </li>
               ))}
             </ul>
+            <Link
+              href={`/${locale}/patologias`}
+              className="mt-3 inline-block text-xs font-semibold text-accent/50 transition-colors hover:text-white"
+            >
+              {locale === "en" ? "View all" : locale === "ca" ? "Veure totes" : "Ver todas"} &rarr;
+            </Link>
           </div>
 
           {/* Contact column */}
