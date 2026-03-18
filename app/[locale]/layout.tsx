@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/i18n";
@@ -40,6 +41,18 @@ export default async function LocaleLayout({
   return (
     <html lang={langMap[locale]}>
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18025540899"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18025540899');
+          `}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
