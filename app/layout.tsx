@@ -5,7 +5,7 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://cirujanodemano.es"),
   verification: {
-    google: "w71ooum1cgcONXdx26j6tv3Br2ViAAg_9Ojvbxk6tcQ",
+    google: "7zzx85tuKA22Eeu6GKp5q4BM6Kbq1iLuFzf62bN9npU",
   },
 };
 
