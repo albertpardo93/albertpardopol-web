@@ -9,6 +9,16 @@ export const OPEN_BOOKING_EVENT = "open-booking-modal";
 
 type Step = "insurance" | "centers" | "contact";
 
+function fireConversion() {
+  if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+    (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
+      send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
+      value: 1.0,
+      currency: "EUR",
+    });
+  }
+}
+
 function BackButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (
     <button
@@ -124,6 +134,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="vithas"
+                onClick={fireConversion}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -144,6 +155,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="bayes"
+                onClick={fireConversion}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -178,6 +190,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="whatsapp"
+                onClick={fireConversion}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600">
