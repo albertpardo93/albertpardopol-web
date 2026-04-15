@@ -1,6 +1,6 @@
 /** Centralized booking & contact configuration */
 
-export const SITE_URL = "https://www.cirujanodemano.es";
+export const SITE_URL = "https://cirujanodemano.es";
 
 export const REVIEWS_ARE_VERIFIED = false;
 
