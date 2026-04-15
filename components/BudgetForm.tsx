@@ -38,6 +38,13 @@ export default function BudgetForm({
       });
 
       if (!res.ok) throw new Error("Failed to send");
+      if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
+          send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
+          value: 1.0,
+          currency: "EUR",
+        });
+      }
       setStatus("success");
     } catch {
       setStatus("error");

@@ -10,8 +10,8 @@ export const OPEN_BOOKING_EVENT = "open-booking-modal";
 type Step = "insurance" | "centers" | "contact";
 
 function fireConversion() {
-  if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-    (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
+  if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+    (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
       send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
       value: 1.0,
       currency: "EUR",
