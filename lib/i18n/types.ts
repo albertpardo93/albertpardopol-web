@@ -104,6 +104,9 @@ export interface Dictionary {
     whatsapp: string;
     back: string;
     close: string;
+    consentText: string;
+    consentPrivacyLink: string;
+    consentTextAfter: string;
   };
   emergencyBanner: {
     text: string;
