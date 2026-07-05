@@ -53,6 +53,18 @@ export default async function LocaleLayout({
             gtag('config', 'AW-18025540899');
           `}
         </Script>
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-SGZFVTFE7C"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SGZFVTFE7C');
+  `}
+</Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
