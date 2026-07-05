@@ -524,6 +524,9 @@ const es = {
     whatsapp: "Enviar WhatsApp",
     back: "Volver",
     close: "Cerrar",
+    consentText: "Acepto expresamente la",
+    consentPrivacyLink: "política de privacidad",
+    consentTextAfter: "y consiento el tratamiento de mis datos, incluida la información sobre mi motivo de consulta (datos de categoría especial, Art. 9 RGPD).",
   },
   emergencyBanner: {
     text: "Para urgencias quirúrgicas, contacta conmigo a través de WhatsApp para poder valorar tu caso.",
