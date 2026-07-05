@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 import { contact, booking } from "@/lib/config";
 
 export const BOOKING_MODAL_ID = "booking-modal";
 export const OPEN_BOOKING_EVENT = "open-booking-modal";
 
-type Step = "insurance" | "centers" | "contact";
+type Step = "insurance" | "centers" | "contact" | "whatsappConsent";
 
 function fireConversion() {
   if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
@@ -34,13 +35,15 @@ function BackButton({ label, onClick }: { label: string; onClick: () => void }) 
   );
 }
 
-export default function BookingModal({ dict }: { dict: Dictionary }) {
+export default function BookingModal({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [step, setStep] = useState<Step>("insurance");
+  const [consentChecked, setConsentChecked] = useState(false);
   const t = dict.bookingModal;
 
   const open = useCallback(() => {
     setStep("insurance");
+    setConsentChecked(false);
     dialogRef.current?.showModal();
   }, []);
 
@@ -53,6 +56,13 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
     window.addEventListener(OPEN_BOOKING_EVENT, handler);
     return () => window.removeEventListener(OPEN_BOOKING_EVENT, handler);
   }, [open]);
+
+  const handleOpenWhatsapp = () => {
+    if (!consentChecked) return;
+    fireConversion();
+    window.open(contact.whatsapp, "_blank", "noopener,noreferrer");
+    close();
+  };
 
   return (
     <dialog
@@ -128,7 +138,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
               {t.chooseCenter}
             </p>
             <div className="mt-4 flex flex-col gap-3">
-              <a
+              
                 href={booking.vithas.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -149,7 +159,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 </div>
               </a>
 
-              <a
+              
                 href={booking.bayes.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -184,14 +194,12 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
               {t.contactSubtitle}
             </p>
             <div className="mt-4 flex flex-col gap-3">
-              <a
-                href={contact.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 data-cta="booking"
-                data-location="whatsapp"
-                onClick={fireConversion}
-                className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
+                data-location="whatsapp-open-consent"
+                onClick={() => setStep("whatsappConsent")}
+                className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 text-left transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -203,8 +211,73 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                   <p className="text-sm font-semibold text-text-primary">{t.whatsapp}</p>
                   <p className="text-xs text-text-muted">WhatsApp</p>
                 </div>
-              </a>
+              </button>
             </div>
+          </div>
+        )}
+
+        {/* Step 3: WhatsApp consent */}
+        {step === "whatsappConsent" && (
+          <div className="mt-4">
+            <BackButton label={t.back} onClick={() => setStep("contact")} />
+
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-green-600">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.105-1.127l-.295-.178-2.868.852.852-2.868-.178-.295A8 8 0 1112 20z" />
+              </svg>
+            </span>
+
+            <h3 className="mt-4 font-display text-lg font-semibold text-text-primary">
+              {t.whatsappConsentTitle}
+            </h3>
+            <p className="mt-2 text-sm text-text-secondary">
+              {t.whatsappConsentSubtitle}
+            </p>
+
+            <label className="mt-5 flex items-start gap-3 text-sm text-text-secondary">
+              <input
+                type="checkbox"
+                checked={consentChecked}
+                onChange={(e) => setConsentChecked(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary focus:ring-primary"
+              />
+              <span>
+                {t.whatsappConsentTextBefore}{" "}
+                
+                  href={`/${locale}/politica-de-privacidad`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-primary-light"
+                >
+                  {t.whatsappConsentPrivacyLink}
+                </a>{" "}
+                {t.whatsappConsentTextAfter}
+              </span>
+            </label>
+
+            <button
+              type="button"
+              disabled={!consentChecked}
+              data-cta="booking"
+              data-location="whatsapp"
+              onClick={handleOpenWhatsapp}
+              className="mt-5 flex w-full items-center justify-center gap-3 rounded-xl bg-green-500 px-4 py-4 text-sm font-semibold text-white transition-colors hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.105-1.127l-.295-.178-2.868.852.852-2.868-.178-.295A8 8 0 1112 20z" />
+              </svg>
+              {t.whatsappConsentButton}
+            </button>
+
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-xs text-text-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path d="M8 11V7a4 4 0 118 0v4" />
+              </svg>
+              {t.whatsappConsentPrivacyNote}
+            </p>
           </div>
         )}
       </div>
