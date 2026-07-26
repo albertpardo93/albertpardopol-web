@@ -53,6 +53,33 @@ export default async function LocaleLayout({
             gtag('config', 'AW-18025540899');
           `}
         </Script>
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      var consent = localStorage.getItem('cookie-consent');
+      gtag('consent', 'default', {
+        analytics_storage: consent === 'accepted' ? 'granted' : 'denied',
+        ad_storage: consent === 'accepted' ? 'granted' : 'denied',
+        ad_user_data: consent === 'accepted' ? 'granted' : 'denied',
+        ad_personalization: consent === 'accepted' ? 'granted' : 'denied'
+      });
+    `,
+  }}
+/>
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-SGZFVTFE7C"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SGZFVTFE7C');
+  `}
+</Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

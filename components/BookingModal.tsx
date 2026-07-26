@@ -37,10 +37,12 @@ function BackButton({ label, onClick }: { label: string; onClick: () => void }) 
 export default function BookingModal({ dict }: { dict: Dictionary }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [step, setStep] = useState<Step>("insurance");
+  const [whatsappConsent, setWhatsappConsent] = useState(false);
   const t = dict.bookingModal;
 
   const open = useCallback(() => {
     setStep("insurance");
+    setWhatsappConsent(false);
     dialogRef.current?.showModal();
   }, []);
 
@@ -184,14 +186,46 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
               {t.contactSubtitle}
             </p>
             <div className="mt-4 flex flex-col gap-3">
+              <label className="flex items-start gap-3 rounded-xl border border-border px-4 py-3 text-sm text-text-secondary">
+                <input
+                  type="checkbox"
+                  checked={whatsappConsent}
+                  onChange={(e) => setWhatsappConsent(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary focus:ring-primary"
+                />
+                <span>
+                  {t.consentText}{" "}
+                  <a
+                    href="/politica-de-privacidad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-primary underline underline-offset-2 hover:text-primary-light"
+                  >
+                    {t.consentPrivacyLink}
+                  </a>{" "}
+                  {t.consentTextAfter}
+                </span>
+              </label>
+
               <a
-                href={contact.whatsapp}
+                href={whatsappConsent ? contact.whatsapp : undefined}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="whatsapp"
-                onClick={fireConversion}
-                className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
+                onClick={(e) => {
+                  if (!whatsappConsent) {
+                    e.preventDefault();
+                    return;
+                  }
+                  fireConversion();
+                }}
+                aria-disabled={!whatsappConsent}
+                className={`flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all ${
+                  whatsappConsent
+                    ? "hover:border-primary hover:shadow-sm cursor-pointer"
+                    : "opacity-40 cursor-not-allowed pointer-events-none"
+                }`}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

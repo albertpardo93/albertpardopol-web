@@ -524,6 +524,9 @@ const en = {
     whatsapp: "Send WhatsApp",
     back: "Back",
     close: "Close",
+    consentText: "I expressly accept the",
+    consentPrivacyLink: "privacy policy",
+    consentTextAfter: "and consent to the processing of my data, including information about my reason for consultation (special category data, Art. 9 GDPR).",
   },
   emergencyBanner: {
     text: "For surgical emergencies, contact me via WhatsApp so I can assess your case.",
