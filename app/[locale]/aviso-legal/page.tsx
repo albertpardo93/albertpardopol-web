@@ -17,6 +17,7 @@ export async function generateMetadata({
   return {
     ...generatePageMetadata(locale, dict, "/aviso-legal"),
     title: `${dict.legal.avisoLegal.title} — Dr. Albert Pardo Pol`,
+    robots: { index: false, follow: false },
   };
 }
 

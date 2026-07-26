@@ -8,9 +8,6 @@ const pages = [
   { path: "/sobre-mi", priority: 0.9, freq: "monthly" as const, lastMod: "2026-04-15" },
   { path: "/patologias", priority: 0.9, freq: "monthly" as const, lastMod: "2026-04-15" },
   { path: "/info-paciente", priority: 0.8, freq: "monthly" as const, lastMod: "2026-04-15" },
-  { path: "/aviso-legal", priority: 0.3, freq: "monthly" as const, lastMod: "2025-01-10" },
-  { path: "/politica-de-privacidad", priority: 0.3, freq: "monthly" as const, lastMod: "2025-01-10" },
-  { path: "/politica-de-cookies", priority: 0.3, freq: "monthly" as const, lastMod: "2025-01-10" },
 ];
 
 const conditionSlugs = [

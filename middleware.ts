@@ -24,11 +24,10 @@ export const config = {
      * Match all request paths except:
      * - _next/static (static files)
      * - _next/image (image optimization)
-     * - favicon.ico
-     * - sitemap.xml
-     * - robots.txt
-     * - public assets
+     * - favicon.ico, sitemap.xml, robots.txt
+     * - public assets (with extension)
+     * - Next.js generated image routes (apple-icon, icon, opengraph-image, twitter-image)
      */
-    "/((?!api/|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
+    "/((?!api/|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|apple-icon|icon|opengraph-image|twitter-image|manifest\\.json|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|xml|txt|json)$).*)",
   ],
 };

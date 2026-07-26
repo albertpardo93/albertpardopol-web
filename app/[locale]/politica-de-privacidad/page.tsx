@@ -17,6 +17,7 @@ export async function generateMetadata({
   return {
     ...generatePageMetadata(locale, dict, "/politica-de-privacidad"),
     title: `${dict.legal.politicaDePrivacidad.title} — Dr. Albert Pardo Pol`,
+    robots: { index: false, follow: false },
   };
 }
 
