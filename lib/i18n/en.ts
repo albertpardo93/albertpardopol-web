@@ -1,8 +1,8 @@
 const en = {
   meta: {
-    title: "Dr. Albert Pardo Pol — Hand Surgeon in Barcelona",
+    title: "English-speaking Hand Surgeon in Barcelona — Dr. Pardo",
     description:
-      "Specialist hand and wrist surgeon in Barcelona. Carpal tunnel, trigger finger, fractures and more. Book an appointment at Hospital del Mar, Vithas or private clinic.",
+      "English-speaking hand and wrist surgeon in Barcelona. Specialist assessment and treatment for carpal tunnel, fractures, ganglion cysts and thumb arthritis.",
   },
   nav: {
     bookAppointment: "Book appointment",
@@ -14,8 +14,8 @@ const en = {
     menu: "Menu",
   },
   hero: {
-    title: "Orthopaedic Surgery & Traumatology",
-    subtitle: "Specialist in hand, elbow and microsurgery",
+    title: "English-speaking hand surgeon in Barcelona",
+    subtitle: "Specialist in hand, wrist, elbow and microsurgery",
     cta: "Book appointment",
     moreInfo: "More about me",
   },
@@ -61,7 +61,7 @@ const en = {
         slug: "tunel-carpiano",
         description:
           "Tingling, numbness or weakness in the hand. Non-surgical or surgical treatment depending on severity.",
-        detail: `<p>Carpal tunnel syndrome is the most common compressive neuropathy of the upper limb. It occurs when the median nerve becomes trapped as it passes through the carpal tunnel, a narrow channel at the base of the wrist formed by the carpal bones and the transverse carpal ligament.</p>
+        detail: `<p>Carpal tunnel syndrome is the most common compressive neuropathy of the upper limb. It occurs when the median nerve becomes trapped at the wrist. English-speaking patients can receive specialist assessment, nerve testing and treatment in Barcelona, from night splints and injections to outpatient carpal tunnel release.</p>
 
 <h2>Carpal tunnel symptoms</h2>
 <ul>
@@ -132,8 +132,8 @@ const en = {
         name: "Ganglion cysts",
         slug: "quistes-sinoviales",
         description:
-          "Lumps on the wrist or hand. Assessment to determine whether treatment or monitoring is needed.",
-        detail: `<p>Ganglion cysts (also called ganglia) are benign, fluid-filled swellings that arise from joints or tendon sheaths. They contain synovial fluid and are the most common type of lump found in the hand and wrist.</p>
+          "Ganglion cyst or lump on the wrist or hand. Specialist assessment and treatment in Barcelona.",
+        detail: `<p>A ganglion cyst is a benign, fluid-filled lump that commonly appears on the wrist or hand. It arises from a joint or tendon sheath and is not cancerous. Assessment by an English-speaking hand surgeon in Barcelona is advisable if the lump grows, becomes painful or restricts movement.</p>
 
 <h2>Symptoms</h2>
 <ul>
@@ -149,6 +149,9 @@ const en = {
 
 <h2>Diagnosis</h2>
 <p>Clinical examination is usually sufficient. The cyst is typically soft, mobile and transilluminates when a light is held against it. In cases of uncertainty, ultrasound confirms the diagnosis and helps assess its relationship with surrounding structures.</p>
+
+<h2>Dorsal, volar and finger ganglion cysts</h2>
+<p>Dorsal wrist ganglia are the most common. Volar ganglia sit close to the radial artery and therefore require particular care during aspiration or surgery. Cysts on the fingers may arise from a tendon sheath or occur near the nail as mucous cysts associated with arthritis.</p>
 
 <h2>Treatment</h2>
 <p>Many ganglion cysts resolve spontaneously without the need for treatment. If they cause pain or concern, aspiration (needle drainage) with or without corticosteroid injection may be performed. When the cyst recurs or persists, surgical excision is the definitive treatment, with a low recurrence rate.</p>
@@ -204,7 +207,7 @@ const en = {
         name: "Hand and wrist fractures",
         slug: "fracturas-mano-muneca",
         description:
-          "From simple to complex fractures. Non-surgical or surgical treatment for optimal recovery.",
+          "Scaphoid, distal radius, metacarpal and finger fractures. Specialist diagnosis and treatment in Barcelona.",
         detail: `<p>Fractures of the hand and wrist are among the most common musculoskeletal injuries. They may result from falls, sporting trauma or workplace accidents. Appropriate treatment is essential to restore anatomy and prevent long-term functional problems.</p>
 
 <h2>Most common fracture types</h2>
@@ -222,6 +225,9 @@ const en = {
 <li>Visible deformity in displaced fractures</li>
 <li>Inability or difficulty moving the fingers or wrist</li>
 </ul>
+
+<h2>When to seek urgent assessment</h2>
+<p>Urgent assessment is needed when there is visible deformity, an open wound, loss of sensation, cold or pale fingers, or severe pain despite immobilisation. Remove rings, elevate the hand and do not attempt to straighten a deformity before medical assessment.</p>
 
 <h2>Diagnosis</h2>
 <p>Plain radiographs confirm the majority of fractures. In complex cases or suspected scaphoid fractures, a CT scan or MRI may be required to assess displacement and plan the most appropriate treatment.</p>
@@ -245,7 +251,7 @@ const en = {
         name: "Thumb arthritis",
         slug: "artrosis-pulgar",
         description:
-          "Pain at the base of the thumb (basal joint arthritis). Treatment options to improve function and relieve pain.",
+          "Thumb basal joint arthritis or rhizarthrosis. Specialist treatment for pain and loss of pinch strength in Barcelona.",
         detail: `<p>Basal joint arthritis (also known as trapeziometacarpal osteoarthritis or rhizarthrosis) is the progressive wearing of cartilage at the base of the thumb. It is one of the most common forms of hand arthritis and predominantly affects women over the age of 50.</p>
 
 <h2>Symptoms of basal joint arthritis</h2>

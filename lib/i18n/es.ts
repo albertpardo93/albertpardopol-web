@@ -132,8 +132,8 @@ const es = {
         name: "Quistes sinoviales",
         slug: "quistes-sinoviales",
         description:
-          "Bultos en muñeca o mano. Evaluación para determinar si requieren tratamiento o seguimiento.",
-        detail: `<p>Los quistes sinoviales (también llamados gangliones) son tumoraciones benignas llenas de líquido sinovial que se originan a partir de articulaciones o vainas tendinosas. Son los bultos más frecuentes de la mano y la muñeca.</p>
+          "Ganglión o bulto en la muñeca y la mano. Diagnóstico y opciones de tratamiento en Barcelona.",
+        detail: `<p>El ganglión o quiste sinovial es un bulto benigno lleno de líquido que suele aparecer en la muñeca o la mano. Se origina en una articulación o vaina tendinosa y es la tumoración más frecuente de esta zona. Aunque no es cáncer, conviene valorarlo si crece, duele o limita el movimiento.</p>
 
 <h2>Síntomas</h2>
 <ul>
@@ -150,8 +150,11 @@ const es = {
 <h2>Diagnóstico</h2>
 <p>La exploración clínica suele ser suficiente. El quiste es blando, móvil y translúcido a la luz. En casos de duda, la ecografía confirma el diagnóstico y permite valorar su relación con las estructuras vecinas.</p>
 
+<h2>Ganglión dorsal, palmar o en los dedos</h2>
+<p>El ganglión dorsal aparece en la parte posterior de la muñeca y es el más habitual. El ganglión palmar o volar se encuentra cerca de la arteria radial, por lo que su punción o cirugía requiere especial precaución. En los dedos también pueden aparecer quistes de la vaina tendinosa o quistes mucosos asociados a artrosis.</p>
+
 <h2>Tratamiento</h2>
-<p>Muchos quistes sinoviales se resuelven espontáneamente sin necesidad de tratamiento. Si causan dolor o preocupación, se puede realizar una aspiración (punción) con o sin infiltración. Cuando el quiste recidiva o persiste, la extirpación quirúrgica es el tratamiento definitivo, con una tasa baja de recurrencia.</p>
+<p>Muchos quistes sinoviales se resuelven espontáneamente y solo requieren observación. Si causan dolor o preocupación, puede plantearse una aspiración, aunque existe riesgo de que reaparezcan. Cuando el ganglión recidiva, persiste o limita la función, la extirpación quirúrgica abierta o artroscópica permite retirar el quiste y su origen.</p>
 
 <h2>Recuperación</h2>
 <p>Tras la cirugía, se utiliza un vendaje durante unos días y se puede retomar la actividad normal en 2-3 semanas. Se recomienda evitar esfuerzos intensos con la muñeca durante el primer mes.</p>`,
@@ -204,7 +207,7 @@ const es = {
         name: "Fracturas de mano y muñeca",
         slug: "fracturas-mano-muneca",
         description:
-          "Desde fracturas simples hasta complejas. Tratamiento conservador o quirúrgico para una recuperación óptima.",
+          "Fracturas de escafoides, radio distal, metacarpianos y dedos. Diagnóstico y tratamiento especializado.",
         detail: `<p>Las fracturas de la mano y la muñeca son una de las lesiones más frecuentes del aparato locomotor. Pueden producirse por caídas, traumatismos deportivos o accidentes laborales. Un tratamiento adecuado es esencial para restaurar la anatomía y evitar secuelas funcionales.</p>
 
 <h2>Tipos de fracturas más frecuentes</h2>
@@ -222,6 +225,9 @@ const es = {
 <li>Deformidad visible en fracturas desplazadas</li>
 <li>Imposibilidad o dificultad para mover los dedos o la muñeca</li>
 </ul>
+
+<h2>Cuándo acudir a urgencias</h2>
+<p>Es importante acudir a urgencias si existe deformidad visible, una herida sobre la fractura, pérdida de sensibilidad, dedos fríos o pálidos, o dolor intenso que no mejora tras inmovilizar la mano. Hasta recibir valoración médica se recomienda retirar anillos, mantener la extremidad elevada y no intentar corregir la deformidad.</p>
 
 <h2>Diagnóstico</h2>
 <p>Las radiografías confirman la mayoría de las fracturas. En casos complejos o fracturas de escafoides, puede ser necesaria una TAC o resonancia magnética para valorar el desplazamiento y planificar el tratamiento.</p>
@@ -245,7 +251,7 @@ const es = {
         name: "Artrosis del pulgar",
         slug: "artrosis-pulgar",
         description:
-          "Dolor en la base del pulgar (rizartrosis). Opciones de tratamiento para mejorar la función y aliviar el dolor.",
+          "Rizartrosis o artrosis trapeciometacarpiana. Tratamiento del dolor y la pérdida de fuerza del pulgar.",
         detail: `<p>La rizartrosis o artrosis trapeciometacarpiana es el desgaste del cartílago en la articulación de la base del pulgar. Es una de las formas más frecuentes de artrosis de la mano y afecta especialmente a mujeres a partir de los 50 años.</p>
 
 <h2>Síntomas de la rizartrosis</h2>
@@ -256,6 +262,9 @@ const es = {
 <li>Rigidez matutina y limitación de la movilidad</li>
 <li>Dolor que empeora con la actividad y mejora con el reposo</li>
 </ul>
+
+<h2>Deformidad en Z del pulgar</h2>
+<p>En fases avanzadas, la inestabilidad de la articulación trapeciometacarpiana puede desplazar la base del pulgar y provocar una hiperextensión compensatoria de la articulación metacarpofalángica. Este patrón se conoce como pulgar en Z y puede reducir todavía más la fuerza de pinza.</p>
 
 <h2>Causas y factores de riesgo</h2>
 <p>La rizartrosis se produce por el desgaste progresivo del cartílago articular. Los factores de riesgo incluyen: sexo femenino, edad superior a 50 años, menopausia, predisposición genética, actividades manuales repetitivas y laxitud ligamentosa.</p>

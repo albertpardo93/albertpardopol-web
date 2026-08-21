@@ -66,7 +66,43 @@ export function generateConditionMetadata(
 ): Metadata {
   const path = `/patologias/${condition.slug}`;
   const url = `${SITE_URL}/${locale}${path}`;
-  const title = `${condition.name} — Dr. Albert Pardo Pol`;
+  const metadataOverrides: Partial<Record<Locale, Record<string, { title: string; description: string }>>> = {
+    es: {
+      "quistes-sinoviales": {
+        title: "Ganglión o quiste sinovial de muñeca — Dr. Pardo",
+        description: "¿Tienes un bulto en la muñeca o la mano? Diagnóstico y tratamiento del ganglión o quiste sinovial con un cirujano de mano en Barcelona.",
+      },
+      "artrosis-pulgar": {
+        title: "Rizartrosis o artrosis del pulgar — Dr. Pardo",
+        description: "Dolor en la base del pulgar por rizartrosis o artrosis trapeciometacarpiana. Diagnóstico y opciones de tratamiento en Barcelona.",
+      },
+      "fracturas-mano-muneca": {
+        title: "Fractura de mano o muñeca: tratamiento — Dr. Pardo",
+        description: "Diagnóstico y tratamiento de fracturas de mano y muñeca: escafoides, radio distal, metacarpianos y falanges. Especialista en Barcelona.",
+      },
+    },
+    en: {
+      "tunel-carpiano": {
+        title: "Carpal tunnel treatment in Barcelona — Dr. Pardo",
+        description: "Carpal tunnel diagnosis and treatment with an English-speaking hand surgeon in Barcelona. Splints, injections and outpatient surgery.",
+      },
+      "quistes-sinoviales": {
+        title: "Wrist ganglion cyst treatment in Barcelona — Dr. Pardo",
+        description: "Assessment and treatment of a ganglion cyst or lump on the wrist or hand with an English-speaking hand surgeon in Barcelona.",
+      },
+      "artrosis-pulgar": {
+        title: "Thumb arthritis treatment in Barcelona — Dr. Pardo",
+        description: "Diagnosis and treatment of thumb basal joint arthritis with an English-speaking hand surgeon in Barcelona. Non-surgical and surgical options.",
+      },
+      "fracturas-mano-muneca": {
+        title: "Hand and wrist fracture treatment in Barcelona",
+        description: "Specialist assessment of hand and wrist fractures in Barcelona, including scaphoid, distal radius, metacarpal and finger fractures.",
+      },
+    },
+  };
+  const override = metadataOverrides[locale]?.[condition.slug];
+  const title = override?.title ?? `${condition.name} — Dr. Albert Pardo Pol`;
+  const description = override?.description ?? condition.description;
 
   const languages: Record<string, string> = {
     "x-default": `${SITE_URL}/es${path}`,
@@ -77,14 +113,14 @@ export function generateConditionMetadata(
 
   return {
     title,
-    description: condition.description,
+    description,
     alternates: {
       canonical: url,
       languages,
     },
     openGraph: {
       title,
-      description: condition.description,
+      description,
       url,
       siteName: "Dr. Albert Pardo Pol",
       locale: hreflangMap[locale],
@@ -93,7 +129,7 @@ export function generateConditionMetadata(
     twitter: {
       card: "summary",
       title,
-      description: condition.description,
+      description,
     },
   };
 }

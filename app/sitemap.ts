@@ -22,6 +22,16 @@ const conditionSlugs = [
   "microcirugia-reconstructiva",
 ];
 
+const updatedConditionPages = new Set([
+  "es:quistes-sinoviales",
+  "es:fracturas-mano-muneca",
+  "es:artrosis-pulgar",
+  "en:tunel-carpiano",
+  "en:quistes-sinoviales",
+  "en:fracturas-mano-muneca",
+  "en:artrosis-pulgar",
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
@@ -54,7 +64,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${SITE_URL}/${locale}${path}`,
-        lastModified: new Date("2026-03-29"),
+        lastModified: new Date(
+          updatedConditionPages.has(`${locale}:${slug}`) ? "2026-08-21" : "2026-03-29"
+        ),
         alternates: { languages },
         changeFrequency: "monthly",
         priority: 0.8,
