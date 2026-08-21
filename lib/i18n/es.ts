@@ -1,8 +1,8 @@
 const es = {
   meta: {
-    title: "Dr. Albert Pardo Pol — Cirujano de mano en Barcelona",
+    title: "Dr. Albert Pardo | Cirujano de Mano y Muñeca",
     description:
-      "Cirujano especialista en mano y muñeca en Barcelona. Túnel carpiano, dedo en gatillo, fracturas y más. Pide cita en Hospital del Mar, Vithas o consulta privada.",
+      "Cirujano especialista en mano, muñeca y codo. Consulta en Barcelona y Vic. Diagnóstico, tratamiento y cirugía especializada.",
   },
   nav: {
     bookAppointment: "Pedir cita",

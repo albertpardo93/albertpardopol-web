@@ -1,8 +1,8 @@
 const ca = {
   meta: {
-    title: "Dr. Albert Pardo Pol — Cirurgià de la mà a Barcelona",
+    title: "Dr. Albert Pardo | Cirurgià de Mà i Canell",
     description:
-      "Cirurgià especialista en mà i canell a Barcelona. Túnel carpià, dit en gallet, fractures i més. Demana cita a l'Hospital del Mar, Vithas o consulta privada.",
+      "Cirurgià especialista en mà, canell i colze. Consulta a Barcelona i Vic. Diagnòstic, tractament i cirurgia especialitzada.",
   },
   nav: {
     bookAppointment: "Demanar cita",
