@@ -2,7 +2,7 @@ const en = {
   meta: {
     title: "English-speaking Hand Surgeon in Barcelona — Dr. Pardo",
     description:
-      "English-speaking hand and wrist surgeon in Barcelona. Specialist assessment and treatment for carpal tunnel, fractures, ganglion cysts and thumb arthritis.",
+      "English-speaking hand, wrist and elbow surgeon in Barcelona and Vic. Specialist diagnosis, treatment and surgery.",
   },
   nav: {
     bookAppointment: "Book appointment",

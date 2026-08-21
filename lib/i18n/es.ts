@@ -2,7 +2,7 @@ const es = {
   meta: {
     title: "Dr. Albert Pardo | Cirujano de Mano y Muñeca",
     description:
-      "Cirujano especialista en mano, muñeca y codo. Consulta en Barcelona y Vic. Diagnóstico, tratamiento y cirugía especializada.",
+      "Cirujano de mano, muñeca y codo en Barcelona y Vic. Diagnóstico, tratamiento especializado y cirugía.",
   },
   nav: {
     bookAppointment: "Pedir cita",
