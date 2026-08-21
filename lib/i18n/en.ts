@@ -392,7 +392,7 @@ const en = {
 {
         name: "Hospital Vithas",
         description:
-          "Private centre with modern facilities and personalised care in Barcelona.",
+          "Private centre at Avinguda de Cornellà, 157, Esplugues de Llobregat, with modern facilities and personalised care.",
         hours: "Check availability",
         cta: "Book appointment",
         location: "vithas" as const,
@@ -400,7 +400,7 @@ const en = {
       {
         name: "Clínica Bayés",
         description:
-          "Private clinic in Vic. Direct and flexible care with a wide range of accepted insurers.",
+          "Private clinic at Carrer de Sant Just, 1, Vic. Direct and flexible care with a wide range of accepted insurers.",
         hours: "Monday to Sunday, 8:00–21:00",
         cta: "Book appointment",
         location: "bayes" as const,
@@ -521,9 +521,9 @@ const en = {
     no: "No, without insurance",
     chooseCenter: "Which centre do you prefer?",
     vithas: "Vithas Barcelona",
-    vithasDetail: "Barcelona",
+    vithasDetail: "Avinguda de Cornellà, 157 · Esplugues de Llobregat",
     bayes: "Bayés Clínica",
-    bayesDetail: "Vic",
+    bayesDetail: "Carrer de Sant Just, 1 · Vic",
     contactTitle: "Contact us directly",
     contactSubtitle: "We'll get back to you as soon as possible",
     phone: "Call by phone",
