@@ -5,6 +5,7 @@ const locales = ["es", "ca", "en"];
 const hreflangMap: Record<string, string> = { es: "es-ES", ca: "ca-ES", en: "en" };
 const pages = [
   { path: "", priority: 1.0, freq: "weekly" as const, lastMod: "2026-04-15" },
+  { path: "/cirujano-mano/vic", priority: 0.9, freq: "monthly" as const, lastMod: "2026-08-21" },
   { path: "/sobre-mi", priority: 0.9, freq: "monthly" as const, lastMod: "2026-04-15" },
   { path: "/patologias", priority: 0.9, freq: "monthly" as const, lastMod: "2026-04-15" },
   { path: "/info-paciente", priority: 0.8, freq: "monthly" as const, lastMod: "2026-04-15" },
