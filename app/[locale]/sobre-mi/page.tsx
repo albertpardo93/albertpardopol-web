@@ -9,6 +9,12 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+const metaDescriptions: Record<Locale, string> = {
+  es: "Conoce la formación y experiencia del Dr. Albert Pardo Pol, traumatólogo especializado en cirugía de mano, muñeca, codo y microcirugía.",
+  ca: "Coneix la formació i experiència del Dr. Albert Pardo Pol, traumatòleg especialitzat en cirurgia de mà, canell, colze i microcirurgia.",
+  en: "Meet Dr Albert Pardo Pol, an orthopaedic surgeon specialising in hand, wrist and elbow surgery, wrist arthroscopy and microsurgery.",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -20,6 +26,7 @@ export async function generateMetadata({
   return {
     ...generatePageMetadata(locale, dict, "/sobre-mi"),
     title: `${dict.about.title} — Dr. Albert Pardo Pol`,
+    description: metaDescriptions[locale],
   };
 }
 

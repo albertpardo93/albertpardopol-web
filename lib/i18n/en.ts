@@ -2,7 +2,7 @@ const en = {
   meta: {
     title: "English-speaking Hand Surgeon in Barcelona — Dr. Pardo",
     description:
-      "English-speaking hand, wrist and elbow surgeon in Barcelona and Vic. Specialist diagnosis, treatment and surgery.",
+      "Dr Albert Pardo is an English-speaking hand, wrist and elbow surgeon in Barcelona and Vic, offering specialist diagnosis and treatment.",
   },
   nav: {
     bookAppointment: "Book appointment",

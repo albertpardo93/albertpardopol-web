@@ -9,6 +9,12 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+const metaDescriptions: Record<Locale, string> = {
+  es: "Información práctica antes y después de una cirugía de mano: preparación, anestesia, cuidados postoperatorios, signos de alarma y rehabilitación.",
+  ca: "Informació pràctica abans i després d'una cirurgia de mà: preparació, anestèsia, cures postoperatòries, signes d'alarma i rehabilitació.",
+  en: "Practical guidance before and after hand surgery: preparation, anaesthesia, post-operative care, warning signs and rehabilitation.",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -20,6 +26,7 @@ export async function generateMetadata({
   return {
     ...generatePageMetadata(locale, dict, "/info-paciente"),
     title: `${dict.patientInfo.title} — Dr. Albert Pardo Pol`,
+    description: metaDescriptions[locale],
   };
 }
 

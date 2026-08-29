@@ -16,9 +16,9 @@ const metaTitles: Record<Locale, string> = {
 };
 
 const metaDescriptions: Record<Locale, string> = {
-  es: "Información completa sobre patologías de mano, muñeca y codo: túnel carpiano, dedo en gatillo, fracturas, artrosis y más. Diagnóstico y tratamiento en Barcelona.",
-  ca: "Informació completa sobre patologies de mà, canell i colze: túnel carpià, dit en gallet, fractures, artrosi i més. Diagnòstic i tractament a Barcelona.",
-  en: "Complete information about hand, wrist and elbow conditions: carpal tunnel, trigger finger, fractures, arthritis and more. Diagnosis and treatment in Barcelona.",
+  es: "Conoce las principales patologías de mano, muñeca y codo, sus síntomas y opciones de diagnóstico y tratamiento con el Dr. Albert Pardo.",
+  ca: "Coneix les principals patologies de mà, canell i colze, els símptomes i les opcions de diagnòstic i tractament amb el Dr. Albert Pardo.",
+  en: "Learn about common hand, wrist and elbow conditions, their symptoms, diagnosis and treatment options with Dr Albert Pardo.",
 };
 
 export async function generateMetadata({

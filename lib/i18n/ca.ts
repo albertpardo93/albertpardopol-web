@@ -2,7 +2,7 @@ const ca = {
   meta: {
     title: "Dr. Albert Pardo | Cirurgià de Mà i Canell",
     description:
-      "Cirurgià de mà, canell i colze a Barcelona i Vic. Diagnòstic, tractament especialitzat i cirurgia.",
+      "Dr. Albert Pardo, cirurgià de mà, canell i colze a Barcelona i Vic. Diagnòstic especialitzat, tractament i cirurgia de l'extremitat superior.",
   },
   nav: {
     bookAppointment: "Demanar cita",
