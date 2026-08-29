@@ -45,6 +45,7 @@ export interface Dictionary {
       faq: readonly { question: string; answer: string }[];
       imageAlt: string;
       relatedSlugs: readonly string[];
+      parentSlug?: string;
     }[];
     cta: string;
     bookCta: string;

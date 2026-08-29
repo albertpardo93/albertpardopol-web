@@ -63,6 +63,10 @@ export default async function PatologiasPage({
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   const dict = getDictionary(locale);
+  const topLevelConditions = dict.conditions.items.filter((item) => !item.parentSlug);
+  const fractureChildren = dict.conditions.items.filter(
+    (item) => item.parentSlug === "fracturas-mano-muneca"
+  );
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -147,7 +151,7 @@ export default async function PatologiasPage({
       <section className="px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {dict.conditions.items.map((item) => (
+            {topLevelConditions.map((item) => (
               <Link
                 key={item.slug}
                 href={`/${locale}/patologias/${item.slug}`}
@@ -171,6 +175,22 @@ export default async function PatologiasPage({
               </Link>
             ))}
           </div>
+
+          <section className="mt-12 rounded-2xl border border-primary/10 bg-surface p-6 sm:p-8">
+            <h2 className="font-display text-xl font-bold text-text-primary">
+              {locale === "en" ? "Hand and wrist fracture guides" : locale === "ca" ? "Guies de fractures de mà i canell" : "Guías de fracturas de mano y muñeca"}
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              {locale === "en" ? "Detailed guidance by fracture location, with symptoms, tests, treatment and recovery." : locale === "ca" ? "Informació específica segons la localització, amb símptomes, proves, tractament i recuperació." : "Información específica según la localización, con síntomas, pruebas, tratamiento y recuperación."}
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {fractureChildren.map((item) => (
+                <Link key={item.slug} href={`/${locale}/patologias/${item.slug}`} className="rounded-xl border border-border bg-white p-4 text-sm font-semibold text-text-primary transition hover:border-primary/30 hover:text-primary hover:shadow-sm">
+                  {item.name} <span aria-hidden="true">&rarr;</span>
+                </Link>
+              ))}
+            </div>
+          </section>
 
           {/* CTA */}
           <div className="mt-12 rounded-2xl bg-surface px-6 py-8 text-center sm:px-8">

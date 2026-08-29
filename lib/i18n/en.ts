@@ -1,3 +1,5 @@
+import { fractureCluster } from "./fracture-cluster";
+
 const en = {
   meta: {
     title: "English-speaking Hand Surgeon in Barcelona — Dr. Pardo",
@@ -129,7 +131,7 @@ const en = {
         relatedSlugs: ["tunel-carpiano", "lesiones-tendinosas", "quistes-sinoviales"],
       },
       {
-        name: "Ganglion cysts",
+        name: "Wrist ganglion cyst",
         slug: "quistes-sinoviales",
         description:
           "Ganglion cyst or lump on the wrist or hand. Specialist assessment and treatment in Barcelona.",
@@ -381,6 +383,7 @@ const en = {
         imageAlt: "Digit replantation using microsurgical technique under operating microscope",
         relatedSlugs: ["lesiones-tendinosas", "fracturas-mano-muneca", "lesiones-deportivas-muneca"],
       },
+      ...fractureCluster.en,
     ],
     cta: "Read more",
     bookCta: "Book appointment",

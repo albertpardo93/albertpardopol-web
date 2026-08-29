@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
 import { OPEN_BOOKING_EVENT } from "./BookingModal";
+import { track } from "@/lib/track";
 
 export default function StickyCTA({ dict }: { dict: Dictionary }) {
   const [visible, setVisible] = useState(false);
@@ -29,6 +30,7 @@ export default function StickyCTA({ dict }: { dict: Dictionary }) {
         data-location="sticky"
         className="block w-full rounded-xl bg-primary py-3.5 text-center text-base font-semibold text-white shadow-md shadow-primary/25 transition-all duration-300 hover:bg-primary-light hover:shadow-lg hover:shadow-primary/35"
         onClick={() => {
+          track("booking_modal_open", { location: "sticky_mobile" });
           window.dispatchEvent(new CustomEvent(OPEN_BOOKING_EVENT));
         }}
       >

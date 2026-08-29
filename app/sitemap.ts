@@ -17,6 +17,10 @@ const conditionSlugs = [
   "quistes-sinoviales",
   "lesiones-tendinosas",
   "fracturas-mano-muneca",
+  "fractura-escafoides",
+  "fractura-radio-distal",
+  "fractura-metacarpiano",
+  "fractura-dedo-falange",
   "artrosis-pulgar",
   "lesiones-deportivas-muneca",
   "patologia-codo",
@@ -31,6 +35,13 @@ const updatedConditionPages = new Set([
   "en:quistes-sinoviales",
   "en:fracturas-mano-muneca",
   "en:artrosis-pulgar",
+]);
+
+const newFracturePages = new Set([
+  "fractura-escafoides",
+  "fractura-radio-distal",
+  "fractura-metacarpiano",
+  "fractura-dedo-falange",
 ]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -66,11 +77,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${SITE_URL}/${locale}${path}`,
         lastModified: new Date(
-          updatedConditionPages.has(`${locale}:${slug}`) ? "2026-08-21" : "2026-03-29"
+          newFracturePages.has(slug)
+            ? "2026-08-29"
+            : updatedConditionPages.has(`${locale}:${slug}`)
+              ? "2026-08-21"
+              : "2026-03-29"
         ),
         alternates: { languages },
         changeFrequency: "monthly",
-        priority: 0.8,
+        priority: newFracturePages.has(slug) ? 0.85 : 0.8,
       });
     }
   }

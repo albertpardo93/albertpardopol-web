@@ -94,7 +94,7 @@ export default function Conditions({
           </h2>
         </ScrollReveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {dict.conditions.items.map((item, i) => (
+          {dict.conditions.items.filter((item) => !item.parentSlug).map((item, i) => (
             <ScrollReveal key={item.name} delay={i + 1}>
               <Link
                 href={`/${locale}/patologias/${item.slug}`}

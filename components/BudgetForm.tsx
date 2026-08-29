@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
+import { track } from "@/lib/track";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
@@ -38,6 +39,7 @@ export default function BudgetForm({
       });
 
       if (!res.ok) throw new Error("Failed to send");
+      track("budget_form_submit", { condition: conditionName });
       if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
           send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
@@ -81,7 +83,10 @@ export default function BudgetForm({
       {!open && (
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            track("budget_form_open", { condition: conditionName });
+            setOpen(true);
+          }}
           className="group flex w-full items-center gap-3 rounded-2xl border border-primary/15 bg-surface px-6 py-5 text-left transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:scale-[1.01]"
         >
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">

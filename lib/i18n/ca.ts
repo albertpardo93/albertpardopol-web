@@ -1,3 +1,5 @@
+import { fractureCluster } from "./fracture-cluster";
+
 const ca = {
   meta: {
     title: "Dr. Albert Pardo | Cirurgià de Mà i Canell",
@@ -129,7 +131,7 @@ const ca = {
         relatedSlugs: ["tunel-carpiano", "lesiones-tendinosas", "quistes-sinoviales"],
       },
       {
-        name: "Quists sinovials",
+        name: "Gangli o quist sinovial",
         slug: "quistes-sinoviales",
         description:
           "Bonys al canell o la mà. Avaluació per determinar si requereixen tractament o seguiment.",
@@ -376,6 +378,7 @@ const ca = {
         imageAlt: "Reimplantament de dit amb tècnica microquirúrgica sota microscopi",
         relatedSlugs: ["lesiones-tendinosas", "fracturas-mano-muneca", "lesiones-deportivas-muneca"],
       },
+      ...fractureCluster.ca,
     ],
     cta: "Llegir més",
     bookCta: "Demanar cita",

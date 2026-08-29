@@ -1,3 +1,5 @@
+import { fractureCluster } from "./fracture-cluster";
+
 const es = {
   meta: {
     title: "Dr. Albert Pardo | Cirujano de Mano y Muñeca",
@@ -129,7 +131,7 @@ const es = {
         relatedSlugs: ["tunel-carpiano", "lesiones-tendinosas", "quistes-sinoviales"],
       },
       {
-        name: "Quistes sinoviales",
+        name: "Ganglión o quiste sinovial",
         slug: "quistes-sinoviales",
         description:
           "Ganglión o bulto en la muñeca y la mano. Diagnóstico y opciones de tratamiento en Barcelona.",
@@ -384,6 +386,7 @@ const es = {
         imageAlt: "Reimplante de dedo con técnica microquirúrgica bajo microscopio",
         relatedSlugs: ["lesiones-tendinosas", "fracturas-mano-muneca", "lesiones-deportivas-muneca"],
       },
+      ...fractureCluster.es,
     ],
     cta: "Leer más",
     bookCta: "Pedir cita",

@@ -12,6 +12,25 @@ const hreflangMap: Record<Locale, string> = {
   en: "en",
 };
 
+const conditionImages: Record<string, string> = {
+  "tunel-carpiano": "tunel-carpiano.svg",
+  "dedo-en-gatillo": "dedo-en-gatillo.png",
+  "quistes-sinoviales": "quistes-sinoviales.jpg",
+  "lesiones-tendinosas": "lesiones-tendinosas.png",
+  "fracturas-mano-muneca": "fracturas-mano-muneca.jpg",
+  "artrosis-pulgar": "artrosis-pulgar.jpg",
+  "lesiones-deportivas-muneca": "lesiones-deportivas-muneca.jpg",
+  "patologia-codo": "patologia-codo.jpg",
+  "microcirugia-reconstructiva": "microcirugia-reconstructiva.jpg",
+};
+
+function conditionImage(slug: string) {
+  const filename = slug.startsWith("fractura-")
+    ? "fracturas-mano-muneca.jpg"
+    : conditionImages[slug] ?? "fracturas-mano-muneca.jpg";
+  return `${SITE_URL}/conditions/${filename}`;
+}
+
 export function generatePageMetadata(
   locale: Locale,
   dict: {
@@ -68,6 +87,10 @@ export function generateConditionMetadata(
   const url = `${SITE_URL}/${locale}${path}`;
   const metadataOverrides: Partial<Record<Locale, Record<string, { title: string; description: string }>>> = {
     es: {
+      "fractura-escafoides": { title: "Fractura de escafoides: tratamiento — Dr. Pardo", description: "Dolor en la muñeca tras una caída: diagnóstico con radiografía, resonancia o TAC y tratamiento de la fractura de escafoides en Barcelona." },
+      "fractura-radio-distal": { title: "Fractura de radio distal o muñeca — Dr. Pardo", description: "Diagnóstico y tratamiento de la fractura de radio distal: reducción, yeso, cirugía y rehabilitación con un cirujano de mano en Barcelona." },
+      "fractura-metacarpiano": { title: "Fractura de metacarpiano y del boxeador — Dr. Pardo", description: "Valoración de fracturas de metacarpiano y del boxeador: rotación, inmovilización, cirugía y recuperación de la función de la mano." },
+      "fractura-dedo-falange": { title: "Fractura de dedo o falange: tratamiento — Dr. Pardo", description: "Diagnóstico y tratamiento de fracturas de dedo o falange para recuperar alineación, movilidad y estabilidad. Especialista de mano en Barcelona." },
       "quistes-sinoviales": {
         title: "Ganglión o quiste sinovial de muñeca — Dr. Pardo",
         description: "¿Tienes un bulto en la muñeca o la mano? Diagnóstico y tratamiento del ganglión o quiste sinovial con un cirujano de mano en Barcelona.",
@@ -81,7 +104,17 @@ export function generateConditionMetadata(
         description: "Diagnóstico y tratamiento de fracturas de mano y muñeca: escafoides, radio distal, metacarpianos y falanges. Especialista en Barcelona.",
       },
     },
+    ca: {
+      "fractura-escafoides": { title: "Fractura d'escafoide: tractament — Dr. Pardo", description: "Diagnòstic precoç i tractament de la fractura d'escafoide amb radiografia, ressonància o TAC. Cirurgià de mà a Barcelona." },
+      "fractura-radio-distal": { title: "Fractura de radi distal o canell — Dr. Pardo", description: "Diagnòstic i tractament de la fractura de radi distal: reducció, guix, cirurgia i rehabilitació amb un cirurgià de mà." },
+      "fractura-metacarpiano": { title: "Fractura de metacarpià i del boxejador — Dr. Pardo", description: "Valoració de fractures de metacarpià: rotació, estabilitat, immobilització, cirurgia i recuperació de la funció de la mà." },
+      "fractura-dedo-falange": { title: "Fractura de dit o falange: tractament — Dr. Pardo", description: "Diagnòstic i tractament de fractures de dit o falange per recuperar alineació, mobilitat i estabilitat articular." },
+    },
     en: {
+      "fractura-escafoides": { title: "Scaphoid fracture treatment in Barcelona — Dr Pardo", description: "Early diagnosis and treatment of a scaphoid fracture with an English-speaking hand surgeon in Barcelona. X-ray, MRI and CT assessment." },
+      "fractura-radio-distal": { title: "Distal radius fracture treatment in Barcelona", description: "Assessment of a distal radius or wrist fracture in Barcelona: cast, surgery and rehabilitation with an English-speaking hand surgeon." },
+      "fractura-metacarpiano": { title: "Metacarpal and boxer's fracture treatment", description: "Specialist assessment of metacarpal and boxer's fractures in Barcelona, including rotation, splinting, surgery and recovery." },
+      "fractura-dedo-falange": { title: "Finger fracture treatment in Barcelona — Dr Pardo", description: "Diagnosis and treatment of finger and phalanx fractures to restore alignment, movement and joint stability with a hand surgeon." },
       "tunel-carpiano": {
         title: "Carpal tunnel treatment in Barcelona — Dr. Pardo",
         description: "Carpal tunnel diagnosis and treatment with an English-speaking hand surgeon in Barcelona. Splints, injections and outpatient surgery.",
@@ -125,11 +158,16 @@ export function generateConditionMetadata(
       siteName: "Dr. Albert Pardo Pol",
       locale: hreflangMap[locale],
       type: "article",
+      images: [{
+        url: conditionImage(condition.slug),
+        alt: condition.name,
+      }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: [conditionImage(condition.slug)],
     },
   };
 }
@@ -142,8 +180,16 @@ export function generateConditionStructuredData(
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
     name: condition.name,
-    description: condition.detail,
+    description: condition.description,
     url: `${SITE_URL}/${locale}/patologias/${condition.slug}`,
+    image: conditionImage(condition.slug),
+    dateModified: "2026-08-29",
+    author: {
+      "@type": "Physician",
+      name: "Dr. Albert Pardo Pol",
+      url: `${SITE_URL}/${locale}/sobre-mi`,
+      medicalSpecialty: "Hand Surgery",
+    },
     medicalSpecialty: "Orthopedic",
     possibleTreatment: {
       "@type": "MedicalTherapy",
@@ -171,7 +217,8 @@ export function generateConditionFAQSchema(
 
 export function generateBreadcrumbSchema(
   locale: Locale,
-  condition: { name: string; slug: string }
+  condition: { name: string; slug: string },
+  parentCondition?: { name: string; slug: string }
 ) {
   const homeLabel = locale === "en" ? "Home" : locale === "ca" ? "Inici" : "Inicio";
   const conditionsLabel = locale === "en" ? "Conditions" : locale === "ca" ? "Patologies" : "Patologías";
@@ -192,9 +239,15 @@ export function generateBreadcrumbSchema(
         name: conditionsLabel,
         item: `${SITE_URL}/${locale}/patologias`,
       },
-      {
+      ...(parentCondition ? [{
         "@type": "ListItem",
         position: 3,
+        name: parentCondition.name,
+        item: `${SITE_URL}/${locale}/patologias/${parentCondition.slug}`,
+      }] : []),
+      {
+        "@type": "ListItem",
+        position: parentCondition ? 4 : 3,
         name: condition.name,
       },
     ],

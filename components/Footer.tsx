@@ -16,7 +16,7 @@ export default function Footer({
   const scheduleLabel = locale === "en" ? "Mon–Fri, 9:00–20:00" : locale === "ca" ? "Dl–Dv, 9:00–20:00" : "Lun–Vie, 9:00–20:00";
 
   // Show all conditions in footer for SEO internal linking
-  const topConditions = dict.conditions.items;
+  const topConditions = dict.conditions.items.filter((item) => !item.parentSlug);
 
   return (
     <footer className="border-t border-primary-light/20 bg-primary pb-24 sm:pb-8">

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
 import { contact, booking } from "@/lib/config";
+import { track } from "@/lib/track";
 
 export const BOOKING_MODAL_ID = "booking-modal";
 export const OPEN_BOOKING_EVENT = "open-booking-modal";
@@ -136,7 +137,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="vithas"
-                onClick={fireConversion}
+                onClick={() => { track("booking_center_click", { center: "vithas" }); fireConversion(); }}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -157,7 +158,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="bayes"
-                onClick={fireConversion}
+                onClick={() => { track("booking_center_click", { center: "bayes" }); fireConversion(); }}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -218,6 +219,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                     e.preventDefault();
                     return;
                   }
+                  track("whatsapp_click", { location: "booking_modal" });
                   fireConversion();
                 }}
                 aria-disabled={!whatsappConsent}

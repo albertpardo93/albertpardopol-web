@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { booking } from "@/lib/config";
+import { track } from "@/lib/track";
 
 function fireConversion() {
   const win = window as typeof window & {
@@ -32,7 +33,7 @@ export default function VicBookingLink({
       data-cta="booking"
       data-location={location}
       className={className}
-      onClick={fireConversion}
+      onClick={() => { track("booking_center_click", { center: "bayes", location }); fireConversion(); }}
     >
       {children}
     </a>
