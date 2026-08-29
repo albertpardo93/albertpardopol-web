@@ -44,10 +44,10 @@ export function generatePageMetadata(
       type: "website",
       images: [
         {
-          url: `${SITE_URL}/dr-pardo-quirofano.jpg`,
-          width: 1200,
-          height: 630,
-          alt: "Dr. Albert Pardo Pol — Cirujano de mano en quirófano",
+          url: `${SITE_URL}/albert-pardo-pol.jpg`,
+          width: 688,
+          height: 688,
+          alt: "Retrato del Dr. Albert Pardo Pol — Cirujano de mano",
         },
       ],
     },
@@ -55,7 +55,7 @@ export function generatePageMetadata(
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
-      images: [`${SITE_URL}/dr-pardo-quirofano.jpg`],
+      images: [`${SITE_URL}/albert-pardo-pol.jpg`],
     },
   };
 }
@@ -277,6 +277,7 @@ export function generateStructuredData(locale: Locale) {
         },
       ],
       image: [
+        `${SITE_URL}/albert-pardo-pol.jpg`,
         `${SITE_URL}/dr-pardo-quirofano.jpg`,
         `${SITE_URL}/dr-pardo-icatme.png`,
       ],

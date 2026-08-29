@@ -177,7 +177,14 @@ export async function generateMetadata({
       siteName: "Dr. Albert Pardo Pol",
       locale: locale === "ca" ? "ca_ES" : locale === "en" ? "en" : "es_ES",
       type: "website",
-      images: [{ url: `${SITE_URL}/dr-pardo-quirofano.jpg`, width: 1200, height: 630 }],
+      images: [
+        {
+          url: `${SITE_URL}/albert-pardo-pol.jpg`,
+          width: 688,
+          height: 688,
+          alt: "Retrato del Dr. Albert Pardo Pol — Cirujano de mano en Vic",
+        },
+      ],
     },
   };
 }
@@ -197,6 +204,7 @@ export default async function VicLandingPage({
     "@type": "Physician",
     name: "Dr. Albert Pardo Pol",
     medicalSpecialty: "Hand Surgery",
+    image: `${SITE_URL}/albert-pardo-pol.jpg`,
     url: `${SITE_URL}/${locale}/cirujano-mano/vic`,
     areaServed: [{ "@type": "City", name: "Vic" }, { "@type": "AdministrativeArea", name: "Osona" }],
     address: {
