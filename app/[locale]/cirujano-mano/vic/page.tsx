@@ -245,14 +245,16 @@ export default async function VicLandingPage({
           </div>
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-3 rounded-[2rem] border border-white/15" />
-            <Image
-              src="/albert-pardo-pol.jpg"
-              alt="Dr. Albert Pardo Pol"
-              width={640}
-              height={760}
-              priority
-              className="relative aspect-[4/5] w-full rounded-[1.6rem] object-cover shadow-2xl shadow-black/30"
-            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.6rem] bg-[#f1f1ef] shadow-2xl shadow-black/30">
+              <Image
+                src="/albert-pardo-pol.jpg"
+                alt="Dr. Albert Pardo Pol"
+                width={640}
+                height={760}
+                priority
+                className="h-full w-full scale-[0.96] object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </section>
