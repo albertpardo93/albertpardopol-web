@@ -10,7 +10,7 @@ function fireConversion() {
   };
 
   win.gtag?.("event", "conversion", {
-    send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
+    send_to: "AW-18025540899/hscKCNe2l-wcEKPan5ND",
     value: 1,
     currency: "EUR",
   });

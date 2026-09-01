@@ -10,15 +10,18 @@ export const OPEN_BOOKING_EVENT = "open-booking-modal";
 
 type Step = "insurance" | "centers" | "contact";
 
-function fireConversion() {
+function fireConversion(sendTo: string) {
   if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
     (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
-      send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
+      send_to: sendTo,
       value: 1.0,
       currency: "EUR",
     });
   }
 }
+
+const BOOKING_CONVERSION = "AW-18025540899/hscKCNe2l-wcEKPan5ND";
+const WHATSAPP_CONVERSION = "AW-18025540899/RygDCKLEluwcEKPan5ND";
 
 function BackButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (
@@ -137,7 +140,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="vithas"
-                onClick={() => { track("booking_center_click", { center: "vithas" }); fireConversion(); }}
+                onClick={() => { track("booking_center_click", { center: "vithas" }); fireConversion(BOOKING_CONVERSION); }}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -158,7 +161,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 data-cta="booking"
                 data-location="bayes"
-                onClick={() => { track("booking_center_click", { center: "bayes" }); fireConversion(); }}
+                onClick={() => { track("booking_center_click", { center: "bayes" }); fireConversion(BOOKING_CONVERSION); }}
                 className="flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all hover:border-primary hover:shadow-sm"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -220,7 +223,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                     return;
                   }
                   track("whatsapp_click", { location: "booking_modal" });
-                  fireConversion();
+                  fireConversion(WHATSAPP_CONVERSION);
                 }}
                 aria-disabled={!whatsappConsent}
                 className={`flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all ${
