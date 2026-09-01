@@ -17,7 +17,7 @@ export default function HeroImage() {
 
   return (
     <div className="hero-animate-image h-64 w-64 sm:h-96 sm:w-80 lg:h-[28rem] lg:w-96">
-      <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/30 ring-1 ring-white/20">
+      <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#f1f1ef] shadow-2xl shadow-black/30 ring-1 ring-white/20">
         {/* Images */}
         {images.map((img, i) => (
           <Image
@@ -27,6 +27,8 @@ export default function HeroImage() {
             width={500}
             height={600}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+              i === 0 ? "scale-[0.96]" : ""
+            } ${
               i === current ? "opacity-100" : "opacity-0"
             }`}
             style={{ objectPosition: img.position }}
