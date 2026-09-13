@@ -39,7 +39,7 @@ const es = {
       "Beca de la Sociedad Española de Cirugía de la Mano — curso especializado en Budapest",
     ],
     experienceTitle: "Situación actual",
-    experience: "Desde el año 2025 trabajo en dos hospitales de referencia: en Barcelona (Hospital del Mar) y en Sabadell (Hospital Parc Taulí, realizando reimplantes de miembro superior).",
+    experience: "Desde el año 2025 trabajo en el Hospital del Mar de Barcelona y en el Hospital Parc Taulí de Sabadell, donde realizo reimplantes de miembro superior. También desarrollo mi actividad asistencial privada en el Hospital Vithas Barcelona y en Clínica Bayés de Vic.",
     membershipsTitle: "Sociedades y docencia",
     memberships: [
       "Miembro de la Sociedad Española de Cirugía de la Mano (SECMA)",

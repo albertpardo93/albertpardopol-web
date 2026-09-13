@@ -39,7 +39,7 @@ const en = {
       "Spanish Society of Hand Surgery scholarship — specialised course in Budapest",
     ],
     experienceTitle: "Current position",
-    experience: "Since 2025 I have been working at two leading hospitals: in Barcelona (Hospital del Mar) and in Sabadell (Hospital Parc Taulí, performing upper limb replantations).",
+    experience: "Since 2025, I have worked at Hospital del Mar in Barcelona and Hospital Parc Taulí in Sabadell, where I perform upper-limb replantation surgery. I also provide private consultations at Hospital Vithas Barcelona and Clínica Bayés in Vic.",
     membershipsTitle: "Societies & teaching",
     memberships: [
       "Member of the Spanish Society of Hand Surgery (SECMA)",

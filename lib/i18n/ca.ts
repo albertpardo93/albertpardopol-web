@@ -39,7 +39,7 @@ const ca = {
       "Beca de la Societat Espanyola de Cirurgia de la Mà — curs especialitzat a Budapest",
     ],
     experienceTitle: "Situació actual",
-    experience: "Des de l'any 2025 treballo en dos hospitals de referència: a Barcelona (Hospital del Mar) i a Sabadell (Hospital Parc Taulí, realitzant reimplantaments de membre superior).",
+    experience: "Des de l'any 2025 treballo a l'Hospital del Mar de Barcelona i a l'Hospital Parc Taulí de Sabadell, on realitzo reimplantaments de membre superior. També desenvolupo la meva activitat assistencial privada a l'Hospital Vithas Barcelona i a Clínica Bayés de Vic.",
     membershipsTitle: "Societats i docència",
     memberships: [
       "Membre de la Societat Espanyola de Cirurgia de la Mà (SECMA)",
