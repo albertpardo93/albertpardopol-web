@@ -78,6 +78,18 @@ const conditionIcons: Record<string, React.ReactNode> = {
   ),
 };
 
+const conditionImagePositions: Record<string, string> = {
+  "tunel-carpiano": "0% 0%",
+  "dedo-en-gatillo": "50% 0%",
+  "quistes-sinoviales": "100% 0%",
+  "lesiones-tendinosas": "0% 50%",
+  "fracturas-mano-muneca": "50% 50%",
+  "artrosis-pulgar": "100% 50%",
+  "lesiones-deportivas-muneca": "0% 100%",
+  "patologia-codo": "50% 100%",
+  "microcirugia-reconstructiva": "100% 100%",
+};
+
 export default function Conditions({
   dict,
   locale,
@@ -105,15 +117,28 @@ export default function Conditions({
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
 
                   <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors duration-300 group-hover:bg-primary/10">
-                      {conditionIcons[item.slug] ?? (
-                        <svg viewBox="0 0 40 40" fill="none" className="h-9 w-9">
-                          <circle cx="20" cy="20" r="12" stroke="currentColor" strokeWidth="1.5" />
-                          <path d="M20 14v12M14 20h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                      )}
-                    </div>
+                    {/* Patient-friendly illustration; SVG remains as a fallback. */}
+                    {conditionImagePositions[item.slug] ? (
+                      <div
+                        role="img"
+                        aria-label={item.imageAlt}
+                        className="h-24 w-24 shrink-0 rounded-xl bg-white bg-no-repeat shadow-sm ring-1 ring-border/60 transition-transform duration-300 group-hover:scale-[1.03]"
+                        style={{
+                          backgroundImage: "url('/conditions/pathology-illustrations.jpg')",
+                          backgroundPosition: conditionImagePositions[item.slug],
+                          backgroundSize: "300% 300%",
+                        }}
+                      />
+                    ) : (
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors duration-300 group-hover:bg-primary/10">
+                        {conditionIcons[item.slug] ?? (
+                          <svg viewBox="0 0 40 40" fill="none" className="h-9 w-9">
+                            <circle cx="20" cy="20" r="12" stroke="currentColor" strokeWidth="1.5" />
+                            <path d="M20 14v12M14 20h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                          </svg>
+                        )}
+                      </div>
+                    )}
                     <div className="min-w-0">
                       <h3 className="text-base font-bold text-text-primary">
                         {item.name}
