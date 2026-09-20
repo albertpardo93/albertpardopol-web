@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
 import { track } from "@/lib/track";
 
@@ -15,10 +15,13 @@ export default function BudgetForm({
 }) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<FormStatus>("idle");
+  const submittingRef = useRef(false);
   const t = dict.budgetForm;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setStatus("sending");
 
     const form = e.currentTarget;
@@ -39,16 +42,20 @@ export default function BudgetForm({
       });
 
       if (!res.ok) throw new Error("Failed to send");
+      const result = (await res.json()) as { id?: string };
+      if (!result.id) throw new Error("Missing submission ID");
       track("budget_form_submit", { condition: conditionName });
       if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
           send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
           value: 1.0,
           currency: "EUR",
+          transaction_id: result.id,
         });
       }
       setStatus("success");
     } catch {
+      submittingRef.current = false;
       setStatus("error");
     }
   };
