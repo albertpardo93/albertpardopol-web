@@ -62,7 +62,7 @@ const es = {
         name: "Túnel carpiano",
         slug: "tunel-carpiano",
         description:
-          "Hormigueo, entumecimiento o debilidad en la mano. Tratamiento conservador o quirúrgico según la gravedad.",
+          "Hormigueo, entumecimiento o pérdida de fuerza en la mano. Tratamiento adaptado a cada caso.",
         detail: `<p>El síndrome del túnel carpiano es la neuropatía por compresión más frecuente de la extremidad superior. Se produce cuando el nervio mediano queda atrapado a su paso por el canal carpiano, un conducto estrecho en la base de la muñeca.</p>
 
 <h2>Síntomas del túnel carpiano</h2>
@@ -100,7 +100,7 @@ const es = {
         name: "Dedo en gatillo",
         slug: "dedo-en-gatillo",
         description:
-          "Bloqueo o chasquido al mover el dedo. Solución rápida y eficaz, habitualmente ambulatoria.",
+          "Dolor, chasquido o bloqueo al mover el dedo. Opciones eficaces para recuperar un movimiento fluido.",
         detail: `<p>El dedo en gatillo (o dedo en resorte) es una de las patologías más comunes de la mano. Se produce cuando el tendón flexor del dedo se engancha al deslizarse por su polea, provocando un chasquido o bloqueo al flexionar y extender el dedo.</p>
 
 <h2>Síntomas</h2>
@@ -134,7 +134,7 @@ const es = {
         name: "Ganglión o quiste sinovial",
         slug: "quistes-sinoviales",
         description:
-          "Ganglión o bulto en la muñeca y la mano. Diagnóstico y opciones de tratamiento en Barcelona.",
+          "Bulto benigno en la mano o la muñeca, relacionado con una articulación o un tendón. Tratamiento según las molestias.",
         detail: `<p>El ganglión o quiste sinovial es un bulto benigno lleno de líquido que suele aparecer en la muñeca o la mano. Se origina en una articulación o vaina tendinosa y es la tumoración más frecuente de esta zona. Aunque no es cáncer, conviene valorarlo si crece, duele o limita el movimiento.</p>
 
 <h2>Síntomas</h2>
@@ -171,7 +171,7 @@ const es = {
         name: "Lesiones tendinosas",
         slug: "lesiones-tendinosas",
         description:
-          "Roturas o inflamación de tendones de la mano. Diagnóstico preciso y plan de recuperación adaptado.",
+          "Roturas o inflamación de los tendones de la mano. Diagnóstico y recuperación adaptados a cada lesión.",
         detail: `<p>Los tendones de la mano son estructuras fundamentales que permiten la flexión y extensión de los dedos. Sus lesiones, ya sean traumáticas o degenerativas, requieren un diagnóstico precoz y un tratamiento adecuado para recuperar la función completa de la mano.</p>
 
 <h2>Tipos de lesiones tendinosas</h2>
@@ -209,7 +209,7 @@ const es = {
         name: "Fracturas de mano y muñeca",
         slug: "fracturas-mano-muneca",
         description:
-          "Fracturas de escafoides, radio distal, metacarpianos y dedos. Diagnóstico y tratamiento especializado.",
+          "Fracturas de escafoides, radio distal, metacarpianos y dedos. Tratamiento para recuperar movilidad y función.",
         detail: `<p>Las fracturas de la mano y la muñeca son una de las lesiones más frecuentes del aparato locomotor. Pueden producirse por caídas, traumatismos deportivos o accidentes laborales. Un tratamiento adecuado es esencial para restaurar la anatomía y evitar secuelas funcionales.</p>
 
 <h2>Tipos de fracturas más frecuentes</h2>
@@ -253,7 +253,7 @@ const es = {
         name: "Artrosis del pulgar",
         slug: "artrosis-pulgar",
         description:
-          "Rizartrosis o artrosis trapeciometacarpiana. Tratamiento del dolor y la pérdida de fuerza del pulgar.",
+          "Dolor y pérdida de fuerza en la base del pulgar. Opciones para aliviar los síntomas y mejorar la función.",
         detail: `<p>La rizartrosis o artrosis trapeciometacarpiana es el desgaste del cartílago en la articulación de la base del pulgar. Es una de las formas más frecuentes de artrosis de la mano y afecta especialmente a mujeres a partir de los 50 años.</p>
 
 <h2>Síntomas de la rizartrosis</h2>
@@ -293,7 +293,7 @@ const es = {
         name: "Lesiones deportivas de muñeca",
         slug: "lesiones-deportivas-muneca",
         description:
-          "Esguinces, fracturas de escafoides y otras lesiones frecuentes en deportistas. Enfoque orientado a la vuelta a la actividad.",
+          "Esguinces, fracturas y lesiones ligamentosas de muñeca. Tratamiento orientado a volver a la actividad.",
         detail: `<p>Las lesiones de muñeca en deportistas son muy frecuentes, especialmente en deportes de contacto, raqueta, gimnasia y deportes acuáticos. Un diagnóstico preciso y un tratamiento orientado a la vuelta a la actividad deportiva son fundamentales para evitar secuelas a largo plazo.</p>
 
 <h2>Lesiones más frecuentes</h2>
@@ -323,7 +323,7 @@ const es = {
         name: "Patología del codo",
         slug: "patologia-codo",
         description:
-          "Epicondilitis, inestabilidad, rigidez y fracturas de codo. Valoración completa y tratamiento especializado.",
+          "Epicondilitis, rigidez, inestabilidad y fracturas de codo. Evaluación y tratamiento especializado.",
         detail: `<p>El codo es una articulación compleja que interviene en todos los movimientos del brazo. Sus patologías son frecuentes tanto en deportistas como en la población general, y requieren una valoración especializada para determinar el mejor tratamiento.</p>
 
 <h2>Patologías más frecuentes del codo</h2>
@@ -358,7 +358,7 @@ const es = {
         name: "Microcirugía reconstructiva",
         slug: "microcirugia-reconstructiva",
         description:
-          "Reconstrucción de defectos óseos, cutáneos y secuelas de infecciones o tumores en extremidad superior mediante técnicas microquirúrgicas.",
+          "Reconstrucción de nervios, vasos y tejidos de la extremidad superior mediante técnicas microquirúrgicas.",
         detail: `<p>La microcirugía reconstructiva utiliza técnicas de alta precisión con microscopio quirúrgico para reparar estructuras de pequeño calibre: nervios, arterias, venas y tendones. Es esencial en el tratamiento de traumatismos graves, secuelas y reconstrucciones complejas de la mano y el miembro superior.</p>
 
 <h2>Indicaciones principales</h2>

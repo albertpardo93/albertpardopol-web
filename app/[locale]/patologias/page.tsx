@@ -161,17 +161,17 @@ export default async function PatologiasPage({
               >
                 <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white p-5 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 sm:p-6">
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="grid grid-cols-[6rem_minmax(0,1fr)] items-start gap-3 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-4">
-                    <div className="relative h-32 w-24 overflow-hidden rounded-xl bg-white sm:h-36 sm:w-32">
+                  <div className="flex flex-col">
+                    <div className="relative mx-auto h-32 w-full overflow-hidden bg-white sm:h-36">
                       <Image
                         src={getConditionImage(item.slug)}
                         alt={item.imageAlt}
                         fill
-                        sizes="(max-width: 640px) 96px, 128px"
+                        sizes="(max-width: 640px) calc(100vw - 72px), 280px"
                         className="object-contain object-center"
                       />
                     </div>
-                    <h2 className="font-display text-base font-bold text-text-primary">
+                    <h2 className="mt-2 font-display text-base font-bold text-text-primary">
                       {item.name}
                     </h2>
                   </div>

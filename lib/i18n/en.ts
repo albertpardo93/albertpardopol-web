@@ -62,7 +62,7 @@ const en = {
         name: "Carpal tunnel syndrome",
         slug: "tunel-carpiano",
         description:
-          "Tingling, numbness or weakness in the hand. Non-surgical or surgical treatment depending on severity.",
+          "Tingling, numbness or loss of strength in the hand. Treatment tailored to each case.",
         detail: `<p>Carpal tunnel syndrome is the most common compressive neuropathy of the upper limb. It occurs when the median nerve becomes trapped at the wrist. English-speaking patients can receive specialist assessment, nerve testing and treatment in Barcelona, from night splints and injections to outpatient carpal tunnel release.</p>
 
 <h2>Carpal tunnel symptoms</h2>
@@ -100,7 +100,7 @@ const en = {
         name: "Trigger finger",
         slug: "dedo-en-gatillo",
         description:
-          "Locking or clicking when moving the finger. Quick and effective solution, usually outpatient.",
+          "Pain, clicking or locking when moving the finger. Effective options to restore smooth movement.",
         detail: `<p>Trigger finger (also known as stenosing tenosynovitis) is one of the most common conditions affecting the hand. It occurs when the flexor tendon catches as it glides through the A1 pulley, causing a clicking sensation or locking when bending and straightening the finger.</p>
 
 <h2>Symptoms</h2>
@@ -134,7 +134,7 @@ const en = {
         name: "Wrist ganglion cyst",
         slug: "quistes-sinoviales",
         description:
-          "Ganglion cyst or lump on the wrist or hand. Specialist assessment and treatment in Barcelona.",
+          "A benign lump on the hand or wrist, arising near a joint or tendon. Treatment according to symptoms.",
         detail: `<p>A ganglion cyst is a benign, fluid-filled lump that commonly appears on the wrist or hand. It arises from a joint or tendon sheath and is not cancerous. Assessment by an English-speaking hand surgeon in Barcelona is advisable if the lump grows, becomes painful or restricts movement.</p>
 
 <h2>Symptoms</h2>
@@ -171,7 +171,7 @@ const en = {
         name: "Tendon injuries",
         slug: "lesiones-tendinosas",
         description:
-          "Tendon tears or inflammation in the hand. Accurate diagnosis and tailored recovery plan.",
+          "Tendon tears or inflammation in the hand. Diagnosis and recovery tailored to each injury.",
         detail: `<p>The tendons of the hand are essential structures that enable flexion and extension of the fingers. Whether traumatic or degenerative, tendon injuries require early diagnosis and appropriate treatment to restore full hand function.</p>
 
 <h2>Types of tendon injuries</h2>
@@ -209,7 +209,7 @@ const en = {
         name: "Hand and wrist fractures",
         slug: "fracturas-mano-muneca",
         description:
-          "Scaphoid, distal radius, metacarpal and finger fractures. Specialist diagnosis and treatment in Barcelona.",
+          "Scaphoid, distal radius, metacarpal and finger fractures. Treatment to restore movement and function.",
         detail: `<p>Fractures of the hand and wrist are among the most common musculoskeletal injuries. They may result from falls, sporting trauma or workplace accidents. Appropriate treatment is essential to restore anatomy and prevent long-term functional problems.</p>
 
 <h2>Most common fracture types</h2>
@@ -253,7 +253,7 @@ const en = {
         name: "Thumb arthritis",
         slug: "artrosis-pulgar",
         description:
-          "Thumb basal joint arthritis or rhizarthrosis. Specialist treatment for pain and loss of pinch strength in Barcelona.",
+          "Pain and loss of strength at the base of the thumb. Options to relieve symptoms and improve function.",
         detail: `<p>Basal joint arthritis (also known as trapeziometacarpal osteoarthritis or rhizarthrosis) is the progressive wearing of cartilage at the base of the thumb. It is one of the most common forms of hand arthritis and predominantly affects women over the age of 50.</p>
 
 <h2>Symptoms of basal joint arthritis</h2>
@@ -290,7 +290,7 @@ const en = {
         name: "Sports wrist injuries",
         slug: "lesiones-deportivas-muneca",
         description:
-          "Sprains, scaphoid fractures and other common sports injuries. Focused on return to activity.",
+          "Wrist sprains, fractures and ligament injuries. Treatment focused on a safe return to activity.",
         detail: `<p>Wrist injuries in athletes are extremely common, particularly in contact sports, racquet sports, gymnastics and water sports. An accurate diagnosis and a treatment plan geared towards returning to sporting activity are essential to prevent long-term complications.</p>
 
 <h2>Most common injuries</h2>
@@ -320,7 +320,7 @@ const en = {
         name: "Elbow conditions",
         slug: "patologia-codo",
         description:
-          "Tennis elbow, instability, stiffness and elbow fractures. Comprehensive assessment and specialised treatment.",
+          "Tennis elbow, stiffness, instability and elbow fractures. Specialist assessment and treatment.",
         detail: `<p>The elbow is a complex joint involved in all movements of the arm. Elbow conditions are common both in athletes and in the general population, and require a specialist assessment to determine the most appropriate treatment.</p>
 
 <h2>Common elbow conditions</h2>
@@ -355,7 +355,7 @@ const en = {
         name: "Reconstructive microsurgery",
         slug: "microcirugia-reconstructiva",
         description:
-          "Reconstruction of bone and skin defects, and sequelae of infections or tumours in the upper limb using microsurgical techniques.",
+          "Reconstruction of nerves, vessels and upper-limb tissues using microsurgical techniques.",
         detail: `<p>Reconstructive microsurgery employs high-precision techniques using an operating microscope to repair small-calibre structures: nerves, arteries, veins and tendons. It is essential in the management of severe trauma, post-traumatic sequelae and complex reconstructions of the hand and upper limb.</p>
 
 <h2>Main indications</h2>

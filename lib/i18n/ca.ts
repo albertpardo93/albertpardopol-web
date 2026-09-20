@@ -62,7 +62,7 @@ const ca = {
         name: "Túnel carpià",
         slug: "tunel-carpiano",
         description:
-          "Formigueig, adormiment o debilitat a la mà. Tractament conservador o quirúrgic segons la gravetat.",
+          "Formigueig, adormiment o pèrdua de força a la mà. Tractament adaptat a cada cas.",
         detail: `<p>La síndrome del túnel carpià és la neuropatia per compressió més freqüent de l'extremitat superior. Es produeix quan el nervi mitjà queda atrapat al seu pas pel canal carpià, un conducte estret a la base del canell format pels ossos del carp i el lligament transvers del carp.</p>
 
 <h2>Símptomes del túnel carpià</h2>
@@ -100,7 +100,7 @@ const ca = {
         name: "Dit en gallet",
         slug: "dedo-en-gatillo",
         description:
-          "Bloqueig o clic en moure el dit. Solució ràpida i eficaç, habitualment ambulatòria.",
+          "Dolor, clic o bloqueig en moure el dit. Opcions eficaces per recuperar un moviment fluid.",
         detail: `<p>El dit en gallet (o dit en ressort) és una de les patologies més comunes de la mà. Es produeix quan el tendó flexor del dit s'enganxa en lliscar per la seva politja, provocant un clic o bloqueig en flexionar i estendre el dit.</p>
 
 <h2>Símptomes</h2>
@@ -134,7 +134,7 @@ const ca = {
         name: "Gangli o quist sinovial",
         slug: "quistes-sinoviales",
         description:
-          "Bonys al canell o la mà. Avaluació per determinar si requereixen tractament o seguiment.",
+          "Bony benigne a la mà o el canell, relacionat amb una articulació o un tendó. Tractament segons les molèsties.",
         detail: `<p>Els quists sinovials (també anomenats ganglions) són tumoracions benignes plenes de líquid sinovial que s'originen a partir d'articulacions o beines tendinoses. Són els bonys més freqüents de la mà i el canell.</p>
 
 <h2>Símptomes</h2>
@@ -168,7 +168,7 @@ const ca = {
         name: "Lesions tendinoses",
         slug: "lesiones-tendinosas",
         description:
-          "Ruptures o inflamació de tendons de la mà. Diagnòstic precís i pla de recuperació adaptat.",
+          "Ruptures o inflamació dels tendons de la mà. Diagnòstic i recuperació adaptats a cada lesió.",
         detail: `<p>Els tendons de la mà són estructures fonamentals que permeten la flexió i extensió dels dits. Les seves lesions, ja siguin traumàtiques o degeneratives, requereixen un diagnòstic precoç i un tractament adequat per recuperar la funció completa de la mà.</p>
 
 <h2>Tipus de lesions tendinoses</h2>
@@ -206,7 +206,7 @@ const ca = {
         name: "Fractures de mà i canell",
         slug: "fracturas-mano-muneca",
         description:
-          "Des de fractures simples fins a complexes. Tractament conservador o quirúrgic per a una recuperació òptima.",
+          "Fractures d'escafoide, radi distal, metacarpians i dits. Tractament per recuperar mobilitat i funció.",
         detail: `<p>Les fractures de la mà i el canell són una de les lesions més freqüents de l'aparell locomotor. Poden produir-se per caigudes, traumatismes esportius o accidents laborals. Un tractament adequat és essencial per restaurar l'anatomia i evitar seqüeles funcionals.</p>
 
 <h2>Tipus de fractures més freqüents</h2>
@@ -247,7 +247,7 @@ const ca = {
         name: "Artrosi del polze",
         slug: "artrosis-pulgar",
         description:
-          "Dolor a la base del polze (rizartrosi). Opcions de tractament per millorar la funció i alleujar el dolor.",
+          "Dolor i pèrdua de força a la base del polze. Opcions per alleujar els símptomes i millorar la funció.",
         detail: `<p>La rizartrosi o artrosi trapeciometacarpiana és el desgast del cartílag a l'articulació de la base del polze. És una de les formes més freqüents d'artrosi de la mà i afecta especialment dones a partir dels 50 anys.</p>
 
 <h2>Símptomes de la rizartrosi</h2>
@@ -284,7 +284,7 @@ const ca = {
         name: "Lesions esportives del canell",
         slug: "lesiones-deportivas-muneca",
         description:
-          "Esquinços, fractures d'escafoides i altres lesions freqüents en esportistes. Enfocament orientat a la tornada a l'activitat.",
+          "Esquinços, fractures i lesions lligamentoses del canell. Tractament orientat a tornar a l'activitat.",
         detail: `<p>Les lesions de canell en esportistes són molt freqüents, especialment en esports de contacte, raqueta, gimnàstica i esports aquàtics. Un diagnòstic precís i un tractament orientat a la tornada a l'activitat esportiva són fonamentals per evitar seqüeles a llarg termini.</p>
 
 <h2>Lesions més freqüents</h2>
@@ -315,7 +315,7 @@ const ca = {
         name: "Patologia del colze",
         slug: "patologia-codo",
         description:
-          "Epicondilitis, inestabilitat, rigidesa i fractures de colze. Valoració completa i tractament especialitzat.",
+          "Epicondilitis, rigidesa, inestabilitat i fractures de colze. Avaluació i tractament especialitzat.",
         detail: `<p>El colze és una articulació complexa que intervé en tots els moviments del braç. Les seves patologies són freqüents tant en esportistes com en la població general, i requereixen una valoració especialitzada per determinar el millor tractament.</p>
 
 <h2>Patologies més freqüents del colze</h2>
@@ -350,7 +350,7 @@ const ca = {
         name: "Microcirurgia reconstructiva",
         slug: "microcirugia-reconstructiva",
         description:
-          "Reconstrucció de defectes ossis, cutanis i seqüeles d'infeccions o tumors a l'extremitat superior mitjançant tècniques microquirúrgiques.",
+          "Reconstrucció de nervis, vasos i teixits de l'extremitat superior mitjançant tècniques microquirúrgiques.",
         detail: `<p>La microcirurgia reconstructiva utilitza tècniques d'alta precisió amb microscopi quirúrgic per reparar estructures de petit calibre: nervis, artèries, venes i tendons. És essencial en el tractament de traumatismes greus, seqüeles i reconstruccions complexes de la mà i el membre superior.</p>
 
 <h2>Indicacions principals</h2>

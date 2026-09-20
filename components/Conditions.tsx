@@ -30,17 +30,17 @@ export default function Conditions({
                   {/* Accent top bar */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
 
-                  <div className="grid grid-cols-[6rem_minmax(0,1fr)] items-start gap-3 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-4">
-                    <div className="relative h-32 w-24 overflow-hidden rounded-xl bg-white sm:h-36 sm:w-32">
+                  <div className="flex flex-col">
+                    <div className="relative mx-auto h-32 w-full overflow-hidden bg-white sm:h-36">
                       <Image
                         src={getConditionImage(item.slug)}
                         alt={item.imageAlt}
                         fill
-                        sizes="(max-width: 640px) 96px, 128px"
+                        sizes="(max-width: 640px) calc(100vw - 72px), 280px"
                         className="object-contain object-center"
                       />
                     </div>
-                    <div className="min-w-0">
+                    <div className="mt-2 min-w-0">
                       <h3 className="text-base font-bold text-text-primary">
                         {item.name}
                       </h3>
