@@ -35,7 +35,7 @@ export default async function LandingPage({
     <>
       <Hero dict={dict} locale={locale} />
       <Conditions dict={dict} locale={locale} />
-      <Centers dict={dict} />
+      <Centers dict={dict} locale={locale} />
       <FAQ dict={dict} />
       <Contact dict={dict} />
     </>

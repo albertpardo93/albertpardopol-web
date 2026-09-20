@@ -1,8 +1,16 @@
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 import BookingTrigger from "./BookingTrigger";
 import ScrollReveal from "./ScrollReveal";
 
-export default function Centers({ dict }: { dict: Dictionary }) {
+const vicLinkLabel: Record<Locale, string> = {
+  es: "Ver consulta de cirugía de mano en Vic",
+  ca: "Veure consulta de cirurgia de mà a Vic",
+  en: "View the hand surgery clinic in Vic",
+};
+
+export default function Centers({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
     <section id="centros" className="bg-white px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-4xl">
@@ -40,6 +48,14 @@ export default function Centers({ dict }: { dict: Dictionary }) {
                   </svg>
                   {center.hours}
                 </div>
+                {center.name.includes("Bayés") && (
+                  <Link
+                    href={`/${locale}/cirujano-mano/vic`}
+                    className="mt-4 text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:text-primary-light hover:decoration-primary-light"
+                  >
+                    {vicLinkLabel[locale]}
+                  </Link>
+                )}
                 <BookingTrigger className="mt-5 block rounded-xl bg-primary py-3 text-center text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-primary-light hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02]">
                   {center.cta}
                 </BookingTrigger>
