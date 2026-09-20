@@ -159,16 +159,16 @@ export default async function PatologiasPage({
                 href={`/${locale}/patologias/${item.slug}`}
                 className="group block h-full"
               >
-                <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white p-7 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
+                <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white p-5 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 sm:p-6">
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="flex items-start gap-4">
-                    <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-white sm:h-28 sm:w-28">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl bg-white sm:h-32 sm:w-32">
                       <Image
                         src={getConditionImage(item.slug)}
                         alt={item.imageAlt}
                         fill
-                        sizes="(max-width: 640px) 96px, 112px"
-                        className="object-contain"
+                        sizes="(max-width: 640px) 112px, 128px"
+                        className="scale-[1.18] object-contain"
                       />
                     </div>
                     <h2 className="font-display text-base font-bold text-text-primary">
