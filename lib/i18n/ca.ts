@@ -440,7 +440,7 @@ const ca = {
       {
         question: "Com puc demanar cita?",
         answer:
-          "Pots sol·licitar cita a través dels botons de reserva d'aquesta web, per telèfon o per correu electrònic. S'atén a l'Hospital del Mar, Vithas i consulta privada a Barcelona.",
+          "Pots sol·licitar cita a través dels botons de reserva d'aquesta web, per telèfon o per correu electrònic. L'atenció privada es realitza a l'Hospital Vithas, a Esplugues de Llobregat, i a la Clínica Bayés, a Vic.",
       },
     ],
   },

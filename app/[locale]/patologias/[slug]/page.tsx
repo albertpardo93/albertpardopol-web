@@ -152,20 +152,6 @@ export default async function ConditionPage({
               </div>
           </figure>
 
-          <aside className="mb-8 flex flex-col gap-3 rounded-xl border border-primary/10 bg-surface px-5 py-4 text-sm text-text-secondary sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="font-semibold text-text-primary">
-                {locale === "en" ? "Medically reviewed by Dr Albert Pardo Pol" : locale === "ca" ? "Revisat mèdicament pel Dr. Albert Pardo Pol" : "Revisado médicamente por el Dr. Albert Pardo Pol"}
-              </p>
-              <p className="mt-1">
-                {locale === "en" ? "Hand surgeon · Updated 29 August 2026" : locale === "ca" ? "Cirurgià de mà · Actualitzat el 29 d'agost de 2026" : "Cirujano de mano · Actualizado el 29 de agosto de 2026"}
-              </p>
-            </div>
-            <Link href={`/${locale}/sobre-mi`} className="shrink-0 font-semibold text-primary hover:text-primary-light">
-              {locale === "en" ? "Credentials and experience" : locale === "ca" ? "Formació i experiència" : "Formación y experiencia"} &rarr;
-            </Link>
-          </aside>
-
           <div
             className="prose prose-sm max-w-none text-text-secondary sm:prose-base prose-headings:font-display prose-headings:text-text-primary prose-h2:text-lg prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-l-4 prose-h2:border-primary/30 prose-h2:pl-4 prose-p:leading-relaxed prose-ul:mt-2 prose-li:marker:text-primary prose-strong:text-text-primary"
             dangerouslySetInnerHTML={{ __html: condition.detail }}

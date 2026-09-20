@@ -445,7 +445,7 @@ const en = {
       {
         question: "How do I book an appointment?",
         answer:
-          "You can book an appointment through the booking buttons on this website, by phone or by email. Consultations are available at Hospital del Mar, Vithas and a private clinic in Barcelona.",
+          "You can book an appointment through the booking buttons on this website, by phone or by email. Private consultations are available at Hospital Vithas in Esplugues de Llobregat and Clínica Bayés in Vic.",
       },
     ],
   },
