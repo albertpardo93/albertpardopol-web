@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
 import { generatePageMetadata, generateBreadcrumbSchema } from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
+import { getConditionImage } from "@/lib/condition-images";
 import BookingTrigger from "@/components/BookingTrigger";
 
 export function generateStaticParams() {
@@ -159,9 +161,20 @@ export default async function PatologiasPage({
               >
                 <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white p-7 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-                  <h2 className="font-display text-base font-bold text-text-primary">
-                    {item.name}
-                  </h2>
+                  <div className="flex items-start gap-4">
+                    <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-white sm:h-28 sm:w-28">
+                      <Image
+                        src={getConditionImage(item.slug)}
+                        alt={item.imageAlt}
+                        fill
+                        sizes="(max-width: 640px) 96px, 112px"
+                        className="object-contain"
+                      />
+                    </div>
+                    <h2 className="font-display text-base font-bold text-text-primary">
+                      {item.name}
+                    </h2>
+                  </div>
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                     {item.description}
                   </p>

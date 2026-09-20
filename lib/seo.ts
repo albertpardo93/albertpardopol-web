@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL, REVIEWS_ARE_VERIFIED } from "./config";
+import { getConditionImage } from "./condition-images";
 
 export type Locale = "es" | "ca" | "en";
 
@@ -12,23 +13,8 @@ const hreflangMap: Record<Locale, string> = {
   en: "en",
 };
 
-const conditionImages: Record<string, string> = {
-  "tunel-carpiano": "tunel-carpiano.svg",
-  "dedo-en-gatillo": "dedo-en-gatillo.png",
-  "quistes-sinoviales": "quistes-sinoviales.jpg",
-  "lesiones-tendinosas": "lesiones-tendinosas.png",
-  "fracturas-mano-muneca": "fracturas-mano-muneca.jpg",
-  "artrosis-pulgar": "artrosis-pulgar.jpg",
-  "lesiones-deportivas-muneca": "lesiones-deportivas-muneca.jpg",
-  "patologia-codo": "patologia-codo.jpg",
-  "microcirugia-reconstructiva": "microcirugia-reconstructiva.jpg",
-};
-
 function conditionImage(slug: string) {
-  const filename = slug.startsWith("fractura-")
-    ? "fracturas-mano-muneca.jpg"
-    : conditionImages[slug] ?? "fracturas-mano-muneca.jpg";
-  return `${SITE_URL}/conditions/${filename}`;
+  return `${SITE_URL}${getConditionImage(slug)}`;
 }
 
 export function generatePageMetadata(

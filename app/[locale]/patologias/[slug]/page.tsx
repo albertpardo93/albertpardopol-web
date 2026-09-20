@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
+import { getConditionImage } from "@/lib/condition-images";
 import { generateConditionMetadata, generateConditionStructuredData, generateConditionFAQSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import BookingTrigger from "@/components/BookingTrigger";
 import BudgetForm from "@/components/BudgetForm";
@@ -138,13 +139,18 @@ export default async function ConditionPage({
       {/* Content */}
       <section className="px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          {(condition.slug === "fracturas-mano-muneca" || condition.parentSlug === "fracturas-mano-muneca") && (
-            <figure className="mb-10 overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
+          <figure className="mb-10 overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
               <div className="relative aspect-[16/9]">
-                <Image src="/conditions/fracturas-mano-muneca.jpg" alt={condition.imageAlt} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" priority />
+                <Image
+                  src={getConditionImage(condition.slug)}
+                  alt={condition.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  className="object-contain"
+                  priority
+                />
               </div>
-            </figure>
-          )}
+          </figure>
 
           <aside className="mb-8 flex flex-col gap-3 rounded-xl border border-primary/10 bg-surface px-5 py-4 text-sm text-text-secondary sm:flex-row sm:items-center sm:justify-between">
             <div>
