@@ -213,12 +213,7 @@ const es = {
         detail: `<p>Las fracturas de la mano y la muñeca son una de las lesiones más frecuentes del aparato locomotor. Pueden producirse por caídas, traumatismos deportivos o accidentes laborales. Un tratamiento adecuado es esencial para restaurar la anatomía y evitar secuelas funcionales.</p>
 
 <h2>Tipos de fracturas más frecuentes</h2>
-<ul>
-<li><strong>Fractura distal de radio</strong>: la más común de la muñeca, típica de caídas con la mano extendida</li>
-<li><strong>Fractura de escafoides</strong>: frecuente en jóvenes y deportistas, con riesgo de necrosis si no se trata</li>
-<li><strong>Fracturas de metacarpianos</strong>: habituales por impacto directo (incluida la fractura del boxeador)</li>
-<li><strong>Fracturas de falanges</strong>: por atrapamientos, golpes o accidentes domésticos</li>
-</ul>
+<!-- fracture-guides -->
 
 <h2>Síntomas</h2>
 <ul>

@@ -53,6 +53,8 @@ export default async function ConditionPage({
   const fractureChildren = dict.conditions.items.filter(
     (item) => item.parentSlug === condition.slug
   );
+  const [detailBeforeFractureGuides, detailAfterFractureGuides = ""] =
+    condition.detail.split("<!-- fracture-guides -->");
   // Resolve related conditions
   const relatedConditions = condition.relatedSlugs
     .map((s) => dict.conditions.items.find((c) => c.slug === s))
@@ -144,15 +146,12 @@ export default async function ConditionPage({
 
           <div
             className="prose prose-sm max-w-none text-text-secondary sm:prose-base prose-headings:font-display prose-headings:text-text-primary prose-h2:text-lg prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-l-4 prose-h2:border-primary/30 prose-h2:pl-4 prose-p:leading-relaxed prose-ul:mt-2 prose-li:marker:text-primary prose-strong:text-text-primary"
-            dangerouslySetInnerHTML={{ __html: condition.detail }}
+            dangerouslySetInnerHTML={{ __html: detailBeforeFractureGuides }}
           />
 
           {fractureChildren.length > 0 && (
-            <section className="mt-12 rounded-2xl border border-primary/10 bg-surface p-6 sm:p-8">
-              <h2 className="font-display text-xl font-bold text-text-primary">
-                {locale === "en" ? "Guides by fracture location" : locale === "ca" ? "Guies segons la localització" : "Guías según la localización de la fractura"}
-              </h2>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <section className="mt-5 rounded-2xl border border-primary/10 bg-surface p-6 sm:p-8">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {fractureChildren.map((child) => (
                   <Link key={child.slug} href={`/${locale}/patologias/${child.slug}`} className="group rounded-xl border border-border bg-white p-5 transition hover:border-primary/30 hover:shadow-sm">
                     <h3 className="font-display font-semibold text-text-primary group-hover:text-primary">{child.name}</h3>
@@ -162,6 +161,13 @@ export default async function ConditionPage({
                 ))}
               </div>
             </section>
+          )}
+
+          {detailAfterFractureGuides && (
+            <div
+              className="prose prose-sm mt-2 max-w-none text-text-secondary sm:prose-base prose-headings:font-display prose-headings:text-text-primary prose-h2:text-lg prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-l-4 prose-h2:border-primary/30 prose-h2:pl-4 prose-p:leading-relaxed prose-ul:mt-2 prose-li:marker:text-primary prose-strong:text-text-primary"
+              dangerouslySetInnerHTML={{ __html: detailAfterFractureGuides }}
+            />
           )}
 
           {locale === "en" && (

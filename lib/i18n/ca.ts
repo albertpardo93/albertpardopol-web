@@ -210,12 +210,7 @@ const ca = {
         detail: `<p>Les fractures de la mà i el canell són una de les lesions més freqüents de l'aparell locomotor. Poden produir-se per caigudes, traumatismes esportius o accidents laborals. Un tractament adequat és essencial per restaurar l'anatomia i evitar seqüeles funcionals.</p>
 
 <h2>Tipus de fractures més freqüents</h2>
-<ul>
-<li><strong>Fractura distal de radi</strong>: la més comuna del canell, típica de caigudes amb la mà estesa</li>
-<li><strong>Fractura d'escafoides</strong>: freqüent en joves i esportistes, amb risc de necrosi si no es tracta</li>
-<li><strong>Fractures de metacarpians</strong>: habituals per impacte directe (inclosa la fractura del boxejador)</li>
-<li><strong>Fractures de falanges</strong>: per atrapaments, cops o accidents domèstics</li>
-</ul>
+<!-- fracture-guides -->
 
 <h2>Símptomes</h2>
 <ul>

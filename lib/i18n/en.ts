@@ -213,12 +213,7 @@ const en = {
         detail: `<p>Fractures of the hand and wrist are among the most common musculoskeletal injuries. They may result from falls, sporting trauma or workplace accidents. Appropriate treatment is essential to restore anatomy and prevent long-term functional problems.</p>
 
 <h2>Most common fracture types</h2>
-<ul>
-<li><strong>Distal radius fracture</strong>: the most common wrist fracture, typically caused by a fall onto an outstretched hand</li>
-<li><strong>Scaphoid fracture</strong>: common in young adults and athletes, with a risk of avascular necrosis if left untreated</li>
-<li><strong>Metacarpal fractures</strong>: frequently caused by direct impact (including the boxer's fracture)</li>
-<li><strong>Phalangeal fractures</strong>: resulting from crush injuries, blows or domestic accidents</li>
-</ul>
+<!-- fracture-guides -->
 
 <h2>Symptoms</h2>
 <ul>
