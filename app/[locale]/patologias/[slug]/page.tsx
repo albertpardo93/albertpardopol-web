@@ -73,6 +73,17 @@ export default async function ConditionPage({
     : locale === "ca"
       ? "Si tens una radiografia, un informe o una indicació quirúrgica, sol·licita un pressupost orientatiu i informació sobre els passos següents."
       : "Si tienes una radiografía, un informe o una indicación quirúrgica, solicita un presupuesto orientativo e información sobre los siguientes pasos.";
+  const assessmentCta = isFracture
+    ? locale === "en"
+      ? "Request a fracture assessment"
+      : locale === "ca"
+        ? "Demanar valoració de la fractura"
+        : "Solicitar valoración de la fractura"
+    : locale === "en"
+      ? "Assess my case"
+      : locale === "ca"
+        ? "Valorar el meu cas"
+        : "Valorar mi caso";
 
   return (
     <article className="bg-white">
@@ -224,11 +235,7 @@ export default async function ConditionPage({
                   : "Pide cita para valorar tu caso y conocer las opciones de tratamiento disponibles."}
             </p>
             <BookingTrigger className="mt-5 rounded-xl bg-white px-8 py-3 text-sm font-semibold text-primary shadow-md transition-colors hover:bg-accent">
-              {locale === "en"
-                ? "Book an appointment"
-                : locale === "ca"
-                  ? "Demanar cita"
-                  : "Pedir cita"}
+              {assessmentCta}
             </BookingTrigger>
           </div>
 
@@ -300,7 +307,7 @@ export default async function ConditionPage({
 
           <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <BookingTrigger className="rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-primary-light hover:shadow-lg hover:scale-[1.02]">
-              {dict.conditions.bookCta}
+              {assessmentCta}
             </BookingTrigger>
             <Link
               href={`/${locale}/patologias`}

@@ -628,6 +628,7 @@ const en = {
     testsAvailable: "I have medical tests or reports",
     needsAssessment: "I am not sure of my diagnosis",
     assessmentAdvice: "If you still need to confirm the diagnosis, booking a medical assessment is the most appropriate next step.",
+    assessmentCta: "Book a medical assessment",
     preferredCenter: "Preferred centre",
     centerPlaceholder: "Select a centre",
     centerVic: "Clínica Bayés · Vic",

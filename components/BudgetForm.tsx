@@ -197,7 +197,7 @@ export default function BudgetForm({
               <div className="rounded-xl border border-primary/15 bg-white px-4 py-3 text-sm text-text-secondary">
                 <p>{t.assessmentAdvice}</p>
                 <BookingTrigger className="mt-3 font-semibold text-primary underline underline-offset-4 hover:text-primary-light">
-                  {dict.conditions.bookCta}
+                  {t.assessmentCta}
                 </BookingTrigger>
               </div>
             )}

@@ -631,6 +631,7 @@ const es = {
     testsAvailable: "Tengo pruebas o informes médicos",
     needsAssessment: "No estoy seguro de cuál es mi diagnóstico",
     assessmentAdvice: "Si todavía necesitas confirmar el diagnóstico, lo más adecuado es pedir cita para una valoración médica.",
+    assessmentCta: "Pedir cita para valoración",
     preferredCenter: "Centro preferido",
     centerPlaceholder: "Selecciona un centro",
     centerVic: "Clínica Bayés · Vic",

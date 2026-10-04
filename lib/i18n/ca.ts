@@ -623,6 +623,7 @@ const ca = {
     testsAvailable: "Tinc proves o informes mèdics",
     needsAssessment: "No estic segur de quin és el diagnòstic",
     assessmentAdvice: "Si encara necessites confirmar el diagnòstic, el més adequat és demanar cita per a una valoració mèdica.",
+    assessmentCta: "Demanar cita per a valoració",
     preferredCenter: "Centre preferit",
     centerPlaceholder: "Selecciona un centre",
     centerVic: "Clínica Bayés · Vic",

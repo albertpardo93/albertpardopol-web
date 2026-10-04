@@ -161,7 +161,11 @@ export default async function PatientInfoPage({
           {/* Book appointment CTA */}
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <BookingTrigger className="rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-primary-light hover:shadow-lg hover:scale-[1.02]">
-              {dict.conditions.bookCta}
+              {locale === "en"
+                ? "Book a medical appointment"
+                : locale === "ca"
+                  ? "Demanar cita mèdica"
+                  : "Pedir cita médica"}
             </BookingTrigger>
             <Link
               href={`/${locale}#condiciones`}

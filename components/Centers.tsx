@@ -10,6 +10,12 @@ const vicLinkLabel: Record<Locale, string> = {
   en: "View the hand surgery clinic in Vic",
 };
 
+const centerCtaLabel: Record<Locale, Record<"vithas" | "bayes" | "hospital-del-mar", string>> = {
+  es: { vithas: "Pedir cita en Vithas", bayes: "Pedir cita en Vic", "hospital-del-mar": "Pedir cita en Hospital del Mar" },
+  ca: { vithas: "Demanar cita a Vithas", bayes: "Demanar cita a Vic", "hospital-del-mar": "Demanar cita a l'Hospital del Mar" },
+  en: { vithas: "Book at Vithas", bayes: "Book in Vic", "hospital-del-mar": "Book at Hospital del Mar" },
+};
+
 export default function Centers({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
     <section id="centros" className="bg-white px-4 py-16 sm:py-24">
@@ -57,7 +63,7 @@ export default function Centers({ dict, locale }: { dict: Dictionary; locale: Lo
                   </Link>
                 )}
                 <BookingTrigger className="mt-5 block rounded-xl bg-primary py-3 text-center text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-primary-light hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02]">
-                  {center.cta}
+                  {centerCtaLabel[locale][center.location]}
                 </BookingTrigger>
               </article>
             </ScrollReveal>

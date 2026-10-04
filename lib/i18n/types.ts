@@ -132,6 +132,7 @@ export interface Dictionary {
     testsAvailable: string;
     needsAssessment: string;
     assessmentAdvice: string;
+    assessmentCta: string;
     preferredCenter: string;
     centerPlaceholder: string;
     centerVic: string;

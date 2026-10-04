@@ -222,7 +222,11 @@ export default async function PatologiasPage({
                   : "Contacta con nosotros para programar una consulta"}
             </p>
             <BookingTrigger className="mt-5 inline-block rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:scale-[1.02] hover:bg-primary-light hover:shadow-lg">
-              {dict.conditions.bookCta}
+              {locale === "en"
+                ? "Book an assessment"
+                : locale === "ca"
+                  ? "Demanar una valoració"
+                  : "Pedir una valoración"}
             </BookingTrigger>
           </div>
         </div>
