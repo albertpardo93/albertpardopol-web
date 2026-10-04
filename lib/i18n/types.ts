@@ -125,6 +125,18 @@ export interface Dictionary {
   budgetForm: {
     title: string;
     subtitle: string;
+    diagnosisStatus: string;
+    diagnosisPlaceholder: string;
+    diagnosisConfirmed: string;
+    surgeryRecommended: string;
+    testsAvailable: string;
+    needsAssessment: string;
+    assessmentAdvice: string;
+    preferredCenter: string;
+    centerPlaceholder: string;
+    centerVic: string;
+    centerVithas: string;
+    centerNoPreference: string;
     name: string;
     namePlaceholder: string;
     email: string;
@@ -133,6 +145,8 @@ export interface Dictionary {
     phonePlaceholder: string;
     message: string;
     messagePlaceholder: string;
+    privacyConsent: string;
+    privacyLink: string;
     submit: string;
     sending: string;
     successTitle: string;

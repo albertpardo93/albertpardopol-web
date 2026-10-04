@@ -7,6 +7,7 @@ import Conditions from "@/components/Conditions";
 import Centers from "@/components/Centers";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import BudgetForm from "@/components/BudgetForm";
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -36,6 +37,15 @@ export default async function LandingPage({
       <Hero dict={dict} locale={locale} />
       <Conditions dict={dict} locale={locale} />
       <Centers dict={dict} locale={locale} />
+      <section className="border-y border-border bg-white px-4 py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl">
+          <BudgetForm
+            dict={dict}
+            conditionName={locale === "en" ? "Home page" : locale === "ca" ? "Pàgina principal" : "Página principal"}
+            className=""
+          />
+        </div>
+      </section>
       <FAQ dict={dict} />
       <Contact dict={dict} />
     </>

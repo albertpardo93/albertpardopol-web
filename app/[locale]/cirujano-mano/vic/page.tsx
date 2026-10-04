@@ -3,8 +3,9 @@ import Image from "next/image";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import VicBookingLink from "@/components/VicBookingLink";
+import BudgetForm from "@/components/BudgetForm";
 import { SITE_URL } from "@/lib/config";
-import { locales, type Locale } from "@/lib/i18n";
+import { getDictionary, locales, type Locale } from "@/lib/i18n";
 
 type Copy = {
   metaTitle: string;
@@ -198,6 +199,7 @@ export default async function VicLandingPage({
   if (!locales.includes(localeParam as Locale)) notFound();
   const locale = localeParam as Locale;
   const t = copy[locale];
+  const dict = getDictionary(locale);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -324,6 +326,41 @@ export default async function VicLandingPage({
           <p className="mt-5 leading-relaxed text-text-secondary">{t.locationText}</p>
           <p className="mt-6 rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-primary">{t.locationNote}</p>
         </article>
+      </section>
+
+      <section className="border-y border-border bg-surface px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="rounded-2xl bg-primary p-7 text-white sm:p-8">
+              <h2 className="font-display text-2xl font-semibold">
+                {locale === "en"
+                  ? "Do you need an assessment in Vic?"
+                  : locale === "ca"
+                    ? "Necessites una valoració a Vic?"
+                    : "¿Necesitas una valoración en Vic?"}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-white/75">
+                {locale === "en"
+                  ? "If you have symptoms or need to confirm the diagnosis, book a specialist consultation at Clínica Bayés."
+                  : locale === "ca"
+                    ? "Si tens símptomes o necessites confirmar el diagnòstic, demana una visita especialitzada a Clínica Bayés."
+                    : "Si tienes síntomas o necesitas confirmar el diagnóstico, pide una consulta especializada en Clínica Bayés."}
+              </p>
+              <VicBookingLink
+                location="vic-pathway-assessment"
+                className="mt-6 inline-flex rounded-xl bg-white px-6 py-3 font-semibold text-primary hover:bg-accent"
+              >
+                {t.cta}
+              </VicBookingLink>
+            </div>
+            <BudgetForm
+              dict={dict}
+              conditionName={locale === "en" ? "Vic consultation" : locale === "ca" ? "Consulta a Vic" : "Consulta en Vic"}
+              defaultCenter="vic"
+              className=""
+            />
+          </div>
+        </div>
       </section>
 
       <section className="bg-primary-dark px-4 py-16 text-center text-white sm:py-20">

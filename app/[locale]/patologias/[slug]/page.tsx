@@ -62,6 +62,17 @@ export default async function ConditionPage({
 
   const homeLabel = locale === "en" ? "Home" : locale === "ca" ? "Inici" : "Inicio";
   const conditionsLabel = locale === "en" ? "Conditions" : locale === "ca" ? "Patologies" : "Patologías";
+  const isFracture = condition.slug.startsWith("fractura");
+  const fractureBudgetTitle = locale === "en"
+    ? "Already diagnosed with a fracture?"
+    : locale === "ca"
+      ? "Ja t'han diagnosticat una fractura?"
+      : "¿Ya te han diagnosticado una fractura?";
+  const fractureBudgetSubtitle = locale === "en"
+    ? "If you have an X-ray, report or surgical recommendation, request an indicative estimate and information about the next steps."
+    : locale === "ca"
+      ? "Si tens una radiografia, un informe o una indicació quirúrgica, sol·licita un pressupost orientatiu i informació sobre els passos següents."
+      : "Si tienes una radiografía, un informe o una indicación quirúrgica, solicita un presupuesto orientativo e información sobre los siguientes pasos.";
 
   return (
     <article className="bg-white">
@@ -197,15 +208,22 @@ export default async function ConditionPage({
           )}
 
           {/* CTA between content and FAQ */}
-          <div className="mt-10 rounded-2xl bg-surface px-6 py-6 sm:px-8 sm:py-8">
-            <p className="font-display text-lg font-semibold text-text-primary sm:text-xl">
+          <div className="mt-10 rounded-2xl bg-primary px-6 py-6 text-white sm:px-8 sm:py-8">
+            <p className="font-display text-lg font-semibold text-white sm:text-xl">
               {locale === "en"
-                ? "Do you need an assessment?"
+                ? "Do these symptoms sound familiar, or do you need to confirm the diagnosis?"
                 : locale === "ca"
-                  ? "Necessites una valoració?"
-                  : "¿Necesitas una valoración?"}
+                  ? "T'identifiques amb aquests símptomes o necessites confirmar el diagnòstic?"
+                  : "¿Te identificas con estos síntomas o necesitas confirmar el diagnóstico?"}
             </p>
-            <BookingTrigger className="mt-4 rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:bg-primary-light hover:shadow-lg hover:scale-[1.02]">
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/75">
+              {locale === "en"
+                ? "Book an appointment to assess your case and understand the available treatment options."
+                : locale === "ca"
+                  ? "Demana cita per valorar el teu cas i conèixer les opcions de tractament disponibles."
+                  : "Pide cita para valorar tu caso y conocer las opciones de tratamiento disponibles."}
+            </p>
+            <BookingTrigger className="mt-5 rounded-xl bg-white px-8 py-3 text-sm font-semibold text-primary shadow-md transition-colors hover:bg-accent">
               {locale === "en"
                 ? "Book an appointment"
                 : locale === "ca"
@@ -214,7 +232,12 @@ export default async function ConditionPage({
             </BookingTrigger>
           </div>
 
-          <BudgetForm dict={dict} conditionName={condition.name} />
+          <BudgetForm
+            dict={dict}
+            conditionName={condition.name}
+            title={isFracture ? fractureBudgetTitle : undefined}
+            subtitle={isFracture ? fractureBudgetSubtitle : undefined}
+          />
 
           {condition.faq.length > 0 && (
             <section className="mt-14">

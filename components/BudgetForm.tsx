@@ -1,22 +1,35 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 import { track } from "@/lib/track";
+import BookingTrigger from "@/components/BookingTrigger";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function BudgetForm({
   dict,
   conditionName,
+  defaultCenter = "",
+  title,
+  subtitle,
+  className = "mt-10",
 }: {
   dict: Dictionary;
   conditionName: string;
+  defaultCenter?: "vic" | "vithas" | "";
+  title?: string;
+  subtitle?: string;
+  className?: string;
 }) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<FormStatus>("idle");
   const submittingRef = useRef(false);
+  const [diagnosisStatus, setDiagnosisStatus] = useState("");
   const t = dict.budgetForm;
+  const formTitle = title ?? t.title;
+  const formSubtitle = subtitle ?? t.subtitle;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,6 +42,9 @@ export default function BudgetForm({
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      diagnosisStatus: (form.elements.namedItem("diagnosisStatus") as HTMLSelectElement).value,
+      preferredCenter: (form.elements.namedItem("preferredCenter") as HTMLSelectElement).value,
+      privacyConsent: (form.elements.namedItem("privacyConsent") as HTMLInputElement).checked,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
       condition: conditionName,
@@ -85,7 +101,7 @@ export default function BudgetForm({
   }
 
   return (
-    <div className="mt-10">
+    <div className={className}>
       {/* Collapsed bubble */}
       {!open && (
         <button
@@ -103,10 +119,10 @@ export default function BudgetForm({
           </span>
           <div className="flex-1">
             <span className="font-display text-base font-semibold text-text-primary sm:text-lg">
-              {t.title}
+              {formTitle}
             </span>
             <span className="mt-0.5 block text-sm text-text-secondary">
-              {t.subtitle}
+              {formSubtitle}
             </span>
           </div>
           <svg className="h-5 w-5 shrink-0 text-text-muted transition-transform group-hover:text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -120,7 +136,7 @@ export default function BudgetForm({
         <div className="rounded-2xl border border-primary/15 bg-surface px-6 py-8 sm:px-8">
           <div className="flex items-center justify-between">
             <h3 className="font-display text-lg font-semibold text-text-primary sm:text-xl">
-              {t.title}
+              {formTitle}
             </h3>
             <button
               type="button"
@@ -134,10 +150,58 @@ export default function BudgetForm({
             </button>
           </div>
           <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-            {t.subtitle}
+            {formSubtitle}
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="budget-diagnosis" className="block text-sm font-medium text-text-primary">
+                  {t.diagnosisStatus}
+                </label>
+                <select
+                  id="budget-diagnosis"
+                  name="diagnosisStatus"
+                  required
+                  value={diagnosisStatus}
+                  onChange={(event) => setDiagnosisStatus(event.target.value)}
+                  className="mt-1.5 block w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-text-primary transition-colors focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                >
+                  <option value="" disabled>{t.diagnosisPlaceholder}</option>
+                  <option value="diagnosis-confirmed">{t.diagnosisConfirmed}</option>
+                  <option value="surgery-recommended">{t.surgeryRecommended}</option>
+                  <option value="tests-available">{t.testsAvailable}</option>
+                  <option value="needs-assessment">{t.needsAssessment}</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="budget-center" className="block text-sm font-medium text-text-primary">
+                  {t.preferredCenter}
+                </label>
+                <select
+                  id="budget-center"
+                  name="preferredCenter"
+                  required
+                  defaultValue={defaultCenter}
+                  className="mt-1.5 block w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-text-primary transition-colors focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                >
+                  <option value="" disabled>{t.centerPlaceholder}</option>
+                  <option value="vic">{t.centerVic}</option>
+                  <option value="vithas">{t.centerVithas}</option>
+                  <option value="no-preference">{t.centerNoPreference}</option>
+                </select>
+              </div>
+            </div>
+
+            {diagnosisStatus === "needs-assessment" && (
+              <div className="rounded-xl border border-primary/15 bg-white px-4 py-3 text-sm text-text-secondary">
+                <p>{t.assessmentAdvice}</p>
+                <BookingTrigger className="mt-3 font-semibold text-primary underline underline-offset-4 hover:text-primary-light">
+                  {dict.conditions.bookCta}
+                </BookingTrigger>
+              </div>
+            )}
+
             <div>
               <label
                 htmlFor="budget-name"
@@ -205,6 +269,21 @@ export default function BudgetForm({
                 className="mt-1.5 block w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none"
               />
             </div>
+
+            <label className="flex items-start gap-3 rounded-xl border border-border bg-white px-4 py-3 text-sm leading-relaxed text-text-secondary">
+              <input
+                type="checkbox"
+                name="privacyConsent"
+                required
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary focus:ring-primary"
+              />
+              <span>
+                {t.privacyConsent}{" "}
+                <Link href="/politica-de-privacidad" target="_blank" className="font-medium text-primary underline underline-offset-2">
+                  {t.privacyLink}
+                </Link>.
+              </span>
+            </label>
 
             {status === "error" && (
               <p className="text-sm text-red-600">{t.errorMessage}</p>
