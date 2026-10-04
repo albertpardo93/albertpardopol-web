@@ -53,16 +53,6 @@ export default async function ConditionPage({
   const fractureChildren = dict.conditions.items.filter(
     (item) => item.parentSlug === condition.slug
   );
-  const references = condition.slug === "quistes-sinoviales"
-    ? [{ label: "American Society for Surgery of the Hand — Ganglion cysts", href: "https://www.assh.org/handcare/servlet/servlet.FileDownload?file=00P0a00000ocYFOEA2" }]
-    : condition.slug === "artrosis-pulgar"
-      ? [{ label: "American Society for Surgery of the Hand — Thumb arthritis", href: "https://www.assh.org/handcare/servlet/servlet.FileDownload?file=00P0a00000ocYBfEAM" }]
-      : condition.slug === "fractura-dedo-falange"
-        ? [{ label: "NHS — Broken finger or thumb", href: "https://www.nhs.uk/conditions/broken-finger/" }]
-        : (condition.slug === "fracturas-mano-muneca" || condition.parentSlug === "fracturas-mano-muneca")
-          ? [{ label: "NHS — Hand and finger injury guidance", href: "https://www.nhs.uk/symptoms/hand-pain/finger-pain/" }]
-          : [];
-
   // Resolve related conditions
   const relatedConditions = condition.relatedSlugs
     .map((s) => dict.conditions.items.find((c) => c.slug === s))
@@ -243,26 +233,6 @@ export default async function ConditionPage({
                   ))}
                 </dl>
               </div>
-            </section>
-          )}
-
-          {references.length > 0 && (
-            <section className="mt-10 border-t border-border pt-8">
-              <h2 className="font-display text-base font-bold text-text-primary">
-                {locale === "en" ? "Medical references" : locale === "ca" ? "Referències mèdiques" : "Referencias médicas"}
-              </h2>
-              <ul className="mt-3 space-y-2 text-sm">
-                {references.map((reference) => (
-                  <li key={reference.href}>
-                    <a href={reference.href} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline decoration-primary/30 underline-offset-4 hover:text-primary-light">
-                      {reference.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 text-xs leading-relaxed text-text-muted">
-                {locale === "en" ? "General information; it does not replace an individual medical assessment." : locale === "ca" ? "Informació general; no substitueix una valoració mèdica individual." : "Información general; no sustituye una valoración médica individual."}
-              </p>
             </section>
           )}
 
