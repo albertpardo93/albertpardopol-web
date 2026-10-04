@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { Dictionary } from "@/lib/i18n";
-import { contact } from "@/lib/config";
+import TrackedWhatsAppLink from "./TrackedWhatsAppLink";
 
 const STORAGE_KEY = "emergency-banner-dismissed";
 
@@ -48,15 +48,13 @@ export default function EmergencyBanner({ dict }: { dict: Dictionary }) {
           {dict.emergencyBanner.text}
         </p>
 
-        <a
-          href={contact.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
+        <TrackedWhatsAppLink
+          location="emergency_banner"
           className="shrink-0 rounded-xl bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-green-700"
         >
           <span className="hidden sm:inline">{dict.emergencyBanner.cta}</span>
           <span className="sm:hidden">WhatsApp</span>
-        </a>
+        </TrackedWhatsAppLink>
 
         <button
           type="button"

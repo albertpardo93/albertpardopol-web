@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
 import { generatePageMetadata } from "@/lib/seo";
-import { SITE_URL, contact } from "@/lib/config";
+import { SITE_URL } from "@/lib/config";
 import BookingTrigger from "@/components/BookingTrigger";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -140,10 +141,8 @@ export default async function PatientInfoPage({
           ))}
 
           {/* Emergency WhatsApp */}
-          <a
-            href={contact.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
+          <TrackedWhatsAppLink
+            location="patient_information"
             className="mt-10 flex items-center gap-3 rounded-xl border border-border bg-surface px-5 py-3.5 text-sm transition-all hover:border-green-300 hover:shadow-sm"
           >
             <svg className="h-5 w-5 shrink-0 text-green-600" viewBox="0 0 24 24" fill="currentColor">
@@ -157,7 +156,7 @@ export default async function PatientInfoPage({
                   : "Para urgencias quirúrgicas, contáctame por "}
               <span className="font-semibold text-green-600">WhatsApp</span>
             </span>
-          </a>
+          </TrackedWhatsAppLink>
 
           {/* Book appointment CTA */}
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
