@@ -8,12 +8,12 @@ export const conditionImages: Record<string, string> = {
   "lesiones-deportivas-muneca": "/conditions/lesiones-deportivas-muneca.png",
   "patologia-codo": "/conditions/patologia-codo.png",
   "microcirugia-reconstructiva": "/conditions/microcirugia-reconstructiva.png",
+  "fractura-escafoides": "/conditions/fractura-escafoides.webp",
+  "fractura-radio-distal": "/conditions/fractura-radio-distal.webp",
+  "fractura-metacarpiano": "/conditions/fractura-metacarpiano.webp",
+  "fractura-dedo-falange": "/conditions/fractura-dedo-falange.webp",
 };
 
 export function getConditionImage(slug: string) {
-  if (slug.startsWith("fractura-")) {
-    return conditionImages["fracturas-mano-muneca"];
-  }
-
   return conditionImages[slug] ?? conditionImages["fracturas-mano-muneca"];
 }
