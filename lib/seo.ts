@@ -75,8 +75,8 @@ export function generateConditionMetadata(
     es: {
       "fractura-escafoides": { title: "Fractura de escafoides: tratamiento — Dr. Pardo", description: "Dolor en la muñeca tras una caída: diagnóstico con radiografía, resonancia o TAC y tratamiento de la fractura de escafoides en Barcelona." },
       "fractura-radio-distal": { title: "Fractura de radio distal o muñeca — Dr. Pardo", description: "Diagnóstico y tratamiento de la fractura de radio distal: reducción, yeso, cirugía y rehabilitación con un cirujano de mano en Barcelona." },
-      "fractura-metacarpiano": { title: "Fractura de metacarpiano y del boxeador — Dr. Pardo", description: "Valoración de fracturas de metacarpiano y del boxeador: rotación, inmovilización, cirugía y recuperación de la función de la mano." },
-      "fractura-dedo-falange": { title: "Fractura de dedo o falange: tratamiento — Dr. Pardo", description: "Diagnóstico y tratamiento de fracturas de dedo o falange para recuperar alineación, movilidad y estabilidad. Especialista de mano en Barcelona." },
+      "fractura-metacarpiano": { title: "Fractura de metacarpiano: tratamiento — Dr. Pardo", description: "Valoración, diagnóstico y tratamiento de la fractura del quinto metacarpiano o del boxeador: inmovilización, cirugía y recuperación funcional." },
+      "fractura-dedo-falange": { title: "Fractura o fisura de dedo: tratamiento — Dr. Pardo", description: "Valoración, diagnóstico y tratamiento de fracturas o fisuras de los dedos para recuperar alineación, movilidad y estabilidad articular." },
       "quistes-sinoviales": {
         title: "Ganglión o quiste sinovial de muñeca — Dr. Pardo",
         description: "¿Tienes un bulto en la muñeca o la mano? Diagnóstico y tratamiento del ganglión o quiste sinovial con un cirujano de mano en Barcelona.",
@@ -93,8 +93,8 @@ export function generateConditionMetadata(
     ca: {
       "fractura-escafoides": { title: "Fractura d'escafoide: tractament — Dr. Pardo", description: "Diagnòstic precoç i tractament de la fractura d'escafoide amb radiografia, ressonància o TAC. Cirurgià de mà a Barcelona." },
       "fractura-radio-distal": { title: "Fractura de radi distal o canell — Dr. Pardo", description: "Diagnòstic i tractament de la fractura de radi distal: reducció, guix, cirurgia i rehabilitació amb un cirurgià de mà." },
-      "fractura-metacarpiano": { title: "Fractura de metacarpià i del boxejador — Dr. Pardo", description: "Valoració de fractures de metacarpià: rotació, estabilitat, immobilització, cirurgia i recuperació de la funció de la mà." },
-      "fractura-dedo-falange": { title: "Fractura de dit o falange: tractament — Dr. Pardo", description: "Diagnòstic i tractament de fractures de dit o falange per recuperar alineació, mobilitat i estabilitat articular." },
+      "fractura-metacarpiano": { title: "Fractura de metacarpià: tractament — Dr. Pardo", description: "Valoració, diagnòstic i tractament de la fractura del cinquè metacarpià o del boxejador: immobilització, cirurgia i recuperació." },
+      "fractura-dedo-falange": { title: "Fractura o fissura de dit: tractament — Dr. Pardo", description: "Valoració, diagnòstic i tractament de fractures o fissures dels dits per recuperar alineació, mobilitat i estabilitat articular." },
     },
     en: {
       "fractura-escafoides": { title: "Scaphoid fracture treatment in Barcelona — Dr Pardo", description: "Early diagnosis and treatment of a scaphoid fracture with an English-speaking hand surgeon in Barcelona. X-ray, MRI and CT assessment." },
