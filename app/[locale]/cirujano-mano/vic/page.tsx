@@ -40,7 +40,7 @@ const copy: Record<Locale, Copy> = {
     title: "Cirujano de mano, muñeca y codo en Vic",
     intro:
       "Valoración especializada de lesiones y patologías de la extremidad superior, con un plan de tratamiento adaptado a cada paciente.",
-    cta: "Pedir valoración en Vic",
+    cta: "Pedir cita para valoración en Vic",
     address: "Clínica Bayés · Carrer de Sant Just, 1 · Vic",
     trust: ["Especialista en mano y codo", "Consulta en Vic", "Tratamiento personalizado"],
     helpTitle: "¿En qué puedo ayudarte?",
@@ -77,7 +77,7 @@ const copy: Record<Locale, Copy> = {
     title: "Cirurgià de mà, canell i colze a Vic",
     intro:
       "Valoració especialitzada de lesions i patologies de l'extremitat superior, amb un pla de tractament adaptat a cada pacient.",
-    cta: "Demanar valoració a Vic",
+    cta: "Demanar cita per a valoració a Vic",
     address: "Clínica Bayés · Carrer de Sant Just, 1 · Vic",
     trust: ["Especialista en mà i colze", "Consulta a Vic", "Tractament personalitzat"],
     helpTitle: "En què et puc ajudar?",
