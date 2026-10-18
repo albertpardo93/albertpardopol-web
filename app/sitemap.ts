@@ -5,7 +5,7 @@ const locales = ["es", "ca", "en"];
 const hreflangMap: Record<string, string> = { es: "es-ES", ca: "ca-ES", en: "en" };
 const pages = [
   { path: "", priority: 1.0, freq: "weekly" as const, lastMod: "2026-04-15" },
-  { path: "/cirujano-mano/vic", priority: 0.9, freq: "monthly" as const, lastMod: "2026-08-21" },
+  { path: "/cirujano-mano/vic", priority: 0.9, freq: "monthly" as const, lastMod: "2026-10-18" },
   { path: "/sobre-mi", priority: 0.9, freq: "monthly" as const, lastMod: "2026-04-15" },
   { path: "/patologias", priority: 0.9, freq: "monthly" as const, lastMod: "2026-04-15" },
   { path: "/info-paciente", priority: 0.8, freq: "monthly" as const, lastMod: "2026-04-15" },
@@ -44,6 +44,19 @@ const newFracturePages = new Set([
   "fractura-dedo-falange",
 ]);
 
+function conditionLastModified(locale: string, slug: string) {
+  if (slug === "quistes-sinoviales") return "2026-10-18";
+  if (
+    (locale === "es" || locale === "ca") &&
+    (slug === "fractura-metacarpiano" || slug === "fractura-dedo-falange")
+  ) {
+    return "2026-10-12";
+  }
+  if (newFracturePages.has(slug)) return "2026-08-29";
+  if (updatedConditionPages.has(`${locale}:${slug}`)) return "2026-08-21";
+  return "2026-03-29";
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
@@ -76,13 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${SITE_URL}/${locale}${path}`,
-        lastModified: new Date(
-          newFracturePages.has(slug)
-            ? "2026-08-29"
-            : updatedConditionPages.has(`${locale}:${slug}`)
-              ? "2026-08-21"
-              : "2026-03-29"
-        ),
+        lastModified: new Date(conditionLastModified(locale, slug)),
         alternates: { languages },
         changeFrequency: "monthly",
         priority: newFracturePages.has(slug) ? 0.85 : 0.8,

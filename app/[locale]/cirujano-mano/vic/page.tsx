@@ -62,7 +62,7 @@ const copy: Record<Locale, Copy> = {
     doctorTitle: "Dr. Albert Pardo Pol",
     doctorText:
       "Especialista en Cirugía Ortopédica y Traumatología, con dedicación específica a la cirugía de la mano, el codo, la artroscopia de muñeca y la microcirugía.",
-    locationTitle: "Consulta de traumatología en Vic",
+    locationTitle: "Traumatólogo de mano en Vic y Osona",
     locationText:
       "Atención en Clínica Bayés para pacientes de Vic, Osona y comarcas cercanas.",
     locationNote: "Carrer de Sant Just, 1, Vic",
@@ -99,7 +99,7 @@ const copy: Record<Locale, Copy> = {
     doctorTitle: "Dr. Albert Pardo Pol",
     doctorText:
       "Especialista en Cirurgia Ortopèdica i Traumatologia, amb dedicació específica a la cirurgia de la mà, el colze, l'artroscòpia de canell i la microcirurgia.",
-    locationTitle: "Consulta de traumatologia a Vic",
+    locationTitle: "Traumatòleg de mà a Vic i Osona",
     locationText:
       "Atenció a Clínica Bayés per a pacients de Vic, Osona i comarques properes.",
     locationNote: "Carrer de Sant Just, 1, Vic",
@@ -136,7 +136,7 @@ const copy: Record<Locale, Copy> = {
     doctorTitle: "Dr Albert Pardo Pol",
     doctorText:
       "Consultant in Orthopaedic Surgery and Traumatology, specialising in hand and elbow surgery, wrist arthroscopy and microsurgery.",
-    locationTitle: "Orthopaedic consultation in Vic",
+    locationTitle: "Hand specialist in Vic and Osona",
     locationText: "Care at Clínica Bayés for patients from Vic, Osona and nearby areas.",
     locationNote: "Carrer de Sant Just, 1, Vic",
     finalTitle: "Take the first step towards restoring function and reducing pain",

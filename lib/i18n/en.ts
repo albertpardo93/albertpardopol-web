@@ -134,7 +134,7 @@ const en = {
         name: "Wrist ganglion cyst",
         slug: "quistes-sinoviales",
         description:
-          "A benign lump on the hand or wrist, arising near a joint or tendon. Treatment according to symptoms.",
+          "A ganglion cyst on the hand or wrist. Assessment and treatment when it causes pain, restricts movement or returns.",
         detail: `<p>A ganglion cyst is a benign, fluid-filled lump that commonly appears on the wrist or hand. It arises from a joint or tendon sheath and is not cancerous. Assessment by an English-speaking hand surgeon in Barcelona is advisable if the lump grows, becomes painful or restricts movement.</p>
 
 <h2>Symptoms</h2>
@@ -163,6 +163,7 @@ const en = {
         faq: [
           { question: "Is a ganglion cyst on the wrist dangerous?", answer: "No, ganglion cysts are benign swellings. They are not cancerous and do not become malignant. However, if they grow, cause pain or compress nearby nerves, it is advisable to have them assessed by a specialist." },
           { question: "Do ganglion cysts go away on their own?", answer: "Yes, many ganglion cysts resolve spontaneously without treatment. If they persist or cause discomfort, aspiration or surgical excision may be considered." },
+          { question: "When should a ganglion cyst be removed surgically?", answer: "Surgery may be considered when the cyst causes pain, restricts movement, compresses nearby structures, returns after aspiration or interferes with daily activities. The decision depends on the examination, location and each patient's symptoms." },
         ],
         imageAlt: "Ganglion cyst on the wrist — diagnosis and treatment",
         relatedSlugs: ["lesiones-tendinosas", "dedo-en-gatillo", "fracturas-mano-muneca"],

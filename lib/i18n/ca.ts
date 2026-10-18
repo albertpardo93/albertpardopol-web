@@ -134,7 +134,7 @@ const ca = {
         name: "Gangli o quist sinovial",
         slug: "quistes-sinoviales",
         description:
-          "Bony benigne a la mà o el canell, relacionat amb una articulació o un tendó. Tractament segons les molèsties.",
+          "Quist sinovial o gangli a la mà o el canell. Valoració i tractament quan causa dolor, limita el moviment o reapareix.",
         detail: `<p>Els quists sinovials (també anomenats ganglions) són tumoracions benignes plenes de líquid sinovial que s'originen a partir d'articulacions o beines tendinoses. Són els bonys més freqüents de la mà i el canell.</p>
 
 <h2>Símptomes</h2>
@@ -160,6 +160,7 @@ const ca = {
         faq: [
           { question: "És perillós un ganglió al canell?", answer: "No, els quists sinovials o ganglions són tumoracions benignes. No són cancerosos ni es malignitzen. Tanmateix, si creixen, fan mal o comprimeixen nervis propers, convé valorar-los amb un especialista." },
           { question: "Els quists sinovials desapareixen sols?", answer: "Sí, molts quists sinovials es resolen espontàniament sense tractament. Si persisteixen o causen molèsties, es pot optar per aspiració o extirpació quirúrgica." },
+          { question: "Quan convé operar un quist sinovial?", answer: "La cirurgia es pot valorar quan el quist causa dolor, limita el moviment, comprimeix estructures properes, reapareix després d'una aspiració o interfereix amb les activitats habituals. La decisió depèn de l'exploració, la localització i les molèsties de cada pacient." },
         ],
         imageAlt: "Quist sinovial o ganglió al canell — diagnòstic i tractament",
         relatedSlugs: ["lesiones-tendinosas", "dedo-en-gatillo", "fracturas-mano-muneca"],

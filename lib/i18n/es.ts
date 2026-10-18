@@ -134,7 +134,7 @@ const es = {
         name: "Ganglión o quiste sinovial",
         slug: "quistes-sinoviales",
         description:
-          "Bulto benigno en la mano o la muñeca, relacionado con una articulación o un tendón. Tratamiento según las molestias.",
+          "Quiste sinovial o ganglión en la mano o la muñeca. Valoración y tratamiento cuando causa dolor, limita el movimiento o reaparece.",
         detail: `<p>El ganglión o quiste sinovial es un bulto benigno lleno de líquido que suele aparecer en la muñeca o la mano. Se origina en una articulación o vaina tendinosa y es la tumoración más frecuente de esta zona. Aunque no es cáncer, conviene valorarlo si crece, duele o limita el movimiento.</p>
 
 <h2>Síntomas</h2>
@@ -163,6 +163,7 @@ const es = {
         faq: [
           { question: "¿Es peligroso un ganglión en la muñeca?", answer: "No, los quistes sinoviales o gangliones son tumoraciones benignas. No son cancerosos ni se malignizan. Sin embargo, si crecen, duelen o comprimen nervios cercanos, conviene valorarlos con un especialista." },
           { question: "¿Los quistes sinoviales desaparecen solos?", answer: "Sí, muchos quistes sinoviales se resuelven espontáneamente sin tratamiento. Si persisten o causan molestias, se puede optar por aspiración o extirpación quirúrgica." },
+          { question: "¿Cuándo conviene operar un quiste sinovial?", answer: "La cirugía puede valorarse cuando el quiste causa dolor, limita el movimiento, comprime estructuras próximas, reaparece después de una aspiración o interfiere con las actividades habituales. La decisión depende de la exploración, la localización y las molestias de cada paciente." },
         ],
         imageAlt: "Quiste sinovial o ganglión en la muñeca — diagnóstico y tratamiento",
         relatedSlugs: ["lesiones-tendinosas", "dedo-en-gatillo", "fracturas-mano-muneca"],

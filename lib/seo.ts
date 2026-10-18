@@ -162,6 +162,13 @@ export function generateConditionStructuredData(
   locale: Locale,
   condition: { name: string; slug: string; description: string; detail: string }
 ) {
+  const dateModified = condition.slug === "quistes-sinoviales"
+    ? "2026-10-18"
+    : (locale === "es" || locale === "ca") &&
+        (condition.slug === "fractura-metacarpiano" || condition.slug === "fractura-dedo-falange")
+      ? "2026-10-12"
+      : "2026-08-29";
+
   return {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
@@ -169,7 +176,7 @@ export function generateConditionStructuredData(
     description: condition.description,
     url: `${SITE_URL}/${locale}/patologias/${condition.slug}`,
     image: conditionImage(condition.slug),
-    dateModified: "2026-08-29",
+    dateModified,
     author: {
       "@type": "Physician",
       name: "Dr. Albert Pardo Pol",
