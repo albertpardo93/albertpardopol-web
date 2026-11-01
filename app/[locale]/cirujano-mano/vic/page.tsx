@@ -3,6 +3,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import VicBookingLink from "@/components/VicBookingLink";
+import Conditions from "@/components/Conditions";
 import BudgetForm from "@/components/BudgetForm";
 import { SITE_URL } from "@/lib/config";
 import { getDictionary, locales, type Locale } from "@/lib/i18n";
@@ -47,9 +48,9 @@ const copy: Record<Locale, Copy> = {
     helpIntro:
       "Diagnóstico y tratamiento de problemas de mano, muñeca y codo, desde las opciones conservadoras hasta la cirugía cuando está indicada.",
     services: [
-      { title: "Mano y dedos", text: "Túnel carpiano, dedo en gatillo, quistes, artrosis y lesiones tendinosas." },
-      { title: "Muñeca", text: "Dolor, inestabilidad, lesiones deportivas y fracturas de mano y muñeca." },
-      { title: "Codo", text: "Valoración de dolor, rigidez, lesiones nerviosas y otras patologías del codo." },
+      { title: "Mano y dedos", text: "Hormigueo o adormecimiento de los dedos, un dedo que se bloquea, dolor en la base del pulgar o dificultad para mover la mano." },
+      { title: "Muñeca", text: "Dolor al apoyar o mover la muñeca, un bulto, pérdida de fuerza o molestias después de una caída o al practicar deporte." },
+      { title: "Codo", text: "Dolor al agarrar objetos o hacer esfuerzos, dificultad para estirar el codo y hormigueo que llega al anular y al meñique." },
     ],
     approachTitle: "Una consulta orientada a encontrar la mejor solución",
     approachText:
@@ -84,9 +85,9 @@ const copy: Record<Locale, Copy> = {
     helpIntro:
       "Diagnòstic i tractament de problemes de mà, canell i colze, des de les opcions conservadores fins a la cirurgia quan està indicada.",
     services: [
-      { title: "Mà i dits", text: "Túnel carpià, dit en gallet, quists, artrosi i lesions tendinoses." },
-      { title: "Canell", text: "Dolor, inestabilitat, lesions esportives i fractures de mà i canell." },
-      { title: "Colze", text: "Valoració del dolor, rigidesa, lesions nervioses i altres patologies del colze." },
+      { title: "Mà i dits", text: "Formigueig o adormiment dels dits, un dit que es bloqueja, dolor a la base del polze o dificultat per moure la mà." },
+      { title: "Canell", text: "Dolor en recolzar o moure el canell, un bony, pèrdua de força o molèsties després d’una caiguda o en practicar esport." },
+      { title: "Colze", text: "Dolor en agafar objectes o fer esforços, dificultat per estirar el colze i formigueig que arriba a l’anular i al dit petit." },
     ],
     approachTitle: "Una consulta orientada a trobar la millor solució",
     approachText:
@@ -121,9 +122,9 @@ const copy: Record<Locale, Copy> = {
     helpIntro:
       "Diagnosis and treatment of hand, wrist and elbow problems, from conservative options to surgery when indicated.",
     services: [
-      { title: "Hand and fingers", text: "Carpal tunnel, trigger finger, cysts, arthritis and tendon injuries." },
-      { title: "Wrist", text: "Pain, instability, sports injuries, and hand or wrist fractures." },
-      { title: "Elbow", text: "Assessment of pain, stiffness, nerve injuries and other elbow conditions." },
+      { title: "Hand and fingers", text: "Tingling or numb fingers, a finger that locks, pain at the base of the thumb or difficulty moving your hand." },
+      { title: "Wrist", text: "Pain when leaning on or moving your wrist, a lump, loss of strength or discomfort after a fall or during sport." },
+      { title: "Elbow", text: "Pain when gripping or lifting, difficulty straightening your elbow and tingling reaching your ring and little fingers." },
     ],
     approachTitle: "A consultation focused on finding the right solution",
     approachText:
@@ -287,6 +288,17 @@ export default async function VicLandingPage({
           ))}
         </div>
       </section>
+
+      <Conditions
+        dict={dict}
+        locale={locale}
+        slugs={["tunel-carpiano", "dedo-en-gatillo", "quistes-sinoviales", "artrosis-pulgar", "lesiones-deportivas-muneca", "patologia-codo"]}
+      />
+      <div className="bg-surface px-4 pb-12 text-center">
+        <VicBookingLink location="vic-conditions" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-primary px-7 py-3.5 font-semibold text-white hover:bg-primary-light">
+          {t.cta}
+        </VicBookingLink>
+      </div>
 
       <section className="bg-surface py-16 sm:py-20">
         <div className="mx-auto grid max-w-5xl gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">

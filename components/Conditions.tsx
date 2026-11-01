@@ -7,9 +7,11 @@ import ScrollReveal from "./ScrollReveal";
 export default function Conditions({
   dict,
   locale,
+  slugs,
 }: {
   dict: Dictionary;
   locale: Locale;
+  slugs?: string[];
 }) {
   return (
     <section id="condiciones" className="bg-surface px-4 py-16 sm:py-24">
@@ -20,7 +22,7 @@ export default function Conditions({
           </h2>
         </ScrollReveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {dict.conditions.items.filter((item) => !item.parentSlug).map((item, i) => (
+          {dict.conditions.items.filter((item) => !item.parentSlug && (!slugs || slugs.includes(item.slug))).map((item, i) => (
             <ScrollReveal key={item.name} delay={i + 1}>
               <Link
                 href={`/${locale}/patologias/${item.slug}`}
