@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
-import { contact, booking } from "@/lib/config";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
+import { booking } from "@/lib/config";
 import { track } from "@/lib/track";
 
 export const BOOKING_MODAL_ID = "booking-modal";
@@ -21,7 +22,6 @@ function fireConversion(sendTo: string) {
 }
 
 const BOOKING_CONVERSION = "AW-18025540899/hscKCNe2l-wcEKPan5ND";
-const WHATSAPP_CONVERSION = "AW-18025540899/RygDCKLEluwcEKPan5ND";
 
 function BackButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (
@@ -211,21 +211,9 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                 </span>
               </label>
 
-              <a
-                href={whatsappConsent ? contact.whatsapp : undefined}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cta="booking"
-                data-location="whatsapp"
-                onClick={(e) => {
-                  if (!whatsappConsent) {
-                    e.preventDefault();
-                    return;
-                  }
-                  track("whatsapp_click", { location: "booking_modal" });
-                  fireConversion(WHATSAPP_CONVERSION);
-                }}
-                aria-disabled={!whatsappConsent}
+              <TrackedWhatsAppLink
+                location="booking_modal"
+                disabled={!whatsappConsent}
                 className={`flex items-center gap-4 rounded-xl border border-border px-4 py-4 transition-all ${
                   whatsappConsent
                     ? "hover:border-primary hover:shadow-sm cursor-pointer"
@@ -242,7 +230,7 @@ export default function BookingModal({ dict }: { dict: Dictionary }) {
                   <p className="text-sm font-semibold text-text-primary">{t.whatsapp}</p>
                   <p className="text-xs text-text-muted">WhatsApp</p>
                 </div>
-              </a>
+              </TrackedWhatsAppLink>
             </div>
           </div>
         )}

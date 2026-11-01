@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import BookingModal from "@/components/BookingModal";
 import ConditionModal from "@/components/ConditionModal";
+import AttributionCapture from "@/components/AttributionCapture";
 import CookieBanner from "@/components/CookieBanner";
 
 export function generateStaticParams() {
@@ -41,24 +42,13 @@ export default async function LocaleLayout({
   return (
     <html lang={langMap[locale]}>
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18025540899"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18025540899');
-          `}
-        </Script>
         <script
   dangerouslySetInnerHTML={{
     __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      var consent = localStorage.getItem('cookie-consent');
+      var consent;
+      try { consent = localStorage.getItem('cookie-consent'); } catch (e) {}
       gtag('consent', 'default', {
         analytics_storage: consent === 'accepted' ? 'granted' : 'denied',
         ad_storage: consent === 'accepted' ? 'granted' : 'denied',
@@ -68,18 +58,19 @@ export default async function LocaleLayout({
     `,
   }}
 />
-        <Script
+        {process.env.NODE_ENV === "production" && <Script
   src="https://www.googletagmanager.com/gtag/js?id=G-SGZFVTFE7C"
   strategy="afterInteractive"
-/>
-<Script id="google-analytics" strategy="afterInteractive">
+/>}
+{process.env.NODE_ENV === "production" && <Script id="google-analytics" strategy="afterInteractive">
   {`
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-SGZFVTFE7C');
+    gtag('config', 'AW-18025540899');
   `}
-</Script>
+</Script>}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -105,6 +96,7 @@ export default async function LocaleLayout({
         >
           {locale === "ca" ? "Salta al contingut" : locale === "en" ? "Skip to content" : "Saltar al contenido"}
         </a>
+        <AttributionCapture />
         <Header locale={locale} dict={dict} />
         <main id="main-content">{children}</main>
         <Footer locale={locale} dict={dict} />

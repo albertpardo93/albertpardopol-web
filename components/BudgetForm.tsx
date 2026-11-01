@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 import { track } from "@/lib/track";
+import { captureAttribution, leadEventParams } from "@/lib/attribution";
 import BookingTrigger from "@/components/BookingTrigger";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
@@ -48,6 +49,7 @@ export default function BudgetForm({
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
       condition: conditionName,
+      attribution: captureAttribution(),
     };
 
     try {
@@ -60,7 +62,7 @@ export default function BudgetForm({
       if (!res.ok) throw new Error("Failed to send");
       const result = (await res.json()) as { id?: string };
       if (!result.id) throw new Error("Missing submission ID");
-      track("budget_form_submit", { condition: conditionName });
+      track("budget_form_submit", { ...leadEventParams(data.attribution), submission_id: result.id });
       if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
           send_to: "AW-18025540899/zZzyCJnP8pEcEKPan5ND",
@@ -107,7 +109,7 @@ export default function BudgetForm({
         <button
           type="button"
           onClick={() => {
-            track("budget_form_open", { condition: conditionName });
+            track("budget_form_open", leadEventParams());
             setOpen(true);
           }}
           className="group flex w-full items-center gap-3 rounded-2xl border border-primary/15 bg-surface px-6 py-5 text-left transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:scale-[1.01]"

@@ -9,6 +9,6 @@ export function track(event: string, payload?: TrackPayload): void {
   }
   if (typeof window !== "undefined") {
     const win = window as typeof window & { gtag?: (...args: unknown[]) => void };
-    win.gtag?.("event", event, payload ?? {});
+    win.gtag?.("event", event, { ...payload, send_to: "G-SGZFVTFE7C" });
   }
 }

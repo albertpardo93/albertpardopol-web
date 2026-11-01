@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { captureAttribution, clearAttribution } from "@/lib/attribution";
 import type { Locale } from "@/lib/i18n";
 const texts = {
   es: {
@@ -44,10 +45,12 @@ export default function CookieBanner({ locale }: { locale: Locale }) {
         ad_personalization: "granted",
       });
     }
+    captureAttribution();
     setVisible(false);
   };
   const handleReject = () => {
     localStorage.setItem("cookie-consent", "rejected");
+    clearAttribution();
     if (typeof (window as any).gtag === "function") {
       (window as any).gtag("consent", "update", {
         analytics_storage: "denied",

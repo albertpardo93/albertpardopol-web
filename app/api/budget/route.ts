@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { sanitizeAttribution, touchLabel } from "@/lib/attribution";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -36,6 +37,7 @@ export async function POST(request: Request) {
       diagnosisStatus,
       preferredCenter,
       privacyConsent,
+      attribution: rawAttribution,
     } = await request.json();
 
     if (
@@ -52,6 +54,17 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    const attribution = sanitizeAttribution(rawAttribution);
+    const trafficHtml = `
+      <hr />
+      <h3>Origen de la solicitud</h3>
+      <p><strong>Sesión del envío:</strong> ${escapeHtml(touchLabel(attribution.session))}</p>
+      <p><strong>Primera visita registrada:</strong> ${escapeHtml(touchLabel(attribution.firstTouch))}</p>
+      ${attribution.session ? `<p><strong>Página de entrada:</strong> ${escapeHtml(attribution.session.landingPath)}</p>` : ""}
+      ${attribution.session?.clickId ? `<p><strong>Identificador publicitario (${attribution.session.clickIdType}):</strong> ${escapeHtml(attribution.session.clickId)}</p>` : ""}
+      <p><small>Origen observado en este navegador, según el consentimiento y los datos disponibles. Directo o desconocido no permite distinguir pago de orgánico. Los parámetros de campaña no verifican por sí solos una inversión publicitaria.</small></p>
+    `;
 
     const { data, error } = await resend.emails.send({
       from: "Presupuestos Web <presupuestos@cirujanodemano.es>",
@@ -70,6 +83,7 @@ export async function POST(request: Request) {
         <hr />
         <h3>Descripción del caso:</h3>
         <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
+        ${trafficHtml}
         <p><small>El paciente ha aceptado expresamente el tratamiento de los datos facilitados.</small></p>
       `,
     });
