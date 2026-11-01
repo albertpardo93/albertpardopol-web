@@ -33,7 +33,7 @@ function storage() {
   const values = new Map();
   return { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key), values };
 }
-test('consent, internal navigation, first visit and WhatsApp reference survive the contact journey', async () => {
+test('consent and attribution survive navigation without exposing tracking in WhatsApp', async () => {
   const lib = await import(`../lib/attribution.ts?journey=${Date.now()}`);
   const local = storage(); const session = storage();
   globalThis.window = { localStorage: local, sessionStorage: session, location: { href: `${host}/es?gclid=abc&utm_campaign=Vic` } };
@@ -50,7 +50,8 @@ test('consent, internal navigation, first visit and WhatsApp reference survive t
   assert.equal(result.session.source, 'google');
   assert.equal(result.firstTouch.clickId, 'abc');
   const whatsapp = nextDocument.whatsappHref('https://wa.me/34600000000');
-  assert.match(new URL(whatsapp.href).searchParams.get('text'), /Pago · google/);
+  assert.equal(new URL(whatsapp.href).searchParams.get('text'), 'Hola, me gustaría solicitar información.');
+  assert.equal(whatsapp.attribution.session.channel, 'paid');
   assert.match(whatsapp.reference, /^W-[A-F0-9]{8}$/);
   assert.equal(new URL(whatsapp.href).searchParams.get('text').includes('abc'), false);
   local.setItem('cookie-consent', 'rejected');
