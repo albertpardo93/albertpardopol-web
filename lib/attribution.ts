@@ -145,8 +145,5 @@ export function leadEventParams(attribution = captureAttribution()): Record<stri
 export function whatsappHref(base: string): { href: string; reference: string; attribution: LeadAttribution } {
   const attribution = captureAttribution();
   const reference = `W-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
-  const url = new URL(base);
-  const original = url.searchParams.get("text") ?? "Hola, me gustaría solicitar información.";
-  url.searchParams.set("text", original);
-  return { href: url.toString(), reference, attribution };
+  return { href: base, reference, attribution };
 }

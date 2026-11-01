@@ -7,7 +7,7 @@
 - `whatsapp_click`: clic para abrir WhatsApp; no confirma envío ni conversación.
 - Los eventos de contacto llevan `lead_channel`, `lead_source` y `lead_medium`.
 - El correo de presupuesto contiene la sesión del envío, la primera visita registrada, la página de entrada sin consulta y, si existe, el identificador publicitario.
-- El mensaje preparado de WhatsApp contiene únicamente una consulta natural. El origen y la referencia aleatoria permanecen en el evento interno, sin mostrarse al paciente. No hay webhook de conversaciones recibidas y no se pueden asociar automáticamente chats reales a clics.
+- El enlace de WhatsApp abre el chat sin mensaje preestablecido. El origen y la referencia aleatoria permanecen en el evento interno, sin mostrarse al paciente. No hay webhook de conversaciones recibidas y no se pueden asociar automáticamente chats reales a clics.
 
 ## Atribución y límites
 

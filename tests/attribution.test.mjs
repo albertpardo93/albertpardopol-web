@@ -50,10 +50,11 @@ test('consent and attribution survive navigation without exposing tracking in Wh
   assert.equal(result.session.source, 'google');
   assert.equal(result.firstTouch.clickId, 'abc');
   const whatsapp = nextDocument.whatsappHref('https://wa.me/34600000000');
-  assert.equal(new URL(whatsapp.href).searchParams.get('text'), 'Hola, me gustaría solicitar información.');
+  assert.equal(whatsapp.href, 'https://wa.me/34600000000');
+  assert.equal(new URL(whatsapp.href).searchParams.has('text'), false);
   assert.equal(whatsapp.attribution.session.channel, 'paid');
   assert.match(whatsapp.reference, /^W-[A-F0-9]{8}$/);
-  assert.equal(new URL(whatsapp.href).searchParams.get('text').includes('abc'), false);
+  assert.equal(whatsapp.href.includes('abc'), false);
   local.setItem('cookie-consent', 'rejected');
   nextDocument.clearAttribution();
   assert.equal(session.getItem(lib.SESSION_KEY), null);
