@@ -3,6 +3,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import VicBookingLink from "@/components/VicBookingLink";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import Conditions from "@/components/Conditions";
 import BudgetForm from "@/components/BudgetForm";
 import { SITE_URL } from "@/lib/config";
@@ -16,6 +17,11 @@ type Copy = {
   intro: string;
   cta: string;
   address: string;
+  whatsapp: string;
+  budgetLink: string;
+  bookingNote: string;
+  practicalTitle: string;
+  practical: { title: string; text: string }[];
   trust: string[];
   helpTitle: string;
   helpIntro: string;
@@ -40,10 +46,15 @@ const copy: Record<Locale, Copy> = {
     eyebrow: "Traumatología especializada en Vic",
     title: "Cirujano de mano, muñeca y codo en Vic",
     intro:
-      "Valoración especializada de lesiones y patologías de la extremidad superior, con un plan de tratamiento adaptado a cada paciente.",
+      "Consulta con el Dr. Albert Pardo en Clínica Bayés: exploración de la mano, muñeca o codo, revisión de tus pruebas y explicación de las opciones de tratamiento.",
     cta: "Pedir cita para valoración en Vic",
     address: "Clínica Bayés · Carrer de Sant Just, 1 · Vic",
     trust: ["Especialista en mano y codo", "Consulta en Vic", "Tratamiento personalizado"],
+    whatsapp: "Consultar por WhatsApp",
+    budgetLink: "¿Ya te han indicado una operación? Solicita presupuesto",
+    bookingNote: "La reserva se completa en Bayés. En la ficha del Dr. Pardo, pulsa «Cita web».",
+    practicalTitle: "Antes de tu visita",
+    practical: [{"title": "Cómo reservar", "text": "El botón de cita abre la ficha del Dr. Albert Pardo en Clínica Bayés. Desde allí puedes acceder a «Cita web» y consultar la disponibilidad."}, {"title": "Qué llevar", "text": "Trae los informes y las pruebas que ya tengas, además de la información sobre tratamientos anteriores."}, {"title": "Consulta o presupuesto", "text": "Si necesitas un diagnóstico, pide una valoración. Si ya te han indicado una operación, puedes solicitar un presupuesto orientativo con el formulario."}, {"title": "Privado y mutuas", "text": "Confirma con Bayés el precio de la visita, la cobertura de tu mutua y la dirección de la consulta al reservar."}],
     helpTitle: "¿En qué puedo ayudarte?",
     helpIntro:
       "Diagnóstico y tratamiento de problemas de mano, muñeca y codo, desde las opciones conservadoras hasta la cirugía cuando está indicada.",
@@ -77,10 +88,15 @@ const copy: Record<Locale, Copy> = {
     eyebrow: "Traumatologia especialitzada a Vic",
     title: "Cirurgià de mà, canell i colze a Vic",
     intro:
-      "Valoració especialitzada de lesions i patologies de l'extremitat superior, amb un pla de tractament adaptat a cada pacient.",
+      "Consulta amb el Dr. Albert Pardo a Clínica Bayés: exploració de la mà, el canell o el colze, revisió de les teves proves i explicació de les opcions de tractament.",
     cta: "Demanar cita per a valoració a Vic",
     address: "Clínica Bayés · Carrer de Sant Just, 1 · Vic",
     trust: ["Especialista en mà i colze", "Consulta a Vic", "Tractament personalitzat"],
+    whatsapp: "Consultar per WhatsApp",
+    budgetLink: "Ja t’han indicat una operació? Demana pressupost",
+    bookingNote: "La reserva es completa a Bayés. A la fitxa del Dr. Pardo, prem «Cita web».",
+    practicalTitle: "Abans de la visita",
+    practical: [{"title": "Com reservar", "text": "El botó de cita obre la fitxa del Dr. Albert Pardo a Clínica Bayés. Des d’allà pots accedir a «Cita web» i consultar la disponibilitat."}, {"title": "Què portar", "text": "Porta els informes i les proves que ja tinguis, així com la informació sobre tractaments anteriors."}, {"title": "Consulta o pressupost", "text": "Si necessites un diagnòstic, demana una valoració. Si ja t’han indicat una operació, pots sol·licitar un pressupost orientatiu amb el formulari."}, {"title": "Privat i mútues", "text": "Confirma amb Bayés el preu de la visita, la cobertura de la teva mútua i l’adreça de la consulta en reservar."}],
     helpTitle: "En què et puc ajudar?",
     helpIntro:
       "Diagnòstic i tractament de problemes de mà, canell i colze, des de les opcions conservadores fins a la cirurgia quan està indicada.",
@@ -114,10 +130,15 @@ const copy: Record<Locale, Copy> = {
     eyebrow: "Specialist orthopaedics in Vic",
     title: "Hand, wrist and elbow surgeon in Vic",
     intro:
-      "Specialist assessment of upper-limb injuries and conditions, with a treatment plan adapted to each patient.",
+      "Consult Dr Albert Pardo at Clínica Bayés for an examination of your hand, wrist or elbow, a review of your tests and an explanation of your treatment options.",
     cta: "Book an assessment in Vic",
     address: "Clínica Bayés · Carrer de Sant Just, 1 · Vic",
     trust: ["Hand and elbow specialist", "Consultations in Vic", "Personalised treatment"],
+    whatsapp: "Contact via WhatsApp",
+    budgetLink: "Already advised to have surgery? Request an estimate",
+    bookingNote: "Complete your booking on Bayés. On Dr Pardo’s profile, select “Cita web”.",
+    practicalTitle: "Before your visit",
+    practical: [{"title": "How to book", "text": "The booking button opens Dr Albert Pardo’s profile at Clínica Bayés. Select “Cita web” there to check availability."}, {"title": "What to bring", "text": "Bring any reports and tests you already have, along with details of previous treatments."}, {"title": "Consultation or estimate", "text": "Book an assessment if you need a diagnosis. If surgery has already been recommended, you can request an indicative estimate using the form."}, {"title": "Private care and insurance", "text": "Confirm consultation fees, insurance coverage and the consultation address with Bayés when booking."}],
     helpTitle: "How can I help?",
     helpIntro:
       "Diagnosis and treatment of hand, wrist and elbow problems, from conservative options to surgery when indicated.",
@@ -243,8 +264,13 @@ export default async function VicLandingPage({
               >
                 {t.cta}
               </VicBookingLink>
-              <p className="text-sm font-medium text-accent">{t.address}</p>
+              <TrackedWhatsAppLink location="vic-hero" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 px-6 py-3.5 font-semibold text-white hover:bg-white/10">
+                {t.whatsapp}
+              </TrackedWhatsAppLink>
             </div>
+            <p className="mt-4 text-sm leading-relaxed text-white/75">{t.bookingNote}</p>
+            <p className="mt-4 text-sm font-medium text-accent">{t.address}</p>
+            <a href="#presupuesto-vic" className="mt-5 inline-block text-sm text-white underline decoration-white/50 underline-offset-4 hover:decoration-white">{t.budgetLink}</a>
           </div>
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-3 rounded-[2rem] border border-white/15" />
@@ -340,7 +366,19 @@ export default async function VicLandingPage({
         </article>
       </section>
 
-      <section className="border-y border-border bg-surface px-4 py-16 sm:py-20">
+      <section className="mx-auto max-w-5xl px-4 pb-16">
+        <h2 className="font-display text-3xl font-semibold text-primary">{t.practicalTitle}</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {t.practical.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-border p-6">
+              <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="presupuesto-vic" className="scroll-mt-28 border-y border-border bg-surface px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="rounded-2xl bg-primary p-7 text-white sm:p-8">
