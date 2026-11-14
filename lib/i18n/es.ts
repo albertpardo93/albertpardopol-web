@@ -87,9 +87,9 @@ const es = {
 <p>Cuando el tratamiento conservador no es suficiente o el electromiograma muestra compresión moderada-severa, la cirugía de liberación del túnel carpiano es el tratamiento de elección. Se trata de un procedimiento ambulatorio con anestesia local. Consiste en seccionar el ligamento transverso del carpo para descomprimir el nervio mediano.</p>
 
 <h2>Recuperación</h2>
-<p>Los pacientes notan mejoría del hormigueo desde los primeros días. La mano se puede usar para actividades ligeras de forma inmediata. La recuperación completa de la fuerza suele producirse entre 4 y 8 semanas. Se realizan revisiones periódicas para asegurar una evolución favorable.</p>`,
+<p>La recuperación varía según el daño previo del nervio, la evolución y las actividades de cada paciente. El hormigueo puede mejorar pronto, pero la sensibilidad y la fuerza pueden tardar meses. El especialista indicará cuándo retomar esfuerzos y trabajo.</p>`,
         faq: [
-          { question: "¿Cuánto tarda en curar la operación de túnel carpiano?", answer: "La recuperación tras la cirugía de túnel carpiano es rápida. El hormigueo suele mejorar en los primeros días. La mano se puede usar para actividades ligeras de inmediato, y la fuerza completa se recupera entre 4 y 8 semanas." },
+          { question: "¿Cuánto tarda en curar la operación de túnel carpiano?", answer: "La recuperación varía según el daño previo del nervio, la evolución y las actividades de cada paciente. El hormigueo puede mejorar pronto, pero la sensibilidad y la fuerza pueden tardar meses. El especialista indicará cuándo retomar esfuerzos y trabajo." },
           { question: "¿Se puede curar el túnel carpiano sin cirugía?", answer: "En fases iniciales sí. Las férulas nocturnas e infiltraciones de corticoides pueden aliviar los síntomas. Sin embargo, si la compresión es moderada-severa en el electromiograma, la cirugía es el tratamiento más eficaz y definitivo." },
           { question: "¿Por qué se me duermen las manos por la noche?", answer: "El adormecimiento nocturno de las manos es el síntoma más típico del síndrome del túnel carpiano. Se produce porque al dormir flexionamos la muñeca, lo que aumenta la presión sobre el nervio mediano. Si es frecuente, conviene consultar con un especialista." },
         ],
@@ -122,7 +122,7 @@ const es = {
 <p>La intervención consiste en una pequeña incisión en la base del dedo para seccionar la polea A1 y permitir que el tendón se deslice libremente. Es un procedimiento ambulatorio con anestesia local.</p>
 
 <h2>Recuperación</h2>
-<p>El dedo se puede mover desde el primer día. Los puntos se retiran a los 10-12 días. La recuperación completa suele producirse en 2-4 semanas, con una reincorporación rápida a las actividades habituales.</p>`,
+<p>La movilidad suele iniciarse pronto siguiendo las indicaciones del cirujano. El dolor, la inflamación o la rigidez pueden persistir varias semanas o meses. La vuelta al trabajo depende de la evolución y de los esfuerzos que requiera.</p>`,
         faq: [
           { question: "¿Cuánto dura la operación de dedo en gatillo?", answer: "La cirugía de dedo en gatillo es un procedimiento ambulatorio que dura aproximadamente 10 minutos. Se realiza con anestesia local y el paciente puede irse a casa el mismo día." },
           { question: "¿Se puede curar el dedo en gatillo con infiltraciones?", answer: "Sí, en muchos casos una infiltración de corticoides resuelve el problema. Sin embargo, si los síntomas reaparecen tras una o dos infiltraciones, se recomienda la cirugía como solución definitiva." },

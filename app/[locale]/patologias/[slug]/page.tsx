@@ -6,6 +6,8 @@ import { getDictionary, type Locale, locales } from "@/lib/i18n";
 import { getConditionImage } from "@/lib/condition-images";
 import { generateConditionMetadata, generateConditionStructuredData, generateConditionFAQSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import BookingTrigger from "@/components/BookingTrigger";
+import VicBookingLink from "@/components/VicBookingLink";
+import TrackedWhatsAppLink from "@/components/TrackedWhatsAppLink";
 import BudgetForm from "@/components/BudgetForm";
 
 export function generateStaticParams() {
@@ -62,6 +64,7 @@ export default async function ConditionPage({
 
   const homeLabel = locale === "en" ? "Home" : locale === "ca" ? "Inici" : "Inicio";
   const conditionsLabel = locale === "en" ? "Conditions" : locale === "ca" ? "Patologies" : "Patologías";
+  const isPrioritySurgery = ["tunel-carpiano", "dedo-en-gatillo"].includes(slug);
   const isFracture = condition.slug.startsWith("fractura");
   const fractureBudgetTitle = locale === "en"
     ? "Already diagnosed with a fracture?"
@@ -142,11 +145,22 @@ export default async function ConditionPage({
             </ol>
           </nav>
           <h1 className="font-display text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-            {condition.name}
+            {condition.name}{isPrioritySurgery && (locale === "ca" ? ": valoració i tractament" : locale === "en" ? ": assessment and treatment" : ": valoración y tratamiento")}
           </h1>
           <p className="mt-3 text-base leading-relaxed text-white/80">
             {condition.description}
           </p>
+          {isPrioritySurgery && (
+            <div className="mt-6">
+              <p className="text-sm leading-relaxed text-white/80">{locale === "ca" ? "Consulta amb el Dr. Albert Pardo a Clínica Bayés, Vic. Revisió del diagnòstic i valoració de les alternatives, inclosa la cirurgia quan està indicada." : locale === "en" ? "Consult Dr Albert Pardo at Clínica Bayés, Vic. Review your diagnosis and treatment options, including surgery when appropriate." : "Consulta con el Dr. Albert Pardo en Clínica Bayés, Vic. Revisión del diagnóstico y valoración de las alternativas, incluida la cirugía cuando está indicada."}</p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <VicBookingLink location="condition-hero" className="inline-flex min-h-12 items-center rounded-xl bg-white px-5 py-3 font-semibold text-primary">{locale === "ca" ? "Demanar valoració a Vic" : locale === "en" ? "Book an assessment in Vic" : "Pedir valoración en Vic"}</VicBookingLink>
+                <TrackedWhatsAppLink location="condition-hero" className="inline-flex min-h-12 items-center rounded-xl border border-white/50 px-5 py-3 font-semibold text-white">WhatsApp</TrackedWhatsAppLink>
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-white/75">{locale === "ca" ? "La reserva es completa a Bayés: a la fitxa del doctor, prem «Cita web»." : locale === "en" ? "Complete your booking on Bayés: select “Cita web” on the doctor’s profile." : "La reserva se completa en Bayés: en la ficha del doctor, pulsa «Cita web»."}</p>
+              <a href="#presupuesto" className="mt-5 inline-block text-sm text-white underline underline-offset-4">{locale === "ca" ? "Ja tens una indicació quirúrgica? Demana pressupost" : locale === "en" ? "Already advised to have surgery? Request an estimate" : "¿Ya tienes una indicación quirúrgica? Solicita presupuesto"}</a>
+            </div>
+          )}
         </div>
       </section>
 
@@ -239,12 +253,14 @@ export default async function ConditionPage({
             </BookingTrigger>
           </div>
 
+          <div id="presupuesto" className="scroll-mt-28">
           <BudgetForm
             dict={dict}
             conditionName={condition.name}
             title={isFracture ? fractureBudgetTitle : undefined}
             subtitle={isFracture ? fractureBudgetSubtitle : undefined}
           />
+          </div>
 
           {condition.faq.length > 0 && (
             <section className="mt-14">

@@ -87,9 +87,9 @@ const ca = {
 <p>Quan el tractament conservador no és suficient o l'electromiograma mostra compressió moderada-greu, la cirurgia d'alliberament del túnel carpià és el tractament d'elecció. Es tracta d'un procediment ambulatori amb anestèsia local. Consisteix a seccionar el lligament transvers del carp per descomprimir el nervi mitjà.</p>
 
 <h2>Recuperació</h2>
-<p>Els pacients noten millora del formigueig des dels primers dies. La mà es pot fer servir per a activitats lleugeres de forma immediata. La recuperació completa de la força sol produir-se entre 4 i 8 setmanes. Es fan revisions periòdiques per assegurar una evolució favorable.</p>`,
+<p>La recuperació varia segons el dany previ del nervi, l’evolució i les activitats de cada pacient. El formigueig pot millorar aviat, però la sensibilitat i la força poden trigar mesos. L’especialista indicarà quan reprendre esforços i feina.</p>`,
         faq: [
-          { question: "Quant triga a curar l'operació de túnel carpià?", answer: "La recuperació després de la cirurgia de túnel carpià és ràpida. El formigueig sol millorar els primers dies. La mà es pot fer servir per a activitats lleugeres de seguida, i la força completa es recupera entre 4 i 8 setmanes." },
+          { question: "Quant triga a curar l'operació de túnel carpià?", answer: "La recuperació varia segons el dany previ del nervi, l’evolució i les activitats de cada pacient. El formigueig pot millorar aviat, però la sensibilitat i la força poden trigar mesos. L’especialista indicarà quan reprendre esforços i feina." },
           { question: "Es pot curar el túnel carpià sense cirurgia?", answer: "En fases inicials sí. Les fèrules nocturnes i les infiltracions de corticoides poden alleujar els símptomes. Tanmateix, si la compressió és moderada-greu a l'electromiograma, la cirurgia és el tractament més eficaç i definitiu." },
           { question: "Per què se m'adormen les mans a la nit?", answer: "L'adormiment nocturn de les mans és el símptoma més típic de la síndrome del túnel carpià. Es produeix perquè en dormir flexionem el canell, cosa que augmenta la pressió sobre el nervi mitjà. Si és freqüent, convé consultar amb un especialista." },
         ],
@@ -122,7 +122,7 @@ const ca = {
 <p>La intervenció consisteix en una petita incisió a la base del dit per seccionar la politja A1 i permetre que el tendó es deslligui lliurement. És un procediment ambulatori amb anestèsia local.</p>
 
 <h2>Recuperació</h2>
-<p>El dit es pot moure des del primer dia. Els punts es retiren als 10-12 dies. La recuperació completa sol produir-se en 2-4 setmanes, amb una reincorporació ràpida a les activitats habituals.</p>`,
+<p>La mobilitat sol iniciar-se aviat seguint les indicacions del cirurgià. El dolor, la inflamació o la rigidesa poden persistir diverses setmanes o mesos. La tornada a la feina depèn de l’evolució i dels esforços que requereixi.</p>`,
         faq: [
           { question: "Quant dura l'operació de dit en gallet?", answer: "La cirurgia de dit en gallet és un procediment ambulatori que dura aproximadament 10 minuts. Es fa amb anestèsia local i el pacient pot tornar a casa el mateix dia." },
           { question: "Es pot curar el dit en gallet amb infiltracions?", answer: "Sí, en molts casos una infiltració de corticoides resol el problema. Tanmateix, si els símptomes reapareixen després d'una o dues infiltracions, es recomana la cirurgia com a solució definitiva." },

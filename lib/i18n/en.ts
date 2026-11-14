@@ -87,9 +87,9 @@ const en = {
 <p>When non-surgical treatment is insufficient or electromyography indicates moderate-to-severe compression, carpal tunnel release surgery is the treatment of choice. It is an outpatient procedure performed under local anaesthesia. The operation involves dividing the transverse carpal ligament to decompress the median nerve.</p>
 
 <h2>Recovery</h2>
-<p>Patients typically notice improvement in tingling within the first few days. The hand can be used for light activities immediately. Full recovery of grip strength usually occurs within four to eight weeks. Regular follow-up appointments are arranged to ensure a favourable outcome.</p>`,
+<p>Recovery depends on previous nerve damage, progress and daily activities. Tingling may improve early, while sensation and strength can take months to recover. Your specialist will advise when to resume strenuous activity and work.</p>`,
         faq: [
-          { question: "How long does it take to recover from carpal tunnel surgery?", answer: "Recovery after carpal tunnel surgery is quick. Tingling usually improves within the first few days. The hand can be used for light activities immediately, and full grip strength is typically restored within four to eight weeks." },
+          { question: "How long does it take to recover from carpal tunnel surgery?", answer: "Recovery depends on previous nerve damage, progress and daily activities. Tingling may improve early, while sensation and strength can take months to recover. Your specialist will advise when to resume strenuous activity and work." },
           { question: "Can carpal tunnel be cured without surgery?", answer: "In the early stages, yes. Night splints and corticosteroid injections can relieve symptoms. However, if the electromyography shows moderate-to-severe compression, surgery is the most effective and definitive treatment." },
           { question: "Why do my hands go numb at night?", answer: "Night-time hand numbness is the most typical symptom of carpal tunnel syndrome. It occurs because we tend to flex our wrists during sleep, which increases pressure on the median nerve. If it happens frequently, it is advisable to consult a specialist." },
         ],
@@ -122,7 +122,7 @@ const en = {
 <p>The procedure involves a small incision at the base of the finger to divide the A1 pulley, allowing the tendon to glide freely. It is an outpatient procedure performed under local anaesthesia.</p>
 
 <h2>Recovery</h2>
-<p>The finger can be moved from the first day after surgery. Stitches are removed after 10 to 12 days. Full recovery usually takes two to four weeks, with a swift return to normal daily activities.</p>`,
+<p>Movement usually starts early as advised by your surgeon. Pain, swelling or stiffness may last several weeks or months. Returning to work depends on recovery and the physical demands of the job.</p>`,
         faq: [
           { question: "How long does trigger finger surgery take?", answer: "Trigger finger surgery is an outpatient procedure lasting approximately 10 minutes. It is performed under local anaesthesia and the patient can go home the same day." },
           { question: "Can trigger finger be cured with injections?", answer: "Yes, in many cases a corticosteroid injection resolves the problem. However, if symptoms recur after one or two injections, surgery is recommended as the definitive solution." },
